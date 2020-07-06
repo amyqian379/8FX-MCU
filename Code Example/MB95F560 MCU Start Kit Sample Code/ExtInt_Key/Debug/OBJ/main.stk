@@ -1,0 +1,18 @@
+@c:\users\miqi\desktop\8fx training\mb560 evb\mb95f560 mcu start kit sample code\extint_key\debug\scr\main.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...
+#
+         2	E	_main
+	->	E	_Key_Function
+	->	E	_MCU_Initialization
+#
+         2	E	_MCU_Initialization
+	->	E	_InitIrqLevels
+#
+         2	E	_Key_Function
+#
+        14	I	_External_INT06
+#
+        14	I	_External_INT07

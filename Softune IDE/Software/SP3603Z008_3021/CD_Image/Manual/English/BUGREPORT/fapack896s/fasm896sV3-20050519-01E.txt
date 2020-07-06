@@ -1,0 +1,70 @@
+[Bug-ID]        fasm896sV3-20050519-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L08
+[Date]          2005-05-19
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows XP/Me/2000/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L09
+[Severity]      High
+
+[Outline]
+        When the assembler assembles a source including branch assembler
+        pseudo-machine instructions, an error may be outputted in spite of
+        being within the limits to which relative distance between the branch
+        assembler pseudo-machine instruction and the branch destination label
+        can branch.
+
+[Detail]
+        The branch assembler pseudo-machine instruction selects out of a
+        relative branch code or an absolute branch code, according to the
+        relative distance to the branch destination label.
+        When the relative distance between the branch assembler pseudo-machine
+        instruction and the branch destination label is close to the threshold
+        value to select the relative branch code and the absolute branch code,
+        the assembler may output an error.
+
+                    |  Selects absolute branch code
+                [Later label]
+                    |
+                    a : Selects relative branch code
+                    |
+                [Branching assembler pseudo-machine instruction]
+                    |
+                    b : Selects relative branch code
+                    |
+                [former label]
+                    |  Selects absolute branch code
+
+            |           Branching assembler          | Threshold Value |
+            |        pseudo-machine instruction      |   a    |   b    |
+            |========================================+========+========|
+            |BHS16 label/BN16 label/BP16 label       |        |        |
+            |BLT16 label/BGE16 label/BBC16 bit, label|        |        |
+            |BBS16 bit, label/BV16 label/BHS16 label |  -128  |  +127  |
+            |BN16 label/BP16 label/BLT16 label       |        |        |
+            |BGE16 label/BBC16 bit, label            |        |        |
+            |BBS16 bit, label/BGT16 label/BHI16 label|        |        |
+            |----------------------------------------+--------+--------|
+            |BV16 label/BNV16 label                  |  -128  |  +122  |
+            |----------------------------------------+--------+--------|
+            |BLE16 label/BLS16 label                 |  -128  |  +125  |
+
+        The error message outputted is as follows.
+          - When -OVFW option effective.
+             W1541A: Value out of range
+          - When -OVFW option does not effective.
+             E4541A: Value out of range
+
+        The -OVFW option changes an error level into "Warning" from "Error",
+        when the results of the operation coded in the immediate value operand
+        exceed the operand size.
+
+[Workaround]
+        -Change from the branch assembler pseudo-machine instruction to
+         absolute branch instruction, when error outputted.
+        -Use the modified version of the assembler.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L09

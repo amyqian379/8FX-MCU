@@ -1,0 +1,5 @@
+@c:\users\miqi\desktop\8fx training\mb560 evb\mb95f560 mcu start kit sample code\extint_key\debug\scr\_f2mc8fx.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...

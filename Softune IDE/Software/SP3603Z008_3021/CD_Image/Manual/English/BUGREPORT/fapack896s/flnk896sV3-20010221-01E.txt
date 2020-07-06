@@ -1,0 +1,24 @@
+[Bug-ID]        flnk896sV3-20010221-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (linker)
+[Versions]      V30L01-V30L07
+[Date]          2001-02-21
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows 2000/95/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L09
+[Severity]      High
+
+[Outline]
+        The Linker is aborted when using the Auto-Arrange Mode 2.
+
+[Detail]
+        The internal information table pointer update fails when using the
+        Auto-Arrange Mode 2 and an abort occurs due to the Linker performing
+        an illegal pointer access.
+
+[Workaround]
+        Use the modified version of the linker.
+
+[Note]
+        [Sample Release]  V30L07R02
+        [Product Release] V30L09

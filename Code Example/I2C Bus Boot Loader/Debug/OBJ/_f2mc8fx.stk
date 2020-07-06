@@ -1,0 +1,5 @@
+@d:\work\06_project\04_i2c boot loader\01_source code\i2c bus boot loader\debug\src\_f2mc8fx.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...

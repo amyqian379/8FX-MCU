@@ -1,0 +1,94 @@
+[Bug-ID]          fcc896sV3-20000530-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L03
+[Date]            2000-05-30
+[Host]            PC-AT
+[OS]              Windows NT4.0/98/95
+[Revision]        V30L04
+[Severity]        High
+
+[Outline]
+        The ret_int() of REALOS System Call function is not correctly
+        inline-expanded.
+
+[Detail]
+        The ret_int() of REALOS System Call function is not correctly
+        inline-expanded.
+
+        [Conditions]
+            (1) Specified the -Krealos option. AND,
+            (2) Used the ret_int() of REALOS System Call function.
+
+        [C source]
+            __interrupt void intHandlerA()
+            {
+              ret_int();
+            }
+
+        [ASM output(wrong)]
+            _intHandlerA:
+                    PUSHW       A
+                    XCHW        A, T
+                    PUSHW       A
+                    MOVW        A, EP
+                    PUSHW       A
+                    MOV A, R0
+                    SWAP
+                    MOV A, R1
+                    PUSHW       A
+                    CALL        ret_int
+            L_intHandlerA:
+                    POPW        A
+                    MOV R1, A
+                    SWAP
+                    MOV R0, A
+                    POPW        A
+                    MOVW        EP, A
+                    POPW        A
+                    XCHW        A, T
+                    POPW        A
+                    RETI
+
+        [ASM output(correct)]
+                        _intHandlerA:
+                    PUSHW   A
+                    XCHW    A, T
+                    PUSHW   A
+                    MOVW    A, EP
+                    PUSHW   A
+                    MOV     A, R0
+                    SWAP
+                    MOV     A, R1
+                    PUSHW   A
+                    POPW    A
+                    MOV     R1, A
+                    SWAP
+                    MOV     R0, A
+                    POPW    A
+                    MOVW    EP, A
+                    POPW    A
+                    XCHW    A, T
+                    POPW    A
+                    CALL    ret_int
+                    JMP     $
+            L_intHandlerA:
+                    POPW    A
+                    MOV     R1, A
+                    SWAP
+                    MOV     R0, A
+                    POPW    A
+                    MOVW    EP, A
+                    POPW    A
+                    XCHW    A, T
+                    POPW    A
+                    RETI
+
+[Workaround]
+      - Please use correction version (V30L04 or later).
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L04
+        [Bug Type]              Illegal Object
+        [Check Tool]            Undetectable

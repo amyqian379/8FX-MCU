@@ -1,0 +1,27 @@
+[Bug-ID]        asmpack896V3-20001013-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack
+[Versions]      Rev:300008
+[Date]          2000-10-13
+[Host]          PC-AT
+[OS]            Windows 2000
+[Revision]      Rev:300010
+[Severity]      Middle
+
+[Outline]
+        The Japanese edition Acrobat Reader (4.0) included with the products
+        will not work with Windows 2000.
+
+[Detail]
+        When the Windows 2000-based PC is used as the host, Windows 2000 does
+        not support the Japanese edition Acrobat Reader (4.0) supplied with
+        the product, so that an error message is displayed at tool
+        installation.
+        The installation itself is however terminated normally.
+
+[Workaround]
+        Get and use the Japanese edition Acrobat Reader (4.05).
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] Rev:300010

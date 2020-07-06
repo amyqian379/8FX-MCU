@@ -1,0 +1,148 @@
+[Information]
+DebChangeFlag=0
+MCUChangeFlag=0
+[Version]
+Version=1
+Level=1
+Revision=0
+[Debug Type]
+Type=0
+Virtual CPU File=wv896e6.dll
+Core ID=0
+Monitor Load=1
+Monitor Load Condition=Disable
+Mode=FFFF
+[Device]
+Communication=USB
+ProductID=2024
+Protocol=1
+[Target]
+AutoLoad=Enable
+Before Batch File=
+After Batch File=
+Main Freq=4
+Main Freq Unit=F4240
+ClockUP Mode=Enable
+PowerSupply=Disable
+StartFlashSync=Enable
+Non AutoMap=Enable
+Load DebInfo Only=Disable
+Ondemand Load Condition=Disable
+Synchronize after load=Disable
+Fast Load=Enable
+[Start]
+Batch File=
+[Emulation Environment]
+Cable Length=2
+Software Break=FFFFFFFF
+Flag=Enable
+Verify=0
+Sampling=FFFFFFFF
+TimerScale=0
+WatchDoc=0
+ParallelPort=-1 0
+DefaultBreak=1
+[Window]
+Flag=Enable
+Layer0=2000,Debug\SCR\vectors.c
+Layer1=2000,Debug\SCR\startup.asm
+Layer2=2000,debug\scr\main.c
+Assembly Address=H'0000
+Memory Address=H'0000
+Memory Mode=H'FFFFFFFF
+Memory Ascii=H'00000001
+Memory Line Byte=H'00000000
+Memory SplitRow=0
+RMemory Address=H'0000
+RMemory Mode=H'FFFFFFFF
+RMemory Ascii=H'00000001
+RMemory SplitRow=0
+Trace ViewMode=FFFFFFFF
+Command Max History=H'00000032
+Source Display Mode=Enable
+Source Multi Mode=Enable
+Source Ask Mode=Enable
+Source Active Mode=Enable
+Abs Sort Mode=H'00000001
+Source PC Color=255 255 0
+Source Scope Color=255 0 255
+Source Back Trace=255 0 255
+Register Change Color=255 0 0
+Memory Change Color=255 0 0
+Memory Mark Color0=192 192 192
+Memory Mark Color1=192 0 0
+Memory Mark Color2=255 255 0
+Memory Mark Color3=0 255 0
+Memory Mark Color4=0 255 255
+Memory Mark Color5=0 128 192
+Memory Mark Color6=255 128 64
+Source Executed Color=0 128 0
+Source UnExecuted Color=128 0 0
+RAM Monitoring Radix=16
+Source0Name=Debug\SCR\startup.asm
+Source0Size=44 58 616 516
+Source0State=0
+Source0Line=2C
+Source0Mode=2
+Source1Name=debug\scr\main.c
+Source1Size=66 87 638 545
+Source1State=2
+Source1Line=2F
+Source1Mode=2
+Source2Name=Debug\SCR\vectors.c
+Source2Size=88 116 660 574
+Source2State=0
+Source2Line=2B
+Source2Mode=2
+RMemory Change Color=255 0 0
+RMemory Invalid Color=128 128 128
+[Path Environment]
+Flag=Enable
+Source=
+[Map]
+Flag=Enable
+Inrom Access=Off
+[Radix Environment]
+Flag=Enable
+Mode=10
+Source=1
+[Watch Environment]
+Flag=Enable
+Size=0
+Mode=0
+MBuf=0
+Check=1
+CSiz=100
+[Exec Environment]
+Flag=Enable
+GoIntMask=0
+StepUnit=3
+StepIntMask=0
+StepIntpCtrl=4
+[Break Environment]
+Flag=Enable
+[Monitor Environment]
+Flag=Enable
+MemoryWindow=0
+WatchWindow=0
+ObjectWindow=0
+ElapseTime=3E8
+Unit=1
+[Error]
+Flag=Enable
+GuiErrorOutput=2
+CommandErrorOutput=1
+BatchErrorOutput=1
+ErrorOutputLevel=0
+[Color]
+Flag=Enable
+[Tab Environment]
+TabSize=8
+[Communication]
+Send=512
+Receive=512
+[Ram Monitor]
+Mode=Disable
+MonitoringInterval=1000
+SamplingInterval=1
+Debug File=C:\Users\miqi\Desktop\8FX Training\MB560 EVB\MB95F560 MCU Start Kit Sample Code\Timer_Buzzer\Debug\ABS\Timer_Buzzer.abs

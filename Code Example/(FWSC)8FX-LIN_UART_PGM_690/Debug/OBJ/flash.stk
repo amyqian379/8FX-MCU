@@ -1,0 +1,11 @@
+@d:\2011\work\8fx uart boot loader\source code\8fx-uart_pgm\debug\src\flash.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...
+#
+        10	E	_Flash_Erase
+#
+        14	E	_Flash_Write
+#
+         6	E	_Flash_Read

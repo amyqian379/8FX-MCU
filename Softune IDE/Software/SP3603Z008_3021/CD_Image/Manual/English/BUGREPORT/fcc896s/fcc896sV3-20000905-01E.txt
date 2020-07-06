@@ -1,0 +1,37 @@
+[Bug-ID]          fcc896sV3-20000905-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L06
+[Date]            2000-09-05
+[Host]            PC-AT
+[OS]              Windows 2000/NT4.0/98/95
+[Revision]        V30L07
+[Severity]        Middle
+
+[Outline]
+        An error message is generated when compiling with a option file which
+        size is over 4095 bytes.
+
+[Detail]
+        In Windows version C Compiler, compile error is occurred when
+        compiling with a option file which size is over 4095 bytes.
+
+        [Conditions]
+            (1) The C compiler of the Windows version is used. AND,
+            (2) When compiling, the option file is used. AND,
+            (3) Size of the option file of (2) is over 4095 bytes.
+
+        [Error Messages]
+        > dir a.opt
+        A        OPT         4,095  00-09-05  00:00 a.opt
+
+        > fcc896s -f a.opt a.c
+        )** E4009D : Illegal file name(
+
+[Workaround]
+      - Please divide the option file so that the size of the option file may
+        become 4094 bytes or less.
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L07

@@ -1,0 +1,63 @@
+[Bug-ID]          fcc896sV3-20000719-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L04
+[Date]            2000-07-19
+[Host]            PC-AT
+[OS]              Windows 2000/NT4.0/98/95
+[Revision]        V30L05
+[Severity]        High
+
+[Outline]
+        The type of the result of sizeof() becomes long type.
+
+[Detail]
+        When sizeof(array_name) is described as an argument of the function,
+        the C Compiler is stored in the stack as long type (correctness is
+        unsigned int type).
+
+        [Conditions]
+            (1) There is an array with initializer which does not specify
+                the number of elements is defined. AND,
+            (2) The size of the array of (1) is calculated in the sizeof()
+                operator. AND,
+            (3) (2) of the function is assumed to be an argument.
+
+        [C source]
+            extern void g(unsigned int);
+            char a[]="";
+            f()
+            {
+              g(sizeof(a));
+            }
+
+        [ASM output(wrong)]
+            _f:
+                    MOVW    A, #1
+                    PUSHW   A
+                    MOVW    A, #0       ;; NG
+                    PUSHW   A           ;; NG
+                    CALL    _g
+                    POPW    A
+                    POPW    A
+            L_f:
+                    RET
+
+        [ASM output(correct)]
+            _f:
+                    MOVW    A, #1
+                    PUSHW   A
+                    CALL    _g
+                    POPW    A
+                    POPW    A
+            L_f:
+                    RET
+
+[Workaround]
+      - Please use correction version (V30L05 or later).
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L05
+        [Bug Type]              Illegal Object
+        [Check Tool]            Undetectable

@@ -1,0 +1,52 @@
+[Bug-ID]          fcc896sV3-20000605-03
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L03
+[Date]            2000-06-05
+[Host]            PC-AT
+[OS]              Windows NT4.0/98/95
+[Revision]        V30L04
+[Severity]        Middle
+
+[Outline]
+        When calls sscanf() function, user program terminates abnormally.
+
+[Detail]
+        When executing following program, sscanf() breaks the stack frame of
+        the caller function.
+
+        [Conditions]
+            (1) Following function is used. AND,
+                    sscanf
+            (2) Following conversion specifier is used in function of (1). AND,
+                    f e E g G
+            (3) The width of the field is not specified or exceeds 511. AND,
+            (4) The length of a transform string exceeds 511.
+
+        [C source]
+#include <stdio.h>
+void main(void)
+{
+  static const char *s =
+          "0.234567890123456789012345678901234567890123456789"    /*  50 */
+          "01234567890123456789012345678901234567890123456789"    /* 100 */
+          "01234567890123456789012345678901234567890123456789"    /* 150 */
+          "01234567890123456789012345678901234567890123456789"    /* 200 */
+          "01234567890123456789012345678901234567890123456789"    /* 250 */
+          "01234567890123456789012345678901234567890123456789"    /* 300 */
+          "01234567890123456789012345678901234567890123456789"    /* 350 */
+          "01234567890123456789012345678901234567890123456789"    /* 400 */
+          "01234567890123456789012345678901234567890123456789"    /* 450 */
+          "01234567890123456789012345678901234567890123456789"    /* 500 */
+          "01234567890123456789012345678901234567890123456789"    /* 550 */
+          "01234567890123456789012345678901234567890123456789" ;  /* 600 */
+  double t ;
+  sscanf(s, "%f", &t) ;
+}
+
+[Workaround]
+      - Please use correction version (V30L04 or later).
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L04

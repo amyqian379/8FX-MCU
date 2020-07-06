@@ -1,0 +1,27 @@
+[Bug-ID]        flnk896sV3-20010925-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (linker)
+[Versions]      V30L01-V30L07
+[Date]          2001-09-25
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows 2000/95/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L09
+[Severity]      High
+
+[Outline]
+        When the "alr" option is specified, the linker may be terminated
+        abnormally.
+
+[Detail]
+        When the "alr" option is specified at link time, and the count of
+        debug information symbols exceed 65535, the linker may be terminated
+        abnormally.
+
+[Workaround]
+        At compiling or assembling time, do not specify the debug information
+        output option "-g" for the module that is not debugged and set the
+        number of debug information symbols within 65535.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L09

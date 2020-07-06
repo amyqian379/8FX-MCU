@@ -1,0 +1,28 @@
+[Bug-ID]        flib896sV3-20020828-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (librarian)
+[Versions]      V30L01-V30L03
+[Date]          2002-08-28
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows 2000/95/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L05
+[Severity]      High
+
+[Outline]
+        Error occurs when the size of an object file to be added to the
+        library is a multiple of 30,000 bytes + 4 bytes.
+
+[Detail]
+        A file write error (F9017) occurs when the size of an object file to
+        be added to the library is a multiple of 30,000 bytes + 4 bytes.
+        With Windows, check the size with [File] - [Property] or with the
+        "DIR" command at the command level prompt.
+        With workstations, check the size with the "ls-1" command.
+
+[Workaround]
+        Check the size of an object file to be added to the library so that it
+        does not become a multiple of 30,000 bytes + 4 bytes.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L05

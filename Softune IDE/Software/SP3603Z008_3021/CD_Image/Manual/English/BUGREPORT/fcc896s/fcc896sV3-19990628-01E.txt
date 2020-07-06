@@ -1,0 +1,43 @@
+[Bug-ID]          fcc896sV3-19990628-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L03
+[Date]            1999-06-28
+[Host]            PC-AT
+[OS]              Windows NT4.0/98/95
+[Revision]        V30L04
+[Severity]        Middle
+
+[Outline]
+        The C preprocessor error occurs in #if 0 ... #endif.
+
+[Detail]
+        The C preprocessor outputs the error message when compiling the
+        following source.
+
+        [Condition]
+            (1) There is #pragma asm ... #pragma endasm in #if 0 ... #endif.
+                AND,
+            (2) There is preprocessor directive for fasm in (1).
+                    #macro      #local      #endm       #exitm
+                    #repeat     #set        #purge
+
+        [C source]
+            #if 0
+            #pragma asm
+            #macro  X       /* preprocessor directive for fasm */
+            #endm           /* preprocessor directive for fasm */
+            #pragma endasm
+            #endif
+
+        [Error Messages]
+            %fcc896s -S a.c
+            *** a.c(3) E4042P: unknown directive
+            *** a.c(4) E4042P: unknown directive
+
+[Workaround]
+      - Please use correction version (V30L04 or later).
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L04

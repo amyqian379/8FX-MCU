@@ -1,0 +1,5 @@
+@c:\users\miqi\desktop\8fx mcu tool\(fwsc)8fx-lin_uart_pgm_690\debug\src\_f2mc8fx.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...

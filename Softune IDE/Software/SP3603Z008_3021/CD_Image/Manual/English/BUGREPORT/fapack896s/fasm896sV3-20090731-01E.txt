@@ -1,0 +1,116 @@
+[Bug-ID]        fasm896sV3-20090731-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L10
+[Date]          2009-07-31
+[Host]          PC-AT
+[OS]            Windows Vista/XP/2000
+[Revision]      V30L11
+[Severity]      High
+
+[Outline]
+        The bit offset value of the bit address operand may become zero.
+
+[Detail]
+        When addresses (dir) of bit address operands (dir:b) are corresponding
+        to all the following conditions, the value of the bit offset becomes
+        zero.
+        The compiler does not output the assembler source where this bug occurs.
+        Therefore, this bug does not occur when C source is compiled.
+
+         (1) A relative value or a external reference value is contained.
+         (2) There is an expression which applies to all the following
+             conditions between the back of a relative value or
+             a external reference value and the front of a bit offset (:b).
+           (2-1) The number of terms is two or more.
+                 When the priority of operations is higher than the plus and
+                 minuses, please count the operations as one term.
+           (2-2) Terms are all absolute value.
+
+        The term that becomes an absolute value is as follows. 
+          - Constant
+          - Symbol defined with the .EQU instruction
+          - Symbol defined in an absolute section
+          - Section symbol for an absolute section (section address)
+        The term that becomes a relative value is as follows. 
+          - Symbol defined in a relative section
+          - Section symbol for a relative section (section address)
+          - Section size
+        The term that becomes an external reference value is as follows. 
+          - Symbol imported by .IMPORT pseudo-instruction
+          - Undefined symbol
+
+        Instructions which cause the bug are shown below.
+        <Machine instructions>
+          SETB dir:b
+          CLRB dir:b
+          BBC dir:b, rel
+          BBS dir:b, rel
+
+         <Pseudo machine instructions>
+          BBC16  bit,label
+          BBS16  bit,label
+
+         <Structured program instructions>
+          .if (onditional expression)
+          .until (onditional expression)
+          .while (onditional expression)
+
+        The examples of description which causes the bug are shown below.
+               .SECTION  ABS_DATA, DATA, LOCATE=0x1000
+          _abs_sym:
+               .SECTION  REL_DATA, DATA, ALIGN=1
+          _rel_sym:
+               .SECTION  CODE, CODE, ALIGN=1
+               .IMPORT   _ext_sym
+          _equ_sym:  .EQU      0x100
+               SETB     _rel_sym + 1 + 1:1
+               SETB     _ext_sym + _abs_sym+1:1
+               SETB     _rel_sym + 1 + ABS_DATA:1
+               SETB     _ext_sym + _abs_sym + _equ_sym:1
+               SETB     _rel_sym + 1 + 1 + 1:1
+               SETB     _ext_sym + _abs_sym+1 + _equ_sym:1
+               SETB     _rel_sym + 1 + ABS_DATA + _abs_sym:1
+               SETB     _ext_sym + ABS_DATA + _abs_sym + _equ_sym:1
+
+[Workaround]
+        Please evade by (a) or (b).
+          (a) Please collect expressions of the absolute value in a term.
+             <Before the correction>
+               SETB     _rel_sym + 1 + 1:1
+             <After the correction>
+               SETB     _rel_sym + 2:1
+                                  ~~~
+             _rel_sym : Symbol defined in a relative section
+
+          (b) Please move a relative value or a external reference value to
+              before a bit offset (:b).
+             <Before the correction>
+               SETB     _rel_sym + _abs_sym + _equ_sym + 1:1
+             <After the correction>
+               SETB     _abs_sym + _equ_sym + 1 + _rel_sym:1
+                                                 ~~~~~~~~~~
+             _abs_sym : Symbol defined in an absolute section
+             _equ_sym : Symbol defined with the .EQU instruction
+             _rel_sym : Symbol defined in a relative section
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L11
+        [Bug Type]        Illegal Object
+        [Check Tool]      Available (V30L01-V30L10)
+
+[Report History]
+        [2009-09-30] New making.
+        [2010-04-30] [Status] was changed for the bug fix.
+                       OLD: [Status]          Under investigation
+                       NEW: [Status]          Completely fixed
+                     [Revision] was changed for the bug fix.
+                       OLD: [Revision]
+                       NEW: [Revision]      V30L11
+                     [Sample Release] was changed for the bug fix.
+                       OLD: [Sample Release]  Non
+                       NEW: [Product Release] V30L11
+                     [Date] was corrected for the false description.
+                       OLD: [Date]          2008-07-31
+                       NEW: [Date]          2009-07-31

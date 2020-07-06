@@ -1,0 +1,37 @@
+[Bug-ID]        fasm896sV3-20070614-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L09
+[Date]          2007-06-14
+[Host]          PC-AT | Sun4
+[OS]            Windows XP/2000 | Solaris 2.6
+[Revision]      V30L10
+[Severity]      Middle
+
+[Outline]
+        The assembly time might become remarkably long.
+
+[Detail]
+        The assembly time becomes remarkably long if the assembler source with
+        a lot of lines is assembled when assembly list output option is
+        specified.
+        The number of lines at this time contain lines of the file that is
+        included. 
+
+[Workaround]
+        Please suppress output assembly list.
+        There are the following two methods of the assembly list output
+        suppression.
+         - Please delete specification of assembly list option (-l) and
+           specification of output assembly list file name option (-lf).
+         - Please add suppression of output assembly list option (-Xl) after -l
+           option and -lf option.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L10
+
+[Report History]
+        [2008-02-01] [Status] was changed to Completely fixed. 
+                     The correction version was added to [Revision] and [Product
+                     Release]. 

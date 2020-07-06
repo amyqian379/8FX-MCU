@@ -1,0 +1,44 @@
+[Bug-ID]          fcc896sV3-20000605-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L03
+[Date]            2000-06-05
+[Host]            PC-AT
+[OS]              Windows NT4.0/98/95
+[Revision]        V30L04
+[Severity]        Middle
+
+[Outline]
+        When '*' which means variable precision is used in a sprintf function,
+        the program doesn't work correctly.
+
+[Detail]
+        When compiling the following source, sprintf function dosen't work
+        correctly.
+
+        [Conditions]
+            (1) Following function is used. AND,
+                    sprintf  vsprintf
+            (2) The variable precision '*' is used in the conversion
+                specifier of function of (1).
+
+        [C source]
+            #include <stdio.h>
+            void main()
+            {
+              char aaa[50];
+              sprintf(aaa, "%.*g", 6, 1234.56);
+            }
+
+        [Output(wrong)]
+            aaa[] = "g"
+
+        [Output(correct)]
+            aaa[] = "1234.56"
+
+[Workaround]
+      - Please use correction version (V30L04 or later).
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L04

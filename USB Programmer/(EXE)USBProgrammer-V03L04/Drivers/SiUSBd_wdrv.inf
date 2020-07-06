@@ -1,0 +1,149 @@
+; Installation file (.inf) for "MB21xx" device
+; (c) 2008-2016, Cypress Semiconductor Corporation
+; or a subsidiary of Cypress Semiconductor Corporation. All rights
+; reserved.
+; This software, including source code, documentation and related
+; materials ("Software"), is owned by Cypress Semiconductor
+; Corporation or one of its subsidiaries ("Cypress") and is protected by
+; and subject to worldwide patent protection (United States and foreign),
+; United States copyright laws and international treaty provisions.
+; Therefore, you may use this Software only as provided in the license
+; agreement accompanying the software package from which you
+; obtained this Software ("EULA").
+;
+; If no EULA applies, Cypress hereby grants you a personal, nonexclusive,
+; non-transferable license to copy, modify, and compile the
+; Software source code solely for use in connection with Cypress's
+; integrated circuit products. Any reproduction, modification, translation,
+; compilation, or representation of this Software except as specified
+; above is prohibited without the express written permission of Cypress.
+;
+; Disclaimer: THIS SOFTWARE IS PROVIDED AS-IS, WITH NO
+; WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING,
+; BUT NOT LIMITED TO, NONINFRINGEMENT, IMPLIED
+; WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+; PARTICULAR PURPOSE. Cypress reserves the right to make
+; changes to the Software without notice. Cypress does not assume any
+; liability arising out of the application or use of the Software or any
+; product or circuit described in the Software. Cypress does not
+; authorize its products for use in any products where a malfunction or
+; failure of the Cypress product may reasonably be expected to result in
+; significant property damage, injury or death ("High Risk Product"). By
+; including Cypress's product in a High Risk Product, the manufacturer
+; of such system or application assumes all risk of such use and in doing
+; so agrees to indemnify Cypress against all liability.
+; (Ver.20160223-01)
+
+; Version Information
+; -------------------
+[Version]
+Signature="$CHICAGO$"  ; Represents all Windows OS's
+Class=USB
+Provider=%Cypress%
+; For WHQL, you should obtain a catalog signed by Microsoft Hardware Compatibility Labs
+CatalogFile=SiUSBd_wdrv.cat
+DriverVer=02/23/2016, 12.0.0
+ClassGUID={876EC2C0-D9B4-11d3-803B-00C04F31F4F9}
+
+; Driver Information
+; ------------------
+[Manufacturer]
+; You may modify the manufacturer name by changing the Mfg variable in the [Strings]
+; section in this INF file.
+%Mfg%=DeviceList,NTamd64
+
+; The 'Install' lines under the [DeviceList] include the device name that will
+; be displayed in the Device Managerand the hardware ID's. 
+; You may modify the device names and the hardware ID's.
+; The Vendor ID is 04c5, and the Product ID is 20xx
+
+; x86 platform, Windows 2000 and later
+[DeviceList]
+"MB2198-01"=Install, USB\VID_04C5&PID_2002
+"MB2147-01"=Install, USB\VID_04C5&PID_2005
+"MB2100-01"=Install, USB\VID_04C5&PID_201A
+"MB2146-07"=Install, USB\VID_04C5&PID_2024
+
+; x64 platform, Windows XP x64 edition and later
+[DeviceList.NTamd64]
+"MB2198-01"=Install, USB\VID_04C5&PID_2002
+"MB2147-01"=Install, USB\VID_04C5&PID_2005
+"MB2100-01"=Install, USB\VID_04C5&PID_201A
+"MB2146-07"=Install, USB\VID_04C5&PID_2024
+
+; Installation Section
+; --------------------
+[Install.NTx86]  ; Installation script for x86-based
+CopyFiles=FilesToCopy_x86
+
+[FilesToCopy_x86]
+wdapi1200.dll,,,0x04  ; 0x04 == COPYFLG_NOVERSIONCHECK
+
+[Install.NTamd64]  ; Installation script for x64-based
+CopyFiles=FilesToCopy_amd64
+
+[FilesToCopy_amd64]
+wdapi1200.dll,wdapi1200_32.dll,,0x04  ; 0x04 == COPYFLG_NOVERSIONCHECK
+
+[Install]
+;AddReg=UpDateRegistry
+
+[ClassInstall32]  ; Register a new class in Windows 2000 and later
+AddReg=UpDateRegistry
+
+[UpDateRegistry]
+HKR,,,,USB
+HKR,,Icon,,-5
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,, windrvr1200.sys
+
+
+[ControlFlags]
+ExcludeFromSelect = *  ; Remove all devices listed in this INF file from certain user 
+;    interface displays, from which a user is expected to select a particular device 
+;    for installation.
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+; Defining WinDriver1200 Service
+; ---------------------------
+[Install.NTx86.Services]
+Addservice=WinDriver1200, 0x00000002, Service_Info_x86
+
+[Service_Info_x86]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\windrvr1200.sys
+
+[Install.NTamd64.Services]
+Addservice=WinDriver1200, 0x00000002, Service_Info_amd64
+
+[Service_Info_amd64]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\windrvr1200.sys
+
+; Source File Information
+; -----------------------
+[SourceDisksFiles.x86]
+wdapi1200.dll=1
+
+[SourceDisksFiles.amd64]
+wdapi1200_32.dll=1
+
+[SourceDisksNames]
+1=,,  ;
+
+[DestinationDirs]
+FilesToCopy_x86=11
+FilesToCopy_amd64=16425
+
+;---------------------------------------------------------------;
+
+[Strings]
+Cypress= "Cypress Semiconductor Corporation"
+Mfg="Cypress Semiconductor Corporation"
+

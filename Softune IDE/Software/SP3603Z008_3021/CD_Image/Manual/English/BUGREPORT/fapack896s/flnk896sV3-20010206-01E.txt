@@ -1,0 +1,29 @@
+[Bug-ID]        flnk896sV3-20010206-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (linker)
+[Versions]      V30L01-V30L07
+[Date]          2001-02-06
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows 2000/95/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L09
+[Severity]      High
+
+[Outline]
+        Linker aborts when "-sl" is specified.
+
+[Detail]
+        The linker aborts if you set the option "-sl" when linking in sources
+        in which functions returning function pointers as recovery values and
+        functions making function pointers into arguments are described.
+
+[Workaround]
+        There is no method for avoidance.
+        Do not use that include "-sl" option.
+
+[Note]
+        Changing the display format of local symbol list
+          The display by only the static symbol value replaced the display by
+          the auto-valuable.
+
+        [Sample Release]  Non
+        [Product Release] V30L09

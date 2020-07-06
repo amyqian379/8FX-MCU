@@ -1,0 +1,34 @@
+[Bug-ID]        f2esV3-20030529-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (load module converter)
+[Versions]      V30L06
+[Date]          2003-05-29
+[Host]          PC-AT
+[OS]            Windows XP/Me/2000/98/NT4.0
+[Revision]      V30L07
+[Severity]      High
+
+[Outline]
+        Message files cannot be opened when kanji characters are included in
+        Environment Variable "FETOOL".
+
+[Detail]
+        When Environment Variable "FETOOL" includes kanji characters and a
+        character of 0x5c(\) in the second byte, or when the load module
+        converter displays version information (specifying the -V option),
+        simple help (specifying the -help option), the message file cannot be
+        opened and the error message (***F9998U: Can not open file (message
+        file)) is displayed.
+        This problem does not occur on the load module converter in the version
+        V30L05.
+
+        This problem occurs in the Japanese version of the Windows system.
+
+[Workaround]
+        Use an Environment Variable "FETOOL" that does not include kanji
+        characters.
+        Use the load module converter in the version V30L05.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L07

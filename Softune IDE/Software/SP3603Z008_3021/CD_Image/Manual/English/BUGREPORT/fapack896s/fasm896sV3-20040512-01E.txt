@@ -1,0 +1,51 @@
+[Bug-ID]        fasm896sV3-20040512-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L07
+[Date]          2004-05-12
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows XP/Me/2000/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L08
+[Severity]      Middle
+
+[Outline]
+        If an error occurs during assembling, the line number of the error
+        message may be displayed incorrectly.
+
+[Detail]
+        If an error occurs during assembling, the line number of the error
+        message may be displayed incorrectly.
+        This error occurs when the assemble source with debug information
+        output by the Compiler is assembled.
+        If the error occurs, the line number of the error message is displayed
+        incorrectly and the error jump function of Workbench cannot correctly
+        display the line with the invalid description.
+        This problem will not affect the object code to be output.
+        The following is an example of the description causing the error.
+
+        [Example of description causing problem]
+        line number | C source description
+        ------------+---------------------------------------------------------
+             1      |func()
+             2      |{
+             3      |#pragma asm
+             4      |    AA          <== Invalid description
+             5      |#pragma endasm  <== Line displayed by error jump function
+             6      |}                   of Workbench
+
+        When the above C source is compiled with debug information, the
+        following error message is displayed.
+
+        *** test.c(5) E4600A: Invalid operation mnemonic (AA)
+
+        The invalid description is on the 4th line, but is displayed on the 5th
+        line of the error message.
+        The error jump function of Workbench displays the 5th line.
+
+
+[Workaround]
+        Use the modified version of the assembler.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L08

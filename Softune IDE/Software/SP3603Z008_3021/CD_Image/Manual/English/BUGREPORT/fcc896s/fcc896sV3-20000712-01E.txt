@@ -1,0 +1,42 @@
+[Bug-ID]          fcc896sV3-20000712-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L04
+[Date]            2000-07-12
+[Host]            PC-AT
+[OS]              Windows 2000/NT4.0/98/95
+[Revision]        V30L05
+[Severity]        Middle
+
+[Outline]
+        Messages displayed when installing to a Windows environment other
+        than the English or Japanese languages are displayed in Japanese
+        causing the display to be unreadable.
+
+[Detail]
+        Messages displayed when installing to a Windows environment other
+        than the English or Japanese languages are displayed in Japanese
+        causing the display to be unreadable.
+
+[Cause]
+        The settings for the installation are for "select Japanese language
+        as standard and select English display only for the English version."
+
+[Workaround]
+        Use the following to avoid that situation (Using the English language
+        menu as representative.)
+
+        - Operations to perform before installing  (On Win 95/98, NT4.0)
+          1) Select the [Start] button in Windows and open the [Control
+             Panel].
+          2) Select [Regional Option] (The globe icon)
+          3) Change the [Regional Setting] to "English (United States)."
+          (*) For Windows 2000, select [Start]->[Control Panel]->[Regional
+              Option]->[General]->[Your Location (location)]->"English
+              (United States)"
+        - Return the settings back to their original status after completing
+          the installation.
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L05

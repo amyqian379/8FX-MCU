@@ -1,0 +1,32 @@
+[Bug-ID]          fcc896sV3-20000316-02
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L03
+[Date]            2000-03-16
+[Host]            PC-AT
+[OS]              Windows NT4.0/98/95
+[Revision]        V30L04
+[Severity]        Middle
+
+[Outline]
+        The double-quote character cannot be specified in the string
+        specified by the -D option.
+
+[Detail]
+        The double-quote character cannot be specified in the string
+        specified by the -D option, the compiler error is occurred.
+
+        [Conditions]
+            (1) When the double-quote character is specified in the string
+                specified by the -D option.
+
+        [Error Messages]
+            % fcc896s -D A=\"ab\" -S a.c
+            *** E4009D : Illegal file name(ab)
+
+[Workaround]
+      - Please describe by #define directive in C source.
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L04

@@ -1,0 +1,102 @@
+[Bug-ID]          fcc896sV3-20000605-02
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L03
+[Date]            2000-06-05
+[Host]            PC-AT
+[OS]              Windows NT4.0/98/95
+[Revision]        V30L04
+[Severity]        Middle
+
+[Outline]
+        When calls sprintf() function, user program terminates abnormally.
+
+[Detail]
+        When executing following program, sprintf() breaks the stack frame of
+        the caller function.
+
+        [Conditions]
+        Case 1:
+            (1) Following function is used. AND,
+                    sprintf  vsprintf
+            (2) Following conversion specifier is used in function of (1).
+            AND,
+                    d i u o
+            (3) The specified precision exceeds 511.
+
+        Case 2:
+            (1) Following function is used. AND,
+                    sprintf  vsprintf
+            (2) Following conversion specifier is used in function of (1).
+            AND,
+                    x X
+            (3) The specified precision exceeds 510.
+
+        Case 3:
+            (1) Following function is used. AND,
+                    sprintf  vsprintf
+            (2) Following conversion specifier is used in function of (1).
+            AND,
+                    f e E g G
+            (3) The specified precision exceeds 503.
+
+        Case 4:
+            (1) Following function is used. AND,
+                    sprintf  vsprintf
+            (2) Following conversion specifier is used in function of (1).
+            AND,
+                    s
+            (3) The width of the field is not specified or exceeds 511. AND,
+            (4) The length of a string to be converted exceeds 511.
+
+        [C source(Case 1)]
+            #include <stdio.h>
+            void main(void)
+            {
+              char aaa[50];
+              sprintf(aaa, "%.600d",1);
+            }
+
+        [C source(Case 2)]
+            #include <stdio.h>
+            void main(void)
+            {
+              char aaa[50];
+              sprintf(aaa, "%.600x",0x1);
+            }
+
+        [C source(Case 3)]
+            #include <stdio.h>
+            void main(void)
+            {
+              char aaa[50];
+              sprintf(aaa, "%.600e\n", 0.0);
+            }
+
+        [C source(Case 4)]
+#include <stdio.h>
+void main(void)
+{
+  char aaa[601];
+  sprintf(aaa, "%s\n",
+          "0123456789012345678901234567890123456789012345678\n" /*  50 */
+          "0123456789012345678901234567890123456789012345678\n" /* 100 */
+          "0123456789012345678901234567890123456789012345678\n" /* 150 */
+          "0123456789012345678901234567890123456789012345678\n" /* 200 */
+          "0123456789012345678901234567890123456789012345678\n" /* 250 */
+          "0123456789012345678901234567890123456789012345678\n" /* 300 */
+          "0123456789012345678901234567890123456789012345678\n" /* 350 */
+          "0123456789012345678901234567890123456789012345678\n" /* 400 */
+          "0123456789012345678901234567890123456789012345678\n" /* 450 */
+          "0123456789012345678901234567890123456789012345678\n" /* 500 */
+          "0123456789012345678901234567890123456789012345678\n" /* 550 */
+          "0123456789012345678901234567890123456789012345678\n" /* 600 */
+          ) ;
+}
+
+[Workaround]
+      - Please use correction version (V30L04 or later).
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L04

@@ -1,0 +1,28 @@
+[Bug-ID]        flnk896sV3-20070710-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (linker)
+[Versions]      V30L01-V30L13
+[Date]          2007-07-10
+[Host]          PC-AT | Sun4
+[OS]            Windows XP/2000 | Solaris 2.6
+[Revision]      V30L14
+[Severity]      Low
+
+[Outline]
+        The display of the local symbol information list may be illegal.
+
+[Detail]
+        The display of the local symbol information list may be illegal when a
+        static variable is defined outside the function.
+
+[Workaround]
+        Please use correction version (V30L14 or later).
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L14
+
+[Report History]
+        [2008-02-01] [Status] was changed to Completely fixed. 
+                     The correction version was added to [Revision] and [Product
+                     Release]. 

@@ -1,0 +1,33 @@
+[Bug-ID]        h2hsV3-20040727-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (format converter)
+[Versions]      V30L01-V30L02
+[Date]          2004-07-27
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows XP/Me/2000/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L03
+[Severity]      High
+
+[Outline]
+        Intel HEX format adjuster (h2hs) does not output object data correctly,
+        when you specify that the parameter of the -len option is 128.
+        The -len is a option that specifies the number of bytes of data to be
+        output into a record.
+
+[Detail]
+        Intel HEX format adjuster does not output object data correctly,  when
+        the following specification is performed.
+
+        h2hs sample.hex -ran 0x00,0xFF -len 128
+
+[Workaround]
+        In order to avoid this problem, there are two kinds of following
+        methods.
+          - Please use Intel HEX Format adjuster without specifying the -len
+            option.
+          - When you specify the -len option, please specify smaller than 128
+            (16/32/64).
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L03

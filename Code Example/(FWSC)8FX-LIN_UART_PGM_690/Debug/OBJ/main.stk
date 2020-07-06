@@ -1,0 +1,47 @@
+!c:\users\miqi\desktop\8fx mcu tool\(fwsc)8fx-lin_uart_pgm_690\debug\src\main.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...
+#
+         2	E	_Boot_main
+	->	E	_ACK_To_PC
+	->	E	_Data_Process
+	->	E	_Command_Receive
+	->	E	_User_Mode
+	->	E	_LIN_UART_Init
+	->	E	_Clock_Init
+	->	E	_Clear_Para
+#
+         2	E	_Clear_Para
+#
+         2	E	_Clock_Init
+#
+         2	E	_LIN_UART_Init
+#
+        14	E	_User_Mode	A
+	->	E	LSHLW
+	->	E	_Flash_Read
+#
+         2	E	_Command_Receive
+	->	E	_LIN_Receive
+#
+         2	E	_LIN_Receive
+	->	E	LSHLW
+#
+        22	E	_Data_Process
+	->	E	_Flash_Write
+	->	E	_Flash_Erase
+	->	E	_Flash_Read
+	->	E	LSHRUW
+#
+         2	E	_ACK_To_PC
+	->	E	_LIN_Transmit
+#
+         2	E	_LIN_Transmit
+#
+         6	E	_Flash_Erase	A
+#
+         4	E	_Flash_Write	A
+#
+         6	E	_Flash_Read

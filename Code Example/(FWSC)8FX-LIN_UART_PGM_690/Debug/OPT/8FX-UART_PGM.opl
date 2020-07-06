@@ -1,0 +1,30 @@
+-g
+-AL 2
+-ra _INRAM01=0x0090/0x088F
+-ro _INROM01=0x1000/0xFFFF
+-sc WRITECODE/Code+ERASECODE/Code=_INRAM01
+-sc @WRITECODE/Const+@ERASECODE/Const+CODE/Code=_INROM01
+-check_rora
+-check_locate
+-rg 0
+-m "C:\Users\miqi\Desktop\8FX MCU Tool\(FWSC)8FX-LIN_UART_PGM_690\Debug\LST\8FX-UART_PGM.mp1"
+-mmi
+-pl 60
+-pw 132
+-alin "C:\Users\miqi\Desktop\8FX MCU Tool\(FWSC)8FX-LIN_UART_PGM_690\Debug\LST"
+-alout "C:\Users\miqi\Desktop\8FX MCU Tool\(FWSC)8FX-LIN_UART_PGM_690\Debug\LST"
+-Xals
+-Xalr
+-na
+-w 1
+-Xset_rora
+-cwno
+-a
+-cpu MB95F698K
+-o "C:\Users\miqi\Desktop\8FX MCU Tool\(FWSC)8FX-LIN_UART_PGM_690\Debug\ABS\8FX-UART_PGM.abs"
+
+"C:\Users\miqi\Desktop\8FX MCU Tool\(FWSC)8FX-LIN_UART_PGM_690\Debug\OBJ\start8FX.obj"
+"C:\Users\miqi\Desktop\8FX MCU Tool\(FWSC)8FX-LIN_UART_PGM_690\Debug\OBJ\main.obj"
+"C:\Users\miqi\Desktop\8FX MCU Tool\(FWSC)8FX-LIN_UART_PGM_690\Debug\OBJ\flash.obj"
+"C:\Users\miqi\Desktop\8FX MCU Tool\(FWSC)8FX-LIN_UART_PGM_690\Debug\OBJ\_f2mc8fx.obj"
+

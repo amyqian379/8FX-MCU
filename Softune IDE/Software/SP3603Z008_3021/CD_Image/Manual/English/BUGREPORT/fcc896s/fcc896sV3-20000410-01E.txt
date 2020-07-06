@@ -1,0 +1,40 @@
+[Bug-ID]          fcc896sV3-20000410-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L03
+[Date]            2000-04-10
+[Host]            PC-AT
+[OS]              Windows NT4.0/98/95
+[Revision]        V30L04
+[Severity]        Middle
+
+[Outline]
+        When refering the bit-field member, the C compiler terminates
+        abnormally.
+
+[Detail]
+        When compiling following source, the C compiler terminates abnormally.
+
+        [Conditions]
+            (1) There is bit-field member reference. AND,
+            (2) The reference to (1) is not used after that.
+
+        [C source]
+            int i;
+            struct {
+              unsigned char f0:1;
+            } flgf;
+
+            f()
+            {
+              if(i == 1) {
+                flgf.f0 == 1;      /* SIGSEGV */
+              }
+            }
+
+[Workaround]
+      - Please use correction version (V30L04 or later).
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L04

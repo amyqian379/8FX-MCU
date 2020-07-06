@@ -1,0 +1,3 @@
+[Recent]
+CPU=31
+Write File=C:\Users\miqi\Desktop\8FX Training\MB560 EVB\MB95F560 MCU Start Kit Sample Code\IO_LED\Debug\ABS\IO_LED.mhx

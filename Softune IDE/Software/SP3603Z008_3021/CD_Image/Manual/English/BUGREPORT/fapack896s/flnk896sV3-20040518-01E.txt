@@ -1,0 +1,46 @@
+[Bug-ID]        flnk896sV3-20040518-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (linker)
+[Versions]      V30L01-V30L12
+[Date]          2004-05-18
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows XP/Me/2000/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L13
+[Severity]      Middle
+[Outline]
+        The absolute assemble list is not created correctly.
+
+[Detail]
+        If the section with the section name matching the section name as
+        compared in the character length strncmp exists in the same module,
+        the absolute assemble list is not created correctly.
+
+        This problem occurs in the following source:
+
+                .SECTION        CODE2, CODE, ALIGN=1
+                MOVW            A, _addr
+                PUSHW           A
+                CALL            _func
+                        .
+                        .
+                        .
+
+                .SECTION        CODE, CODE, ALIGN=1
+                MOVW            A, _addr
+                PUSHW           A
+                CALL            _func
+                        .
+                        .
+                        .
+
+        In the above source, the section name CODE matches the section name
+        CODE2 in the character length (4 characters).
+        This problem will not affect the load module to be generated.
+
+[Workaround]
+        Change the first character of a section name to avoid duplicating
+        names.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L13

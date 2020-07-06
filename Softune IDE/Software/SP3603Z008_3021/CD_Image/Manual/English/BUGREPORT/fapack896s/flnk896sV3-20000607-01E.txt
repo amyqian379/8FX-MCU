@@ -1,0 +1,25 @@
+[Bug-ID]        flnk896sV3-20000607-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (linker)
+[Versions]      V30L01-V30L06
+[Date]          2000-06-07
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows 95/98/NT4.0 | Solaris 2.5 | HP-UX 10.0
+[Revision]      V30L07
+[Severity]      Middle
+
+[Outline]
+        Incorrect auxiliary data may be displayed at the time of displaying an
+        error.
+
+[Detail]
+        When a link error occurs due to a variable present in the C source,
+        incorrect auxiliary data may be displayed at the time of displaying an
+        error.
+
+[Workaround]
+        Since this problem occurs at the time of error, delete the error.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L07

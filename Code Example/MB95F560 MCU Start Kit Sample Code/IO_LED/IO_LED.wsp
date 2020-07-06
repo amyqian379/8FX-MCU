@@ -1,0 +1,24 @@
+[CPUTYPE]
+CpuSerise=896
+
+[PrjFile]
+Count=1
+FILE-0=IO_LED.prj
+ActivePrj=IO_LED.prj
+
+[SubPrj-IO_LED.prj]
+Count=0
+
+[DebState]
+AutoSave=1
+Exec=0
+AutoLoad=1
+
+[DirInfo]
+WSP=C:\Users\miqi\Desktop\8FX Training\MB560 EVB\MB95F560 MCU Start Kit Sample Code\IO_LED\
+
+[EditState]
+STATE-1=Debug\SCR\main.c:1
+STATE-2=Debug\SCR\vectors.c:115
+Count=2
+

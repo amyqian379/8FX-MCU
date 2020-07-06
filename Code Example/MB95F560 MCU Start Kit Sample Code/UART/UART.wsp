@@ -1,0 +1,25 @@
+[CPUTYPE]
+CpuSerise=896
+
+[PrjFile]
+Count=1
+FILE-0=UART.prj
+ActivePrj=UART.prj
+
+[SubPrj-UART.prj]
+Count=0
+
+[DebState]
+AutoSave=1
+Exec=0
+AutoLoad=1
+
+[DirInfo]
+WSP=D:\2011\work\MB95F560 MCU Start Kit Sample Code\UART\
+
+[EditState]
+STATE-1=Debug\SCR\main.c:97
+STATE-2=debug\scr\MB95560.h:1292
+STATE-3=Debug\SCR\vectors.c:76
+Count=3
+

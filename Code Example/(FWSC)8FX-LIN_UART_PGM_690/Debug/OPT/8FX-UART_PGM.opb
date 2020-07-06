@@ -1,0 +1,12 @@
+-dt s,d,r,a
+-pl 60
+-pw 132
+-g
+-cwno
+-cpu MB95F698K
+"C:\Users\miqi\Desktop\8FX MCU Tool\(FWSC)8FX-LIN_UART_PGM_690\Debug\ABS\8FX-UART_PGM.abs"
+-a "C:\Users\miqi\Desktop\8FX MCU Tool\(FWSC)8FX-LIN_UART_PGM_690\Debug\OBJ\start8FX.obj"
+-a "C:\Users\miqi\Desktop\8FX MCU Tool\(FWSC)8FX-LIN_UART_PGM_690\Debug\OBJ\main.obj"
+-a "C:\Users\miqi\Desktop\8FX MCU Tool\(FWSC)8FX-LIN_UART_PGM_690\Debug\OBJ\flash.obj"
+-a "C:\Users\miqi\Desktop\8FX MCU Tool\(FWSC)8FX-LIN_UART_PGM_690\Debug\OBJ\_f2mc8fx.obj"
+

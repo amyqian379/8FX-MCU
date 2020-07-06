@@ -1,0 +1,40 @@
+[Bug-ID]        flnk896sV3-20030204-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (linker)
+[Versions]      V30L01-V30L11
+[Date]          2003-02-04
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows XP/Me/2000/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L12
+[Severity]      Low
+
+[Outline]
+        When the section content/type in the section details map list is
+        "DIRCONST", the character string "DIRCONST" that indicates the
+        section type is overwritten in characters indicating the joint
+        attributes and output.
+        Also, in this case, a continuous character string that does not
+        include empty spaces <space fonts> (delimiter) is output.
+
+[Detail]
+        When the section content/type in the section details map list is
+        "DIRCONST", the character string "DIRCONST" that indicates the
+        section type is overwritten in characters (P/C/N) indicating the
+        joint attributes, as shown in the example below, and output.
+        Also, in this case, the character string "DIRCONST" indicating the
+        section type is displayed up to the position where the empty
+        characters that separate the section contents (called Section in
+        the example below) and the section type (called Type in the example
+        below), so the section content and section type are output as a
+        continuous character string.
+
+        S_Addr. -E_Addr.   Size     Section Type Al M.No.  Sec.(Top 80)
+        00000000-00000000  00000001 DIRCONPTR--I 01    1   DIRCONST_2
+        00000010-00000010  00000001 DIRCONNTR--I 00    1   DIRCONST_1
+
+[Workaround]
+        Use the modified version of the linker.
+
+[Note]
+        [Sample Release]  V30L11R01
+        [Product Release] V30L12

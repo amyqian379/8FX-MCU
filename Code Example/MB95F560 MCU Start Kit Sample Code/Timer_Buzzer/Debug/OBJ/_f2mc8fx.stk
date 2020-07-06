@@ -1,0 +1,5 @@
+@d:\2011\work\mb95f560 mcu start kit sample code\timer_buzzer\debug\scr\_f2mc8fx.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...

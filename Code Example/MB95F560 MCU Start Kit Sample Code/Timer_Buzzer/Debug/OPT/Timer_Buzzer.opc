@@ -1,0 +1,7 @@
+-g
+-w 1
+-O 0
+-B
+-c
+-cwno
+-cpu MB95F564K

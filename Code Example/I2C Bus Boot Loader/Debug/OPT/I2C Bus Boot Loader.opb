@@ -1,0 +1,12 @@
+-dt s,d,r,a
+-pl 60
+-pw 132
+-g
+-cwno
+-cpu MB95F636K
+"D:\Work\06_Project\04_I2C Boot Loader\01_source code\I2C Bus Boot Loader\Debug\ABS\I2C Bus Boot Loader.abs"
+-a "D:\Work\06_Project\04_I2C Boot Loader\01_source code\I2C Bus Boot Loader\Debug\OBJ\_f2mc8fx.obj"
+-a "D:\Work\06_Project\04_I2C Boot Loader\01_source code\I2C Bus Boot Loader\Debug\OBJ\flash.obj"
+-a "D:\Work\06_Project\04_I2C Boot Loader\01_source code\I2C Bus Boot Loader\Debug\OBJ\main.obj"
+-a "D:\Work\06_Project\04_I2C Boot Loader\01_source code\I2C Bus Boot Loader\Debug\OBJ\start8FX.obj"
+

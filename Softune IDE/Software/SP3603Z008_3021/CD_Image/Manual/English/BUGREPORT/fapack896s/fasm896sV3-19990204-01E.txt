@@ -1,0 +1,23 @@
+[Bug-ID]        fasm896sV3-19990204-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L02
+[Date]          1999-02-04
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows 95/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L05
+[Severity]      Middle
+
+[Outline]
+        Character strings enclosed in (") cannot be defined in the -D option.
+
+[Detail]
+        Character strings enclosed in (")
+        like -DD_PP_USERNAME='"PC7069\\smart"' cannot be defined.
+
+[Workaround]
+        Use the modified version of the assembler.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L05

@@ -1,0 +1,57 @@
+[Bug-ID]        fasm896sV3-20040116-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L07
+[Date]          2004-01-16
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows XP/Me/2000/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L08
+[Severity]      Low
+
+[Outline]
+        When -f option is specified, an improper error message might be output.
+
+[Detail]
+        When -f option is specified, an improper error message might be output.
+
+        [Conditions-1]
+            (1) The -f option is specified. AND,
+            (2) The option file specified by (1) doesn't exist. AND,
+            (3) Some options are specified after -f option of (1).
+
+        [Conditions-2]
+            (1) There are 8 level nest of the option file. AND,
+            (2) The -f option is specified in the option file at the eighth
+                level. AND,
+            (3) Some options are specified after -f option of (2).
+
+        [Error Message-1(wrong)]
+            > dir a.opt
+            File Not Found
+            > fasm896s -cpu MB91F154 -f a.opt -V a.asm
+            *** F9952A: Cannot open file (-V a.opt)
+
+        [Error Message-1(correct)]
+            > dir a.opt
+            File Not Found
+            > fasm896s -cpu MB91F154 -f a.opt -V a.asm
+            *** F9952A: Cannot open file (-f a.opt)
+
+        [Error Message-2(wrong)]
+            > type a.opt
+            -f a.opt -g
+            > fasm896s -cpu MB91F154 -f a.opt -V a.asm
+            *** F9959A: Nested option file exceeds 8 (-g a.opt)
+
+        [Error Message-2(correct)]
+            > type a.opt
+            -f a.opt -g
+            > fasm896s -cpu MB91F154 -f a.opt -V a.asm
+            *** F9959A: Nested option file exceeds 8 (-f a.opt)
+
+[Workaround]
+        Use the modified version of the assembler(V30L08 or later).
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L08

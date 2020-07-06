@@ -1,0 +1,48 @@
+[Bug-ID]        fasm896sV3-20050823-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L08
+[Date]          2005-08-23
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows XP/Me/2000/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L09
+[Severity]      High
+
+[Outline]
+        The error (E4550A:Location counter overflow) occurs even though the
+        section size does not exceed the upper limit value. 
+
+[Detail]
+        The upper limit value of one section size on the F2MC-8L/8FX Assemblers
+        is 64KB. 
+        If the section size exceeded the upper limit value, the error (E4550A:
+        Location counter overflow) occurs. 
+        When it occurs, an object file is not output. 
+        However, if the -l option is specified, an assembly list is output. 
+
+        The error occurs (E4550A:Location counter overflow) even though the
+        section size does not exceed the upper limit value, if a branch
+        assembler pseudo-machine instruction or a structured instructions such
+        as an ".if" statement is described in the section. 
+        The following are the conditions for this problem and how to determine
+        this problem has occurred.
+
+        [Conditions for Problem] 
+           - Branch assembler pseudo-machine instruction or a structured
+             instruction is described in the section. 
+           - Section size exceeds the upper limit value of when all branch
+             assembler pseudo-machine instructions or structured instructions
+             in the section are an absolute branching code (a long code). 
+
+        [How to Determine Problem Has Occurred]
+           The correct section size is output to the assembly list.
+           If an error occurs although the section size output to the list file
+           does not exceed the upper limit value (64KB), it means the problem
+           has occurred. 
+
+[Workaround]
+        Split the source where the error occurred into multiple sources. 
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L09

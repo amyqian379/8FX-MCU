@@ -1,0 +1,73 @@
+[Bug-ID]        fasm896sV3-20030220-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L07
+[Date]          2003-02-20
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows XP/Me/2000/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L08
+[Severity]      Middle
+
+[Outline]
+        When returning the location counter using the Assembler
+        pseudo-instruction (.org), the section size becomes invalid.
+
+[Detail]
+        When all of the following conditions are met, the section size becomes
+        invalid.
+
+        1. The location counter is returned using the pseudo-instruction (.org).
+        2. Size is secured bigger than the size returned on conditions 1. after
+           pseudo-instruction (.org).
+
+        [Example of Where Problems Occur]
+          .section io,iocommon,locate=0x100
+        LABEL1 .res.b 1      ; Get 1 byte
+               .org 0x100
+        LABEL2 .res.b 2      ; Get 2 bytes
+               .end
+
+        [LIST File Output]
+        FFMC-8L Family Softune Assembler V30L07  2003-02-21 15:08:30  Page:  2
+        - SOURCE LISTING - ( asmsource )
+
+        SN LOC    OBJ                   LLINE    SOURCE
+
+        <asmsource.asm>                 =====
+        io 000100 ---------<io>-------   1       .section io,iocommon,locate=0x100
+        io 000100 [1]B                   2     LABEL1 .res.b 1
+        io 000100                        3            .org 0x100
+        io 000100 [2]B                   4     LABEL2 .res.b 2
+                  ==                     5            .end
+        ______________________________________________________________________
+
+        FFMC-8L Family Softune Assembler V30L07  2003-02-21 15:08:30  Page:  3
+        - SECTION LISTING - ( asmsource )
+
+        NO SECTION-NAME                       SIZE  ATTRIBUTES
+
+        0 io . . . . . . . . . . . . . . .  000003 IO CMN  ABS LOCATE=000100
+
+        In the example above, the section size should be 2 bytes, but was
+        calculated to be 3 bytes.
+
+        In the example above, the location counter is returned to "0x100" using
+        the pseudo-instruction (.org).  Though the size was 1 byte from the
+        address "0x100" up to the pseudo-instruction (.org), as you know from
+        the LIST file, 2 bytes are got using the .res instruction immediately
+        after the pseudo-instruction (.org), which causes this problem.
+
+[Workaround]
+        Correct the source not to return the location counter.
+        In the case of [Example of Where Problems Occur] in [Detail] mentioned
+        above, make the following corrections to avoid this problem.
+
+          .section io,iocommon,locate=0x100
+        LABEL1:
+        LABEL2:
+               .res.b 2
+               .end
+
+[Note]
+        [Sample Release]  V30L07R01
+        [Product Release] V30L08

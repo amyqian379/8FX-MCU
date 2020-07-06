@@ -1,0 +1,55 @@
+[Bug-ID]          fcc896sV3-20000801-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L07
+[Date]            2000-08-01
+[Host]            PC-AT
+[OS]              Windows 2000/NT4.0/98/95
+[Revision]        V30L08
+[Severity]        Middle
+
+[Outline]
+        When optimization is specified, debugging information of the local
+        variable is not correct.
+
+[Detail]
+        When the following source is compiled by -O -g option, the value of
+        the local variable is not correctly displayed in the watch window of
+        the debugger, because debugging information of the local variable is
+        not correct.
+
+        [Conditions]
+            (1) Specified the optimization option. AND,
+            (2) Specified the debugging information generation option (-g).
+                AND,
+            (3) There is the local variable. AND,
+            (4) When the variable of (3) is not allocated to the register by
+                optimization.
+
+        [C source]
+            extern unsigned char a[];
+            unsigned char f(unsigned char *p, unsigned char c)
+            {
+              unsigned char i,j,k;
+              i = c/8;
+              j = c+8;
+              k = c-8;
+              return (p[i]&a[c&j]+k);
+            }
+
+        [ASM output(wrong)]
+            ._SYMBOL        "i", V, 2, R, "R0"
+            ._SYMBOL        "j", V, 2, R, "R0"
+            ._SYMBOL        "k", V, 2, R, "R0"
+
+        [ASM output(correct)]
+            ._SYMBOL        "i", V, 2, A, -3
+            ._SYMBOL        "j", V, 2, A, -2
+            ._SYMBOL        "k", V, 2, A, -1
+
+[Workaround]
+      - Please use correction version (V30L08 or later).
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L08

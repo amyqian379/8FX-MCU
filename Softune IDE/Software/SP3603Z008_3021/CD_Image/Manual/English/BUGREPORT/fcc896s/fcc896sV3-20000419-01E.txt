@@ -1,0 +1,54 @@
+[Bug-ID]          fcc896sV3-20000419-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L03
+[Date]            2000-04-19
+[Host]            PC-AT
+[OS]              Windows NT4.0/98/95
+[Revision]        V30L04
+[Severity]        Middle
+
+[Outline]
+        When the I/O register file is used, the compilation error occurs.
+
+[Detail]
+        The compilation error occurs if the I/O register file attached to
+        V30L03 is used.
+
+        [Conditions]
+            (1) Include the I/O register file "_ffmc8l.h" which attached to
+                V30L03. AND,
+            (2) The following identifiers are used since #include line of (1).
+                    BYTE_MEM          BYTE_MEM_A        CONST
+                    EXTERN            LWORD_MEM         LWORD_MEM_A
+                    RESERVE_D         SECTION           STRUCT
+                    STRUCT_AD         STRUCT_B          STRUCT_D
+                    STRUCT_E          STRUCT_MEM        STRUCT_MEM_A
+                    STRUCT_TYPE_B     STRUCT_TYPE_E     STRUCT_TYPE_UNION
+                    TYPE_UNION        UCHAR             UCHARBIT
+                    UCHARBIT_COM01    UCHARBIT_COM012   UCHARBIT_COM0123
+                    UCHARBIT_NONAME   UCHARBIT_UNION    UCHAR_A
+                    UCHAR_AD          UCHAR_D           ULONG
+                    ULONGBIT          ULONGBIT_NONAME   ULONGBIT_UNION
+                    ULONG_A           ULONG_AD          ULONG_D
+                    UNION             UNION_AD          UNION_D
+                    UNION_MEM         UNION_MEM_A       UNION_TYPE_B
+                    UNION_TYPE_E      UNION_TYPE_UNION  USHORT
+                    USHORTBIT         USHORTBIT_NONAME  USHORTBIT_UNION
+                    USHORT_A          USHORT_AD         USHORT_D
+                    VOLATILE          WORD_MEM          WORD_MEM_A
+
+        [C source]
+            #include "_ffmc8l.h"
+            CONST(){}
+
+        [Error Messages]
+            % fcc896s -S -I %FETOOL%\lib\896\include\sample a.c -cpu MB89601
+            *** a.c(2) E4062C: syntax error near `)'
+
+[Workaround]
+      - Please use correction version (V30L04 or later).
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L04

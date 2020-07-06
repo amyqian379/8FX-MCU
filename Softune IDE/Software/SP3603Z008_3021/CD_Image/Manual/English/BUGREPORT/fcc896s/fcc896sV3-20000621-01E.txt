@@ -1,0 +1,54 @@
+[Bug-ID]          fcc896sV3-20000621-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L06
+[Date]            2000-06-21
+[Host]            PC-AT
+[OS]              Windows NT4.0/98/95
+[Revision]        V30L07
+[Severity]        High
+
+[Outline]
+        The act_cyc() of REALOS System Call function is not correctly
+        inline-expanded.
+
+[Detail]
+        When the same constant as the 1st argument and the 2nd argument of
+        the act_cyc() is described, the inline-expansion of the act_cyc() is
+        not correct.
+
+        [Conditions]
+            (1) Specified the -Krealos option. AND,
+            (2) Used the ret_int() of REALOS System Call function which the
+                same constant as the 1st argument and the 2nd argument of the
+                act_cyc() is described.
+
+        [C source]
+            f(){
+              act_cyc(1,1);
+            }
+
+        [ASM output(wrong)]
+            _f:
+                    MOVW    A, #1
+                    CALL    act_cyc
+            L_f:
+                    RET
+
+        [ASM output(correct)]
+            _f:
+                    MOVW    A, #1
+                    MOVW    A, #1
+                    XCHW    A, T
+                    CALL    act_cyc
+            L_f:
+                    RET
+
+[Workaround]
+      - Please modify the 1st argument or the 2nd argument to variable.
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L07
+        [Bug Type]              Illegal Object
+        [Check Tool]            Undetectable

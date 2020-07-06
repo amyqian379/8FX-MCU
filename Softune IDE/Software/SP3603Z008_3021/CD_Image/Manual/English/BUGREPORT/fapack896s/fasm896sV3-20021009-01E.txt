@@ -1,0 +1,94 @@
+[Bug-ID]        fasm896sV3-20021009-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L07
+[Date]          2002-10-09
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows XP/Me/2000/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L08
+[Severity]      High
+
+[Outline]
+        Errors are found in the expanded codes for the SETRPA assembler
+        pseudo-machine instructions.
+        The manual and help file also have invalid expanded codes.
+
+[Detail]
+        Errors indicated by *1 and *2 are found in the expanded codes for the
+        SETRPA assembler pseudo-machine instructions.
+
+        [Invalid Expanded Code]                 [Valid Expanded Code]
+
+        MOVW    A,#0FFE0H  <- *1                MOVW    A,#001FH
+        ANDW    A                               ANDW    A
+        PUSHW   A                               PUSHW   A
+        MOVW    A,PS                            MOVW    A,PS
+        MOVW    A,#07FFH                        MOVW    A,#07FFH
+        ANDW    A                               ANDW    A
+        XCH     A,T  <- *2                      XCHW    A,T
+        POPW    A                               POPW    A
+        CLRC                                    CLRC
+        ROLC    A                               ROLC    A
+        ROLC    A                               ROLC    A
+        ROLC    A                               ROLC    A
+        SWAP                                    SWAP
+        ORW     A                               ORW     A
+        MOVW    PS,A                            MOVW    PS,A
+
+        The "FR/F2MC Family SOFTUNE Assembler Manual for V3" and "help file"
+        have the invalid code description indicated by *3.
+
+        [Incorrect Description in Manual/Help]  [Correct Description]
+        MOVW    A,#0FFE0H  <- *3                MOVW    A,#001FH
+        ANDW    A                               ANDW    A
+        PUSHW   A                               PUSHW   A
+        MOVW    A,PS                            MOVW    A,PS
+        MOVW    A,#07FFH                        MOVW    A,#07FFH
+        ANDW    A                               ANDW    A
+        XCHW    A,T                             XCHW    A,T
+        POPW    A                               POPW    A
+        CLRC                                    CLRC
+        ROLC    A                               ROLC    A
+        ROLC    A                               ROLC    A
+        ROLC    A                               ROLC    A
+        SWAP                                    SWAP
+        ORW     A                               ORW     A
+        MOVW    PS,A                            MOVW    PS,A
+
+[Workaround]
+        To use the SETRPA instructions, use the "macro function of the
+        assembler" for "SETRPA macro definition."
+        Macro expansion is case sensitive.  Write the SETRPA instructions in
+        uppercase or lowercase corresponding to the macro names used in the
+        macro definition.
+        Since macro expansion precedes the code expansion of the
+        pseudo-machine instructions, the errors can be avoided by the macro
+        function.
+
+        #macro  SETRPA
+                MOVW    A,#001FH
+                ANDW    A
+                PUSHW   A
+                MOVW    A,PS
+                MOVW    A,#07FFH
+                ANDW    A
+                XCHW    A,T
+                POPW    A
+                CLRC
+                ROLC    A
+                ROLC    A
+                ROLC    A
+                SWAP
+                ORW     A
+                MOVW    PS,A
+        #endm
+
+                .section        co,code
+                SETRPA
+                .end
+
+[Note]
+        The errors occur in the assemblers V30L01 to V30L07.
+
+        [Sample Release]  Non
+        [Product Release] V30L08

@@ -1,0 +1,117 @@
+[Bug-ID]          fcc896sV3-20001019-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L07
+[Date]            2000-10-19
+[Host]            PC-AT
+[OS]              Windows 2000/NT4.0/98/95
+[Revision]        V30L08
+[Severity]        High
+
+[Outline]
+        When the optimization level is 3 or more, the condition expression
+        which cannot be deleted is deleted.
+
+[Detail]
+        When the following source is compiled by -O3 or more, the condition
+        expression ((f3==1) && (d<-37.0F)) which cannot be deleted is deleted.
+
+        [Conditions]
+            (1) Specified the optimization option(-O3,-O4,-Ksize or -Kspeed).
+                AND,
+            (2) The comparison of the same constants as the same variable
+                appears two or more times in the condition expression of the
+                if statement. AND,
+            (3) The comparison between the variable and the constant besides
+            (2) appears two or more times. AND,
+            (4) The variable and the constant of (2) and (3) are all integer
+                types.
+
+        [C source]
+            unsigned char   f0;
+            unsigned char   f1,f2,f3;
+            float           d;
+
+            f(){
+              if ((f1==1) && (f2==1) && (d<-37.0F)) {
+                f0 = 1;
+              } else if (((f1==1) && (f2==0) && (f3==0) && (d<-32.2F)) ||
+                         ((f1==1) && (f2==0) && (f3==1) && (d<-37.0F))) {
+                f0 = 1;
+              } else {
+                f0 = 0;
+              }
+            }
+
+        [ASM output(wrong)]                  [ASM output(correct)]
+            _f:                             _f:
+                    MOV     A, _f1                  MOV     A, _f1
+                    CMP     A, #1                   CMP     A, #1
+                    BNE16   L_28                    BNE16   L_28
+                    MOV     A, _f2                  MOV     A, _f2
+                    CMP     A, #1                   CMP     A, #1
+                    BNE16   L_23                    BNE16   L_23
+                    MOVW    A, _d+2                 MOVW    A, _d+2
+                    PUSHW   A                       PUSHW   A
+                    MOVW    A, _d                   MOVW    A, _d
+                    PUSHW   A                       PUSHW   A
+                    MOVW    A, #0                   MOVW    A, #0
+                    PUSHW   A                       PUSHW   A
+                    MOVW    A, #-15852              MOVW    A, #-15852
+                    PUSHW   A                       PUSHW   A
+                    CALL    LFCOMP                  CALL    LFCOMP
+                    BGE16   L_23                    BGE16   L_23
+                    MOV     A, #1                   MOV     A, #1
+                    JMP     L_35                    JMP     L_35
+            L_23:                           L_23:
+                    MOV     A, _f2                  MOV     A, _f2
+                    BNE16   L_29                    BNE16   L_29
+                    MOV     A, _f3                  MOV     A, _f3
+                    BNE16   L_29                    BNE16   L_29
+                    MOVW    A, _d+2                 MOVW    A, _d+2
+                    PUSHW   A                       PUSHW   A
+                    MOVW    A, _d                   MOVW    A, _d
+                    PUSHW   A                       PUSHW   A
+                    MOVW    A, #-13107              MOVW    A, #-13107
+                    PUSHW   A                       PUSHW   A
+                    MOVW    A, #-15872              MOVW    A, #-15872
+                    PUSHW   A                       PUSHW   A
+                    CALL    LFCOMP                  CALL    LFCOMP
+                    BLT16   L_27                    BLT16   L_27
+            L_29:                           L_29:
+                    JMP     L_28          >         MOV     A, _f2
+                                          >         BNE16   L_28
+                                          >         MOV     A, _f3
+                                          >         CMP     A, #1
+                                          >         BNE16   L_28
+                                          >         MOVW    A, _d+2
+                                          >         PUSHW   A
+                                          >         MOVW    A, _d
+                                          >         PUSHW   A
+                                          >         MOVW    A, #0
+                                          >         PUSHW   A
+                                          >         MOVW    A, #-15852
+                                          >         PUSHW   A
+                                          >         CALL    LFCOMP
+                                          >         BGE16   L_28
+            L_27:                           L_27:
+                    MOV     A, #1                   MOV     A, #1
+                    JMP     L_35                    JMP     L_35
+            L_28:                           L_28:
+                    MOV     A, #0                   MOV     A, #0
+            L_35:                           L_35:
+                    MOV     _f0, A                  MOV     _f0, A
+            L_f:                            L_f:
+                    RET                             RET
+
+[Workaround]
+      - Either of the following options are specified.
+          - Please specify optimization level 2 or less.
+          - Please specify the -Tc,-zmpa=S4 option when it is optimization
+            level 3 or more.
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L08
+        [Bug Type]              Illegal Object
+        [Check Tool]            Undetectable

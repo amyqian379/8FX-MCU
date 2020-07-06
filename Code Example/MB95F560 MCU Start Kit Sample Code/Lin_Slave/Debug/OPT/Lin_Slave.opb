@@ -1,0 +1,12 @@
+-dt s,d,r,a
+-pl 60
+-pw 132
+-g
+-cwno
+-cpu MB95F564K
+"D:\2011\work\MB95F560 MCU Start Kit Sample Code\Lin_Slave\Debug\ABS\Lin_Slave.abs"
+-a "D:\2011\work\MB95F560 MCU Start Kit Sample Code\Lin_Slave\Debug\OBJ\vectors.obj"
+-a "D:\2011\work\MB95F560 MCU Start Kit Sample Code\Lin_Slave\Debug\OBJ\_f2mc8fx.obj"
+-a "D:\2011\work\MB95F560 MCU Start Kit Sample Code\Lin_Slave\Debug\OBJ\main.obj"
+-a "D:\2011\work\MB95F560 MCU Start Kit Sample Code\Lin_Slave\Debug\OBJ\startup.obj"
+

@@ -1,0 +1,30 @@
+-g
+-AL 2
+-ra _INRAM01=0x0090/0x048F
+-ro _INROM01=0x1000/0x1FFF
+-ro _INROM02=0x8000/0xFFFF
+-sc WRITECODE/Code+ERASECODE/Code=_INRAM01
+-sc @ERASECODE/Const+@WRITECODE/Const+CODE/Code=_INROM01
+-check_rora
+-check_locate
+-rg 0
+-m "D:\Work\06_Project\04_I2C Boot Loader\01_source code\I2C Bus Boot Loader\Debug\LST\I2C Bus Boot Loader.mp1"
+-pl 60
+-pw 132
+-alin "D:\Work\06_Project\04_I2C Boot Loader\01_source code\I2C Bus Boot Loader\Debug\LST"
+-alout "D:\Work\06_Project\04_I2C Boot Loader\01_source code\I2C Bus Boot Loader\Debug\LST"
+-Xals
+-Xalr
+-na
+-w 1
+-Xset_rora
+-cwno
+-a
+-cpu MB95F636K
+-o "D:\Work\06_Project\04_I2C Boot Loader\01_source code\I2C Bus Boot Loader\Debug\ABS\I2C Bus Boot Loader.abs"
+
+"D:\Work\06_Project\04_I2C Boot Loader\01_source code\I2C Bus Boot Loader\Debug\OBJ\_f2mc8fx.obj"
+"D:\Work\06_Project\04_I2C Boot Loader\01_source code\I2C Bus Boot Loader\Debug\OBJ\flash.obj"
+"D:\Work\06_Project\04_I2C Boot Loader\01_source code\I2C Bus Boot Loader\Debug\OBJ\main.obj"
+"D:\Work\06_Project\04_I2C Boot Loader\01_source code\I2C Bus Boot Loader\Debug\OBJ\start8FX.obj"
+

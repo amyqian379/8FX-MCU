@@ -1,0 +1,51 @@
+[Bug-ID]        flnk896sV3-20070309-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (linker)
+[Versions]      V30L01-V30L12
+[Date]          2007-03-09
+[Host]          PC-AT | Sun4
+[OS]            Windows XP/2000 | Solaris 2.6
+[Revision]      V30L13
+[Severity]      Middle
+
+[Outline]
+        When there are a large number of modules referring to an external
+        symbol, the linker may be terminated abnormally, if the external symbol
+        cross-reference information list is created.
+[Detail]
+        When there are a large number of modules referring to an external
+        symbol, the linker may be terminated abnormally, if the external symbol
+        cross-reference information list is created.
+
+        --- Symbol --     --- type/value ---    --- modlue (No.) ---
+        func01            Addr.  0x00008A82     104 115 126 237 279
+                                               |                    |
+                                               +--------------------+
+                                                         ^
+                                        It happens when this part of module
+                                        number string exceeds 1025 bytes.
+
+        The creation of the external symbol cross-reference information list
+        will be performed after the creation of load module (ABS) file is
+        terminated normally.
+        Therefore, load module file (ABS) can be created correctly even if this
+        problem occurs.
+
+[Workaround]
+        Please inhibit the external symbol cross-reference information list
+        output by either one of the methods below.
+        A. Inhibiting by Workbench
+          1. Select a tub for [Linker] in [Setup Project].
+          2. Select [Output List] category.
+          3. Remove check for [Creates a external symbol mutual reference
+             information list].
+
+        B. Inhibiting by command line.
+          Delete the specification of external symbol cross-reference
+          information list output option (-xl), or add the external symbol
+          cross-reference information list output inhibiting option (-Xxl)
+          after -xl option specification.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L13

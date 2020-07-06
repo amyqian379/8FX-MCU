@@ -1,0 +1,54 @@
+[Bug-ID]          fcc896sV3-20000417-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L03
+[Date]            2000-04-17
+[Host]            PC-AT
+[OS]              Windows NT4.0/98/95
+[Revision]        V30L04
+[Severity]        High
+
+[Outline]
+        The number of initial values secures an extra area when there are
+        65536 more arrays.
+
+[Detail]
+        The area more than the number of elements of arrays is secured when
+        there are both 65536 numbers of elements of arrays and numbers of
+        initial values.
+
+        [Conditions]
+            (1) The number of elements of arrays is and there are 65536 more
+                arrays. AND,
+            (2) There are 65536 numbers or more of initial values of (1).
+
+        [C source]
+            char a[65536] = {
+              1,1,1,1,1,...1,1  /* initial values is 65536 */
+            };
+
+        [ASM output(wrong)]
+                    .SECTION        INIT, DATA, ALIGN=1
+                    .GLOBAL _a
+            _a:
+                    .DATA.B 1                   ;;-+
+                    ...                         ;; +- 65536
+                    .DATA.B 1                   ;;-+
+                    .DATAB.B        65536, 0    ;; The extra area
+
+        [ASM output(correct)]
+                    .SECTION        INIT, DATA, ALIGN=1
+                    .GLOBAL _a
+            _a:
+                    .DATA.B 1                   ;;-+
+                    ...                         ;; +- 65536
+                    .DATA.B 1                   ;;-+
+
+[Workaround]
+      - Please use correction version (V30L04 or later).
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L04
+        [Bug Type]              Illegal Object
+        [Check Tool]            Undetectable

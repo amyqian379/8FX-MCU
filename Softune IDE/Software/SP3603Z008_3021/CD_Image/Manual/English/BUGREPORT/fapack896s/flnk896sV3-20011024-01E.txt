@@ -1,0 +1,39 @@
+[Bug-ID]        flnk896sV3-20011024-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (linker)
+[Versions]      V30L01-V30L07
+[Date]          2001-10-24
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows 2000/95/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L09
+[Severity]      Middle
+
+[Outline]
+        When an absolute assemble list is created for the list in which
+        assembler pseudo-instructions causing the bit locations ; such as
+        .bit, .data.i, .datab.i and .res.i ; are used, the error (E4335L)
+        occurs.
+
+[Detail]
+        When an absolute assemble list is created for the list in which
+        assembler pseudo-instructions causing the bit locations ; such as
+        .bit, .data.i, .datab.i and .res.i ; are used, the internal address
+        counter is miscalculated. And then the error (E4335L) occurs.
+        This error occurs in the following sources.
+
+                .DATA.I 1
+                .DATA.I 1
+                .DATA.B 0x12,0x34
+                .DATA.B 0x56,0x78
+
+[Workaround]
+        Use the byte-by-byte assembler pseudo-instructions such as .data.b
+        instead of the bit-by-bit assembler pseudo-instructions.
+
+        Example:
+                .DATA.I 1
+                .DATA.I 1       ->      .data.b  b'00000011
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L09

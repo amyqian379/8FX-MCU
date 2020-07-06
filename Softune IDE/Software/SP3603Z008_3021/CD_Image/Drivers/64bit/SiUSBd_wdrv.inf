@@ -1,0 +1,117 @@
+; Installation file (.inf) for "MB21xx" device
+; (c) Copyright Spansion LLC, All Rights Reserved 2008-2014
+; (Ver.20140411-01)
+
+; Version Information
+; -------------------
+[Version]
+Signature="$CHICAGO$"  ; Represents all Windows OS's
+Class=USB
+Provider=%Spansion%
+; For WHQL, you should obtain a catalog signed by Microsoft Hardware Compatibility Labs
+CatalogFile=SiUSBd_wdrv.cat
+DriverVer=04/11/2014, 11.5.0
+ClassGUID={876EC2C0-D9B4-11d3-803B-00C04F31F4F9}
+
+; Driver Information
+; ------------------
+[Manufacturer]
+; You may modify the manufacturer name by changing the Mfg variable in the [Strings]
+; section in this INF file.
+%Mfg%=DeviceList,NTamd64
+
+; The 'Install' lines under the [DeviceList] include the device name that will
+; be displayed in the Device Managerand the hardware ID's. 
+; You may modify the device names and the hardware ID's.
+; The Vendor ID is 04c5, and the Product ID is 20xx
+
+; x86 platform, Windows 2000 and later
+[DeviceList]
+"MB2198-01"=Install, USB\VID_04C5&PID_2002
+"MB2147-01"=Install, USB\VID_04C5&PID_2005
+"MB2100-01"=Install, USB\VID_04C5&PID_201A
+"MB2146-07"=Install, USB\VID_04C5&PID_2024
+
+; x64 platform, Windows XP x64 edition and later
+[DeviceList.NTamd64]
+"MB2198-01"=Install, USB\VID_04C5&PID_2002
+"MB2147-01"=Install, USB\VID_04C5&PID_2005
+"MB2100-01"=Install, USB\VID_04C5&PID_201A
+"MB2146-07"=Install, USB\VID_04C5&PID_2024
+
+; Installation Section
+; --------------------
+[Install.NTx86]  ; Installation script for x86-based
+CopyFiles=FilesToCopy_x86
+
+[FilesToCopy_x86]
+wdapi1150.dll,,,0x04  ; 0x04 == COPYFLG_NOVERSIONCHECK
+
+[Install.NTamd64]  ; Installation script for x64-based
+CopyFiles=FilesToCopy_amd64
+
+[FilesToCopy_amd64]
+wdapi1150.dll,wdapi1150_32.dll,,0x04  ; 0x04 == COPYFLG_NOVERSIONCHECK
+
+[Install]
+;AddReg=UpDateRegistry
+
+[ClassInstall32]  ; Register a new class in Windows 2000 and later
+AddReg=UpDateRegistry
+
+[UpDateRegistry]
+HKR,,,,USB
+HKR,,Icon,,-5
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,, windrvr6.sys
+
+
+[ControlFlags]
+ExcludeFromSelect = *  ; Remove all devices listed in this INF file from certain user 
+;    interface displays, from which a user is expected to select a particular device 
+;    for installation.
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+; Defining WinDriver6 Service
+; ---------------------------
+[Install.NTx86.Services]
+Addservice=WinDriver6, 0x00000002, Service_Info_x86
+
+[Service_Info_x86]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\windrvr6.sys
+
+[Install.NTamd64.Services]
+Addservice=WinDriver6, 0x00000002, Service_Info_amd64
+
+[Service_Info_amd64]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\windrvr6.sys
+
+; Source File Information
+; -----------------------
+[SourceDisksFiles.x86]
+wdapi1150.dll=1
+
+[SourceDisksFiles.amd64]
+wdapi1150_32.dll=1
+
+[SourceDisksNames]
+1=,,  ;
+
+[DestinationDirs]
+FilesToCopy_x86=11
+FilesToCopy_amd64=16425
+
+;---------------------------------------------------------------;
+
+[Strings]
+Spansion= "Spansion Inc."
+Mfg="Spansion Inc."
+

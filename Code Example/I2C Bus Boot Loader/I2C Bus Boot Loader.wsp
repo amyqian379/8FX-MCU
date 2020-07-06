@@ -1,0 +1,25 @@
+[CPUTYPE]
+CpuSerise=896
+
+[PrjFile]
+Count=1
+FILE-0=I2C Bus Boot Loader.prj
+ActivePrj=I2C Bus Boot Loader.prj
+
+[SubPrj-I2C Bus Boot Loader.prj]
+Count=0
+
+[DebState]
+AutoSave=1
+Exec=0
+AutoLoad=1
+
+[DirInfo]
+WSP=D:\Work\06_Project\04_I2C Boot Loader\01_source code\I2C Bus Boot Loader\
+
+[EditState]
+STATE-1=Debug\src\main.c:65
+STATE-2=debug\src\API.h:52
+STATE-3=Debug\src\start8FX.asm:29
+Count=3
+

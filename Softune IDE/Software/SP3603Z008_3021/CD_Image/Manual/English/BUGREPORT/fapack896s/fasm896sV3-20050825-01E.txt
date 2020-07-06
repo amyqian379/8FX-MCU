@@ -1,0 +1,43 @@
+[Bug-ID]        fasm896sV3-20050825-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L04-V30L08
+[Date]          2005-08-25
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows XP/Me/2000/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L09
+[Severity]      High
+
+[Outline]
+        An error object with an incorrect branch is output if the relative
+        distance between the branch instruction and the branch destination
+        address is outside of the operand size range. 
+
+[Detail]
+        If the relative distance between the branch instruction and the branch
+        destination address is outside of the operand size range, and the -OVFW
+        option is specified, the Assembler issues the warning (W1541A: Value
+        out of range), outputs an object file and terminates. 
+        The relative distance between the branch instruction and the branch
+        destination address in which there was the warning (W1541A: Value out
+        of range) is masked according to the operand size. 
+        In this case, the output object file is an error one with an incorrect
+        branch. Never use this to make a load module file or a library file. 
+
+        -OVFW is an option for a warning message when the operand operation
+        result exceeds the operand size. 
+        If -OVFW is not specified, the Assembler issues the error (E4541A:
+        Value out of range), and it does not output an object file and
+        terminates. 
+
+[Workaround]
+        - Change the branch instruction so that the relative distance between
+          the branch instruction and the branch destination address is within
+          the operand size range for the branch instruction in which the
+          warning (W1541A) was output. 
+        - Disable the -OVFW specification to prevent outputting error object
+          files with incorrect branches. 
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L09

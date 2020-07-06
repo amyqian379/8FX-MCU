@@ -1,0 +1,47 @@
+[Bug-ID]          fcc896sV3-20000509-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L03
+[Date]            2000-05-09
+[Host]            PC-AT
+[OS]              Windows NT4.0/98/95
+[Revision]        V30L04
+[Severity]        Middle
+
+[Outline]
+        The address of the member of the I/O register file is wrong.
+
+[Detail]
+        When the I/O register file attached to V30L03 is used, the address of
+        SMC22 register and SRC2 register of UART/SIO of the MB89530 series is
+        different from the CPU.
+
+        [Conditions]
+            (1) Include the I/O register file "_ffmc8l.h" which attached to
+                V30L03. AND,
+            (2) The following MB numbers are specified for -cpu option. AND,
+                    MB89530   MB89537   MB89537C  MB89537H
+                    MB89537HC MB89538   MB89P538  MB89538C
+                    MB89538H  MB89538HC MB89PV530
+            (3) Use the following I/O registers.
+                    IO_SRC2
+                    IO_SMC22
+
+        [C source]
+            #include "_ffmc8l.h"
+            main()
+            {
+              IO_SRC2 = 0;
+              IO_SMC22.byte = 0;
+            }
+
+        [Linker Map File]
+            00000033(ABS)      Addr.  OM/LM @_IO_SMC22     ;; CPU is 0x30.
+            00000030(ABS)      Addr.  OM/LM @_IO_SRC2      ;; CPU is 0x33.
+
+[Workaround]
+      - Please use correction version (V30L04 or later).
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L04

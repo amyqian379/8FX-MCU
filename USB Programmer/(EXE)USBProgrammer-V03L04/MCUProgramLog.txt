@@ -1,0 +1,11 @@
+22:55:31--November 05 2009 -- Previous Programming Settings 
+
+ Serialize Parts:  NO
+ Serial Number Size : 4 BYTE
+ Starting SN : 132
+ SN Increment : 1
+ Next Serial Number : N/A
+ SN Code Location :0xFFB0~0xFFB3
+ Current MCU  Serial Number : N/A
+ Program Successful Count:  4
+ Program Total Count:  19

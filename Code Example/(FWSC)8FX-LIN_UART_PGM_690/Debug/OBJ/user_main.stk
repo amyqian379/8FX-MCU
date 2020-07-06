@@ -1,0 +1,7 @@
+!d:\amy.qian\source code\8fx-uart_pgm\debug\src\user_main.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...
+#
+         2	E	_user_main

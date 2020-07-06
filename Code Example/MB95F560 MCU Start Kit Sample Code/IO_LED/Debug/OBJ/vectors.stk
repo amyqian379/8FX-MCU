@@ -1,0 +1,9 @@
+@c:\users\miqi\desktop\8fx training\mb560 evb\mb95f560 mcu start kit sample code\io_led\debug\scr\vectors.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...
+#
+         2	E	_InitIrqLevels
+#
+        14	I	_DefaultIRQHandler

@@ -1,0 +1,47 @@
+[Bug-ID]        flib896sV3-20010824-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (librarian)
+[Versions]      V30L01-V30L03
+[Date]          2001-08-24
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows 2000/95/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L04
+[Severity]      Low
+
+[Outline]
+        When "-V" and "-XV" are included in the library file name or the
+        object file name, the "-V" and "-XV" are recognized as an option for
+        version number display, and an option for inhibiting version number
+        display respectively.
+
+[Detail]
+        When "-V" and "-XV" are included in the library file name or the
+        object file name, the "-V" and "-XV" are recognized as an option for
+        version number display, and an option for inhibiting version number
+        display respectively.
+
+        1. When "-V" is included in the file name, the version number is
+           displayed.
+          [Example]
+             flib896s libfile-V.lib ...     <- Version number is displayed.
+                                               (Default version number display
+                                               inhibition)
+             flib896s -XV libfile-V.lib ... <- The version number is displayed
+                                               in spite of specifying the
+                                               version number display
+                                               inhibition.
+
+        2. When "-XV" is included in the file name, the version number is not
+           displayed.
+          [Example]
+             flib896s -V libfile-XV.lib ... <- The version number is not
+                                               displayed in spite of
+                                               specifying the version number
+                                               display.
+
+[Workaround]
+        Do not use file names that include "-V" or "-XV".
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L04

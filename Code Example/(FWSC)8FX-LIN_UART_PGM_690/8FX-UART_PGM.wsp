@@ -1,0 +1,26 @@
+[CPUTYPE]
+CpuSerise=896
+
+[PrjFile]
+Count=1
+FILE-0=8FX-UART_PGM.prj
+ActivePrj=8FX-UART_PGM.prj
+
+[SubPrj-8FX-UART_PGM.prj]
+Count=0
+
+[DebState]
+AutoSave=1
+Exec=0
+AutoLoad=1
+
+[DirInfo]
+WSP=C:\Users\miqi\Desktop\8FX MCU Tool\(FWSC)8FX-LIN_UART_PGM_690\
+
+[EditState]
+STATE-1=Debug\SRC\main.c:40
+STATE-2=Debug\SRC\start8FX.asm:184
+STATE-3=Debug\SRC\_f2mc8fx.c:9
+STATE-4=debug\src\_f2mc8fx.h:14
+Count=4
+

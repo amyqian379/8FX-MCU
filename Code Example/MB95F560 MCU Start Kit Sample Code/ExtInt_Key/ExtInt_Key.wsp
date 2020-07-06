@@ -1,0 +1,23 @@
+[CPUTYPE]
+CpuSerise=896
+
+[PrjFile]
+Count=1
+FILE-0=ExtInt_Key.prj
+ActivePrj=ExtInt_Key.prj
+
+[SubPrj-ExtInt_Key.prj]
+Count=0
+
+[DebState]
+AutoSave=1
+Exec=0
+AutoLoad=1
+
+[DirInfo]
+WSP=C:\Users\miqi\Desktop\8FX Training\MB560 EVB\MB95F560 MCU Start Kit Sample Code\ExtInt_Key\
+
+[EditState]
+STATE-1=Debug\SCR\main.c:106
+Count=1
+

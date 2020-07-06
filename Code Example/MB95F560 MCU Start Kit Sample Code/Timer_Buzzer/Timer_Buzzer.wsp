@@ -1,0 +1,23 @@
+[CPUTYPE]
+CpuSerise=896
+
+[PrjFile]
+Count=1
+FILE-0=Timer_Buzzer.prj
+ActivePrj=Timer_Buzzer.prj
+
+[SubPrj-Timer_Buzzer.prj]
+Count=0
+
+[DebState]
+AutoSave=1
+Exec=0
+AutoLoad=1
+
+[DirInfo]
+WSP=C:\Users\miqi\Desktop\8FX Training\MB560 EVB\MB95F560 MCU Start Kit Sample Code\Timer_Buzzer\
+
+[EditState]
+STATE-1=Debug\SCR\main.c:1
+Count=1
+

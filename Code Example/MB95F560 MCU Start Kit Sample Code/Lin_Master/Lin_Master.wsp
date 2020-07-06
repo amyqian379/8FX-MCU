@@ -1,0 +1,25 @@
+[CPUTYPE]
+CpuSerise=896
+
+[PrjFile]
+Count=1
+FILE-0=Lin_Master.prj
+ActivePrj=Lin_Master.prj
+
+[SubPrj-Lin_Master.prj]
+Count=0
+
+[DebState]
+AutoSave=1
+Exec=0
+AutoLoad=1
+
+[DirInfo]
+WSP=D:\2011\work\MB95F560 MCU Start Kit Sample Code\Lin_Master\
+
+[EditState]
+STATE-1=Debug\SCR\main.c:169
+STATE-2=Debug\SCR\vectors.c:72
+STATE-3=debug\scr\MB95560.h:2077
+Count=3
+

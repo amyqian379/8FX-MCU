@@ -1,0 +1,32 @@
+[Bug-ID]          fcc896sV3-20000316-03
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L03
+[Date]            2000-03-16
+[Host]            PC-AT
+[OS]              Windows NT4.0/98/95
+[Revision]        V30L04
+[Severity]        Middle
+
+[Outline]
+        The space character cannot be specified in the directory name
+        specified by the -I option.
+
+[Detail]
+        The space character cannot be specified in the directory name
+        specified by the -I option, the compiler error is occurred.
+
+        [Conditions]
+            (1) When the space character is specified in the directory name
+                specified by the -I option.
+
+        [Error Messages]
+            % fcc896s -I="a b" -S a.c
+            *** E4009D : Illegal file name(b)
+
+[Workaround]
+      - Please use correction version (V30L04 or later).
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L04

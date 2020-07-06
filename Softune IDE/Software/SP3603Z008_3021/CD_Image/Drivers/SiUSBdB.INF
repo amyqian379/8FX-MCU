@@ -1,0 +1,61 @@
+[Version]
+Signature="$CHICAGO$"
+Class=USB
+ClassGuid = {36fc9e60-c465-11cf-8056-444553540000}
+provider=%MfgName%
+LayoutFile=layout.inf
+
+[Manufacturer]
+%MfgName%=SECTION_0
+
+[SECTION_0]
+%USB\VID_04C5&PID_200C.DeviceDesc%=SiUSBdB.Dev, USB\VID_04C5&PID_200C
+%USB\VID_04C5&PID_2018.DeviceDesc%=SiUSBdB.Dev, USB\VID_04C5&PID_2018
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+[DestinationDirs]
+SiUSBdB.Files.Ext = 10,System32\Drivers
+SiUSBdB.Files.Inf = 10,INF
+
+[SiUSBdB.Dev]
+CopyFiles=SiUSBdB.Files.Ext, SiUSBdB.Files.Inf
+AddReg=SiUSBdB.AddReg
+
+[SiUSBdB.Dev.NT]
+CopyFiles=SiUSBdB.Files.Ext, SiUSBdB.Files.Inf
+AddReg=SiUSBdB.AddReg
+
+[SiUSBdB.Dev.NT.Services]
+Addservice = SiUSBdB, 0x00000002, SiUSBdB.AddService
+
+[SiUSBdB.AddService]
+DisplayName    = %SiUSBdB.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 2                  ; SERVICE_AUTO_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\SiUSBdB.sys
+LoadOrderGroup = Base
+
+[SiUSBdB.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,SiUSBdB.sys
+HKLM,"System\Currentcontrolset\Services\SiUSBdB\Parameters","MaximumTransferSize",0x10001,4096
+HKLM,"System\Currentcontrolset\Services\SiUSBdB\Parameters","DebugLevel",0x10001,2
+
+
+[SiUSBdB.Files.Ext]
+SiUSBdB.sys
+
+[SiUSBdB.Files.Inf]
+SiUSBdB.Inf
+
+
+;---------------------------------------------------------------;
+
+[Strings]
+MfgName="FUJITSU LIMITED"
+USB\VID_04C5&PID_200C.DeviceDesc="BGM Adaptor(MB2146-09)"
+USB\VID_04C5&PID_2018.DeviceDesc="BGM Adaptor(MB2146-08)"
+SiUSBdB.SvcDesc="BGM Adaptor"

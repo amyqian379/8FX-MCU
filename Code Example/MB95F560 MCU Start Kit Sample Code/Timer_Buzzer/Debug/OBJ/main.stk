@@ -1,0 +1,15 @@
+@d:\2011\work\mb95f560 mcu start kit sample code\timer_buzzer\debug\scr\main.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...
+#
+         2	E	_main
+	->	E	_InitIrqLevels
+	->	E	_PWM_Init
+#
+         2	E	_PWM_Init
+#
+        14	I	_External_INT06
+#
+        14	I	_External_INT07

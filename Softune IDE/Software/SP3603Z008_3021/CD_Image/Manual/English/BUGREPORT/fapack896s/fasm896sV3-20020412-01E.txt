@@ -1,0 +1,44 @@
+[Bug-ID]        fasm896sV3-20020412-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L06
+[Date]          2002-04-12
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows 2000/95/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L08
+[Severity]      Middle
+
+[Outline]
+        When a preprocessor instruction contains a hexadecimal constant that
+        begins with "0D" and has the suffix "H", a warning message (W1116A)
+        is output.
+
+[Detail]
+        When a preprocessor instruction contains a hexadecimal constant that
+        begins with "0D" and has the suffix "H", "0D" is misidentified as
+        the prefix for the decimal constant, outputting a warning message
+        (W1116A).
+
+        [An example of a hexadecimal constant notation for which the warning
+        message is output]
+               #define DEF_VAL 0D0H
+
+        [Warning message to be output]
+               W1116A:  Invalid value (0D0H)
+               W1116A:  Invalid value (0D0H)
+
+[Workaround]
+        When writing a hexadecimal constant, omit "0" at the beginning of it
+        or use the prefix "0x".
+
+        [An example of a hexadecimal constant notation when "0" at the
+        beginning is omitted]
+               #define DEF_VAL D0H
+
+        [An example of a hexadecimal constant notation when the prefix "0x" is
+        used]
+               #define DEF_VAL 0x0D0
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L08

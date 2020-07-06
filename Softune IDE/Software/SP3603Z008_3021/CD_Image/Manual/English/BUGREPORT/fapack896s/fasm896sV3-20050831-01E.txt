@@ -1,0 +1,55 @@
+[Bug-ID]        fasm896sV3-20050831-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L08
+[Date]          2005-08-31
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows Me/2000/95/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L09
+[Severity]      High
+
+[Outline]
+        The assembling of the assembler source, including branch assembler
+        pseudo-machine instructions, does not terminate.
+
+[Detail]
+        The branch assembler pseudo-machine instruction selects distance
+        a relative branch code or an absolute branch code, according to the
+        relative distance to the branch destination label.
+        There is the possibility that the assembler will not terminate if the
+        relative between the branch assembler pseudo-machine instruction and
+        the branch destination label is close to the threshold value to
+        select the relative branch code and the absolute branch code.
+
+                    |  Selects absolute branch code
+                [Later label]
+                    |
+                    a : Selects relative branch code
+                    |
+                [Branching assembler pseudo-machine instruction]
+                    |
+                    b : Selects relative branch code
+                    |
+                [former label]
+                    |  Selects absolute branch code
+
+            |           Branching assembler          | Threshold Value |
+            |        pseudo-machine instruction      |   a    |   b    |
+            |========================================+========+========|
+            |BHS16 label/BN16 label/BP16 label       |        |        |
+            |BLT16 label/BGE16 label/BBC16 bit, label|        |        |
+            |BBS16 bit, label/BV16 label/BHS16 label |  -128  |  +127  |
+            |BN16 label/BP16 label/BLT16 label       |        |        |
+            |BGE16 label/BBC16 bit, label            |        |        |
+            |BBS16 bit, label/BGT16 label/BHI16 label|        |        |
+            |----------------------------------------+--------+--------|
+            |BV16 label/BNV16 label                  |  -128  |  +122  |
+            |----------------------------------------+--------+--------|
+            |BLE16 label/BLS16 label                 |  -128  |  +125  |
+
+[Workaround]
+        Use the modified version of the assembler.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L09

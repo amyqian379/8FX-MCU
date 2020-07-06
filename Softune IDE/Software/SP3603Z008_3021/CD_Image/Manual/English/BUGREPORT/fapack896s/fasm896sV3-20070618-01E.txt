@@ -1,0 +1,33 @@
+[Bug-ID]        fasm896sV3-20070618-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L09
+[Date]          2007-06-18
+[Host]          PC-AT | Sun4
+[OS]            Windows XP/2000 | Solaris 2.6
+[Revision]      V30L10
+[Severity]      Middle
+
+[Outline]
+        The assembler terminates abnormally when over 256 characters are
+        defined by the #define macro.
+
+[Detail]
+        The assembler terminates abnormally when over 256 characters are
+        defined by the #define macro.
+
+        #define DEF (abcd ... xyz)
+                     ~~~~~~~~~~~~ <= The assembler terminates abnormally when
+                                     this part is over 256 characters.
+
+[Workaround]
+        Please define under 256 characters by the #define macro.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L10
+
+[Report History]
+        [2008-02-01] [Status] was changed to Completely fixed. 
+                     The correction version was added to [Revision] and [Product
+                     Release]. 

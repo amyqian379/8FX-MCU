@@ -1,0 +1,59 @@
+[Bug-ID]        fasm896sV3-20041006-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L04-V30L08
+[Date]          2004-10-06
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows XP/Me/2000/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L09
+[Severity]      High
+
+[Outline]
+        When the results of the operation coded in the immediate value operand
+        exceed the operand size, The object file which should originally be
+        outputted is not outputted.
+        The -OVFW option changes an error level into "Warning" from "Error",
+        when the results of the operation coded in the immediate value operand
+        exceed the operand size.
+
+[Detail]
+        Example of description causing this problem is as following.
+              .SECTION  CODE, CODE, ALIGN=2
+                  :
+              MOVW  A, #~(8008H)
+                  :
+              .END
+
+        The right processing is as following, when the assembler assembles the
+        above-mentioned description
+
+        1. The assembler displays warning(W1541A).
+        2. The assembler masks the results of the operation to the size of the
+           operand, sets only the lower bits and generates a code.
+        3. The assembler outputs a object file.
+        4. The assembly list which an assembler outputs is as follows.
+
+                :
+            CO 0025 E47FF7            10   T       MOVW  A, #~(8008H)
+            *** mod.asm(2) W1541A: Value out of range (in operand 2)
+                :
+
+        On the other hand the processing of the assembler to which this problem
+        occurred is as follows.
+
+        1. The assembler displays warning(W1541A).
+        2. The assembler replaces the corresponded instruction with NOP code.
+        3. The assembler does not outputs a object file.
+        4. The assembly list which an assembler outputs is as follows.
+
+                :
+            CO 0025 00                10   T       MOVW  A, #~(8008H)
+            *** mod.asm(2) W1541A: Value out of range (in operand 2)
+                :
+
+[Workaround]
+        Use the modified version of the assembler.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L09

@@ -1,0 +1,71 @@
+[Bug-ID]        fasm896sV3-20061215-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L07-V30L08
+[Date]          2006-12-15
+[Host]          PC-AT | Sun4
+[OS]            Windows XP/2000 | Solaris 2.6
+[Revision]      V30L09
+[Severity]      Middle
+
+[Outline]
+        The line number displayed by the following messages swerves ahead one
+        line when assembler code is described in C source.
+          - E4616A : Not enough operands
+          - W1712A : This structure field cannot initialized
+
+[Detail]
+        The line number displayed by the following messages swerves ahead one
+        line when assembler code is described in C source.
+          - E4616A : Not enough operands
+          - W1712A : This structure field cannot initialized
+
+        At this time, the error jump function of Workbench cannot correctly
+        display the line with the invalid description.
+
+        The following is an example of the description causing the error.
+
+        - E4616A : Not enough operands
+          line number | C source description
+          ------------+--------------------------------------------------------
+               1      |func()
+               2      |{
+               3      |#pragma asm     <== Line displayed by error jump
+                      |                    function of Workbench
+               4      |    MOV  A      <== Invalid description
+               5      |#pragma endasm
+               6      |}
+
+        When the above C source is compiled with debug information, the
+        following error message is displayed.
+
+        *** sample.c(3) E4616A: Not enough operands
+
+        - W1712A : This structure field cannot initialized
+          line number | C source description
+          ------------+--------------------------------------------------------
+               1      |func()
+               2      |{
+               3      |#pragma asm
+               4      |TAG:   .STRUCT
+               5      |MEM1:  .DATA.B  0,0
+               6      |MEM2:  .RES.B   1
+               7      |MEM3:  .DATA.B  1,1
+               8      |TAG:   .ENDS       <== Line displayed by error jump
+                      |                       function of Workbench
+               9      |c:     TAG <1,1,1> <== Invalid description
+              10      |#pragma endasm
+              11      |}
+
+        When the above C source is compiled with debug information, the
+        following error message is displayed.
+
+        *** sample.c(3) W1712A: This structure field cannot initialized
+
+[Workaround]
+        Please refer after one line of the line number displayed in the
+        message.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L09

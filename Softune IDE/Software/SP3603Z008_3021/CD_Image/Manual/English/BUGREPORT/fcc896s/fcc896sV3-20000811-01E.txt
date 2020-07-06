@@ -1,0 +1,114 @@
+[Bug-ID]          fcc896sV3-20000811-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L06
+[Date]            2000-08-11
+[Host]            PC-AT
+[OS]              Windows NT4.0/98/95
+[Revision]        V30L07
+[Severity]        High
+
+[Outline]
+        The assignment code to the bit field member is wrong.
+
+[Detail]
+        When the following source is compiled, the definition of one bit in
+        the bit field member becomes invalid.
+
+        [Conditions 1]
+            (1) There is a union to which __direct type is qualified.
+                The union has the member of struct with two bit field members
+                or more (a) and variable of type of the entire bit field of
+                the struct (b). AND,
+            (2) There is bit field member (c) in two bits or more in (a). AND,
+            (3) There is bit field member (d) in one bit in (a). AND,
+            (4) There is assignment with operation for (b). AND,
+            (5) There is a definition in (d) just behind (4). AND,
+            (6) There is a definition in (c) just behind (5).
+
+        [Conditions 2]
+            (1) There is a struct or union to which __direct type is qualified.
+                AND,
+            (2) There are two bit field members or more(a,b) in two bits or
+                more in (1). AND,
+            (3) There is bit field member (c) in one bit in (1). AND,
+            (4) There is a definition in (a). AND,
+            (5) There is a definition in (c) just behind (4). AND,
+            (6) There is a definition in (b) just behind (5).
+
+        [C source 1]
+            __direct union {
+              unsigned char byte;
+              struct {
+                unsigned char a:2;
+                unsigned char b:1;
+                unsigned char c:5;
+              } bit;
+            } s;
+
+            f()
+            {
+              s.byte ^= 255;
+              s.bit.b = 1;
+              s.bit.c = 0;
+            }
+
+        [ASM output 1(wrong)]           [ASM output 1(correct)]
+        _f:                             _f:
+        ;;;;     {                      ;;;;     {
+        ;;;;       s.byte ^= 255;       ;;;;       s.byte ^= 255;
+                MOVW    A, #0                   MOVW    A, #0
+                MOV     A, _s                   MOV     A, _s
+                MOVW    A, #255                 MOVW    A, #255
+                XORW    A                       XORW    A
+                MOV     _s, A                   MOV     _s, A
+        ;;;;       s.bit.b = 1;         ;;;;       s.bit.b = 1;
+                SETB    _s:2                    SETB    _s:2
+        ;;;;       s.bit.c = 0;         ;;;;       s.bit.c = 0;
+                                      >         MOV     A, _s
+                AND     A, #7                   AND     A, #7
+                MOV     _s, A                   MOV     _s, A
+        ;;;;     }                      ;;;;     }
+        L_f:                            L_f:
+                RET                             RET
+
+        [C source 2]
+            __direct struct {
+              unsigned char a:2;
+              unsigned char b:1;
+              unsigned char c:5;
+            } s;
+
+            f()
+            {
+              s.a = 1;
+              s.b = 1;
+              s.c = 0;
+            }
+
+        [ASM output 2(wrong)]           [ASM output 2(correct)]
+        _f:                             _f:
+        ;;;;     {                      ;;;;     {
+        ;;;;       s.a = 1;             ;;;;       s.a = 1;
+                MOV     A, _s                   MOV     A, _s
+                AND     A, #131                 AND     A, #131
+                OR      A, #4                   OR      A, #4
+                MOV     _s, A                   MOV     _s, A
+        ;;;;       s.b = 1;             ;;;;       s.b = 1;
+                SETB    _s:7                    SETB    _s:7
+        ;;;;       s.c = 0;             ;;;;       s.c = 0;
+                                      >         MOV     A, _s
+                AND     A, #252                 AND     A, #252
+                MOV     _s, A                   MOV     _s, A
+        ;;;;     }                      ;;;;     }
+        L_f:                            L_f:
+                RET                             RET
+
+[Workaround]
+      - Please specify the -Tc,-zbe=be3=0 option when compiling.
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L07
+        [Bug Type]              Illegal Object
+        [Check Tool]            Undetectable

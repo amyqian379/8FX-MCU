@@ -1,0 +1,58 @@
+[Bug-ID]          fcc896sV3-20000511-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L03
+[Date]            2000-05-11
+[Host]            PC-AT
+[OS]              Windows NT4.0/98/95
+[Revision]        V30L04
+[Severity]        Middle
+
+[Outline]
+        The Assembler error (E4573A: Has no statement (._CONFIG E)) occurred.
+
+[Detail]
+        When the following source is compiled by -O -g option, the Assembler
+        error is occurred.
+
+        [Conditions]
+            (1) Specified the optimization option. AND,
+            (2) Specified the debugging information generation option (-g).
+                AND,
+            (3) There is do-while statement. AND,
+            (4) The conditional expression of (3) is 0. AND,
+            (5) There is the for or while loop just behind (3).
+
+        [C source]
+            typedef unsigned short ushort;
+            typedef unsigned char  uchar;
+
+            void test(ushort Bsize, uchar *Table)
+            {
+              ushort  i;
+              register ushort buffer;
+
+              do {
+                *(volatile ushort*)(0x05000036) = Bsize;
+              } while (0);
+
+              for(i = 0; i < Bsize; i++ ) {
+                do {
+                  *(volatile ushort*)(0x05000034) = (ushort)*Table;
+                } while (0);
+                Table++;
+              }
+            }
+
+        [Error Messages]
+            % fcc896s -O -g -c a.c
+            *** /tmp/fcc780_2.asm(27) E4573A: Has no statement (._CONFIG E)
+
+[Workaround]
+      - Either of the following options are specified.
+            - The debugging information generation cancel option (-Xg)
+            - The optimization cancel option (-O0)
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L04

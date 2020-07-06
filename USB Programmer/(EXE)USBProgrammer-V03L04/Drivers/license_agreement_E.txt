@@ -1,0 +1,210 @@
+IMPORTANT. Read the following Cypress Semiconductor Corporation ("CYPRESS") Software License Agreement ("Agreement") completely. By selecting the button to install the SOFTWARE as defined below, you ("LICENSEE") are deemed to accept the terms of this Agreement, and legally bound by all of the terms of this Agreement. You may then install the SOFTWARE.
+
+SOFTWARE LICENSE AGREEMENT
+(for development tool "SOFTUNE" license)
+
+This is a legal agreement between you (either as an individual or as an authorized representative of your employer) and CYPRESS. It concerns your rights to use the SOFTWARE. In consideration for CYPRESS allowing you to access the SOFTWARE, you are agreeing to be bound by the terms of this Agreement. IF YOU DO NOT AGREE TO ALL OF THE TERMS OF THIS AGREEMENT, DO NOT INSTALL THE SOFTWARE. If you change your mind later, stop using the SOFTWARE and delete all copies of the SOFTWARE in your possession or control. Any copies of the SOFTWARE that you have already distributed, where permitted, and do not destroy will continue to be governed by this Agreement. Your prior use will also continue to be governed by this Agreement.
+
+WHEREAS:
+
+WHEREAS, CYPRESS owns certain programs defined as "Licensed Program" in Section 1 below;
+
+WHEREAS, LICENSEE wishes to license from CYPRESS the right to use the Licensed Program for the sole purpose of developing LICENSEE's products; and 
+
+WHEREAS, CYPRESS wishes to grant such licenses and the certain rights with regard to the Licensed Program to LICENSEE. 
+
+NOW THEREFORE, in consideration of mutual covenants and agreements herein contained, the parties hereto have agreed as follows: 
+
+1.   DEFINITIONS
+
+1.1	"Confidential Information" means all programs and information that are disclosed by CYPRESS to LICENSEE in connection with this Agreement, and (i) which is marked "confidential" at the time of disclosure thereof if disclosed in tangible form; (ii) which is designated at the time of disclosure thereof as confidential and summarized in writing within thirty (30) days after the disclosure, if disclosed in intangible form; and (iii) the Deliverables (hereinafter defined).
+1.2	"Customers" mean commercial customers of LICENSEE or LICENSEE's dealers, distributors and agents for the Licensee Products.
+1.3	"Defect" means any error, defect or bug that causes the Licensed Program not to substantially operate in accordance with the Specifications (hereinafter defined).
+1.4	"Deliverables" means (i) the Licensed Program, and (ii) Documentation provided by CYPRESS to LICENSEE in accordance with this Agreement. 
+1.5	"Derivative Works" means a work that is based upon Source Code (hereinafter defined) or which contains or incorporates any portion of Source Code, such as a revision, modification, translation, abridgment, condensation, expansion, or any other form in which Source Code may be recast, transformed or adapted.
+1.6	"Documentation" means the technical documentation of the Licensed Program specified in Exhibit A, and any other materials provided by CYPRESS to LICENSEE pursuant to this Agreement.
+1.7	"Intellectual Property Rights" means any and all intellectual property rights including  without limitation: (a) patents, design and trademarks, (b) rights relating to innovations, know-how, trade secrets, confidential, technical and non-technical information, and (c) copyrights, moral rights, author's rights, any rights of publicity, database rights and any all applications for renewals and extensions of such rights arising anywhere in the world, regardless of whether or not such rights have been issued and/or registered with the appropriate authorities in such jurisdictions in accordance with the relevant legislation.
+1.8	"Licensed Program" means Source Code and Object Code (hereinafter defined) specified in Exhibit A as such and provided by CYPRESS to LICENSEE pursuant to this Agreement.
+1.9	"Licensee Product" means the LICENSEE's products embedding or incorporating CYPRESS's semiconductor product.
+1.10	 "Object Code" means the programs and files in object code form described in Exhibit A of this Agreement.
+1.11	 "Source Code" means the programs in source code form described in Exhibit A of this Agreement.
+1.12	 "Specifications" means the specifications, features, operational characteristics and requirements of the Licensed Program specified in Exhibit A.
+
+2.   DELIVERY AND ACCEPTANCE
+
+2.1	The Deliverables will be delivered by CYPRESS to LICENSEE in a form and manner separately prescribed by CYPRESS.
+2.2	Within the period of thirty (30) calendar days after the delivery of the Deliverables ("Acceptance Period"), LICENSEE shall examine whether the Deliverables have any Defect in accordance with the Specifications and shall notify CYPRESS in writing of its acceptance or rejection of Deliverables. If LICENSEE does not provide CYPRESS with any notice of the acceptance or rejection of Deliverables within Acceptance Period, the Deliverables shall be deemed to have been accepted. 
+2.3	In the event that LICENSEE rejects the Deliverables within Acceptance Period, CYPRESS will correct such Deliverables using commercially reasonable means, and redeliver them in a commercially reasonable period of time.
+
+3.   LICENSE GRANT
+
+3.1	Development Right. Subject to the terms and conditions of this Agreement, CYPRESS hereby grants to LICENSEE, during the term of this Agreement, a non-exclusive, revocable, non-sublicensable, non-transferable, limited license for the limited right to use the Deliverables solely for the purpose of developing Licensee Product ("Purpose"). Such limited license shall include the following rights:  
+(a) 	use the Licensed Program as a tool to support  development  of the Licensee Software to embed CYPRESS's products into Licensee Product;
+(b) 	make copies of the Deliverables for the sole purpose of exercising the foregoing rights and back-ups.
+3.2	LICENSEE may subcontract any development work consistent with the rights granted under this Agreement to a subcontractor ("Subcontractor") only with prior written approval of CYPRESS. LICENSEE shall have any such Subcontractor comply with the same obligations under this Agreement, and LICENSEE shall be liable for any Subcontractor's breach of such obligations.
+3.3	LICENSEE shall add the same notice of copyright and any other Intellectual Property Rights to any reproduction of the Deliverables created by LICENSEE in accordance with this Agreement.
+3.4	LICENSEE shall maintain and manage the Deliverables with due care at the delivery place.
+3.5	LICENSEE shall not:
+(a)	sell, manufacture, market, transfer, distribute, or otherwise provide third parties access to any portion of the Deliverables;
+(b)	use, copy, reproduce, modify or distribute the Deliverables except as expressly permitted in this Agreement; 
+(c) 	incorporate or embed the Licensed Program in any products;
+(d) 	disclose and distribute Source Code and/or Object Code to any third parties including Customers and their end users;
+(e)	reverse assemble, reverse compile or otherwise reverse engineer Object Code except as expressly permitted by any applicable laws; 
+(f) 	use any of Licensed Program's components, files, modules or related licensed materials separately from the Licensed Program; 
+(g)	rent, lease, assign or otherwise dispose of the Deliverables; and
+(h)	use the Deliverables in connection with development or manufacturing of any products that compete with CYPRESS's products or for any purpose other than the Purpose.
+
+4.	FEES AND PAYMENT
+
+4.1	For the license granted hereunder, LICENSEE shall pay CYPRESS the license fees prescribed by CYPRESS (plus applicable consumption taxes) in a manner separately prescribed by CYPRESS. 
+4.2	Payment past the due date will be subject to a charge at the rate of fourteen and six tenths percent (14.6%) per year or the maximum permitted by law, whichever is less.
+4.3	All license fees payable hereunder shall be exclusive of all taxes, which shall be burden and paid by LICENSEE, other than withholding taxes and taxes imposed or based on CYPRESS's net income. For the avoidance of doubt, if applicable law requires LICENSEE to deduct or withhold any taxes, levies, fees, deductions or charges from or in respect of any amounts payable hereunder to CYPRESS, LICENSEE shall (i) withhold the amount of the income taxes levied by the government of LICENSEE's country on the total amounts to be paid by LICENSEE to CYPRESS pursuant to this Agreement, (ii) effect the payment of such tax so withheld to the appropriate taxing authorities of LICENSEE, and (iii) as promptly as possible, but no later than 30 days following the actual payment date of the subject fees, furnish CYPRESS with said tax receipts evidencing the payments of such tax so withheld. If applicable law requires LICENSEE's filing for relief or reduction in withholding tax levied on fees subject to such withholding tax, LICENSEE shall make such filing, and CYPRESS will assist LICENSEE by providing necessary documents in a commercially reasonable manner upon LICENSEE's request. In the event that LICENSEE cannot file for such reduction or relief for such withholding tax prior to CYPRESS's the scheduled remittance dates of amounts of invoice received in accordance with this Agreement because of a delay in CYPRESS's provision of the requested documents to LICENSEE, LICENSEE may hold the invoice until such filing for relief or reduction in withholding tax is completed and delay in remittance may take place.
+
+5. 	WARRANTIES
+
+5.1	CYPRESS shall use its commercially reasonable efforts to ensure that for a period of six (6) months following the acceptance (or deemed acceptance) of the Licensed Program ("Warranty Period"), the Licensed Program will be free from Defects.
+5.2	If the Licensed Program has a Defect during the Warranty Period, LICENSEE shall promptly notify CYPRESS, and the parties shall discuss with each other, and if the Defect is determined to be attributable to CYPRESS, CYPRESS shall, as its exclusive obligation and liability, make commercially reasonable efforts to modify and fix such Defect, and CYPRESS will deliver to LICENSEE such modifications as may be required to correct such Defect within a commercially reasonable period. Any updates provided by CYPRESS to correct such Defect will not extend the Warranty Period. The warranty stated herein shall apply only to LICENSEE and is not intended to create rights in LICENSEE's dealers, distributors, agents or Customers.
+5.3	CYPRESS shall not be liable for any Defect or any other defects of the Licensed Program caused by (a) repair or alteration by any person other than CYPRESS, (b) installation, test, use, storage or handling in a method, manner or purpose not intended in the Specifications, (c) use in combination with other circuits, products, software or hardware not intended in the Specifications, or (d) LICENSEE's design, instruction, specifications, technologies or other cause not attributable to CYPRESS.
+5.4	Disclaimer.  EXCEPT AS PROVIDED IN SECTION 5.1, ALL DELIVERABLES, SOFTWARE, DOCUMENTATION, SERVICES, AND ANY OTHER ITEMS PROVIDED BY CYPRESS HEREUNDER ARE PROVIDED "AS IS" AND CYPRESS MAKES NO WARRANTY OF ANY KIND WITH REGARD TO SUCH DELIVERABLES, SOFTWARE, DOCUMENTATION, SERVICES, OR OTHER ITEMS.  CYPRESS EXPRESSLY DISCLAIMS ANY OTHER WARRANTIES, EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, PATENT VALIDITY, OR ARISING OUT OF INDUSTRY CUSTOM OR COURSE OF DEALING WITH RESPECT TO THE DELIVERABLES, SOFTWARE, DOCUMENTATION, SERVICES AND/OR ANY SUBJECT MATTER OF THIS AGREEMENT. FURTHER, CYPRESS DOES NOT WARRANT RESULTS OF USE OR THAT THE DELIVERABLES OR SOFTWARE IS ERROR FREE OR THAT ITS USE WILL BE UNINTERRUPTED.
+
+6.   INDEMNIFICATION OF INTELLECTUAL PROPERTY RIGHTS
+
+6.1	If the Licensed Program becomes the subject to a claim or dispute (the "Claim") of infringement of a third party's United States patent against LICENSEE during the Warranty Period, CYPRESS shall defend the dispute at its own cost and indemnify LICENSEE against the damages and costs LICENSEE is ordered to pay by the final judgment (including attorney fees) subject to Section 7 on condition that LICENSEE: (A) immediately notifies CYPRESS of the Claim, (B) grants CYPRESS the necessary authority to defend and settle the Claim through counsel of CYPRESS's choice, (C) reasonably cooperates with CYPRESS in resolving the Claim at CYPRESS's costs, and (D) does not admit the infringement or liability without prior written consent of CYPRESS.
+6.2	If, in the foregoing case, the Deliverables are reasonably determined to have infringed a third party's United States patent, then CYPRESS shall take any of the following measures at its own judgment:
+(1)	to obtain a license to entitle LICENSEE to use the Licensed Program; or
+(2)	to replace the Licensed Program so that it is no longer infringing without detracting substantially from the overall performance and functionality of the Licensed Program; or
+(3)	to terminate this Agreement and compensate LICENSEE for damages subject to Section 7 if neither (1) nor (2) is commercially or reasonably viable.
+6.3	The obligations under this Section shall not apply in case of the following:
+(a)	The infringement is attributable to the amendment or change to the Deliverables by a party other than CYPRESS;
+(b)	The infringement is attributable to the installment, test, use, storage or handling in a method, manner or purpose not intended in the Specifications;
+(c)	The infringement is attributable to a combination or embedment of the Deliverables with other circuit, product, software or hardware not intended in the Specifications; or
+(d)	The infringement is caused by LICENSEE's design, instruction, specifications, technologies or other cause not attributable to CYPRESS.
+6.4	If the Licensed Program becomes the subject to a Claim in any of the cases listed in Section 6.3 above, LICENSEE shall defend any such Claim at its own cost and with its responsibility; provided that upon LICENSEE's request for cooperation in solving the dispute, CYPRESS will provide technical information or other technical cooperation with LICENSEE to a reasonable extent.
+6.5	THIS SECTION 6 STATES THE ENTIRE LIABILITY OF CYPRESS WITH REGARDS TO ANY CLAIMS OF INFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS OF ANY THIRD PARTIES.
+
+7.	LIMITATION OF LIABILITIES
+
+7.1	ALL LIABILITIES OF CYPRESS, ITS SUBSIDIARIES AND LICENSORS AND SUPPLIERS, WHETHER IN CONTRACT, TORT, OR OTHERWISE, ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT, SHALL NOT EXCEED THE TOTAL LICENSE FEE AMOUNTS PAID TO CYPRESS BY LICENSEE UNDER THIS AGREEMENT. 
+7.2	IN NO EVENT SHALL CYPRESS, ITS SUBSIDIARIES OR THEIR LICENSORS AND SUPPLIERS BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, INCLUDING, WITHOUT LIMITATION, ANY DAMAGES RESULTING FROM LOSS OF USE, LOSS OF DATA, LOSS OF PROFITS OR LOSS OF BUSINESS ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT, OR OF ANY OTHER OBLIGATIONS RELATING TO THIS AGREEMENT OR THE DELIVERABLES, WHETHER BASED ON TORT, BREACH OF CONTRACT OR OTHERWISE AND WHETHER OR NOT CYPRESS, ITS SUBSIDIARIES OR LICENSORS OR SUPPLIERS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+8.  SUPPORT AND MAINTENANCE
+
+8.1	CYPRESS shall provide LICENSEE with the support services related to the Licensed Program in accordance with Exhibit B (the "Support Services") for the term of one year after the commencement date separately prescribed by CYPRESS (the "Support Term"). 
+8.2	CYPRESS shall not be obligated to provide Customers or any other third party with any Support Services directly. 
+8.3	If LICENSEE desires to continuously the Support Services with charge after expiration of the Support Term, LICENSEE shall so notify CYPRESS at least one month before the expiration of the Support Term, and the parties shall discuss with each other as to whether the Support Services shall continue or not.
+8.4	In the event that CYPRESS releases the updated or new version of the Licensed Program and/or Documentation, such Licensed Program and/or Documentation shall be treated as "Licensed Program" and/or "Documentation" pursuant to this Agreement.
+
+9.  CONFIDENTIALITY
+
+9.1	LICENSEE shall keep and cause to be kept Confidential Information in confidence from any third party or person, except for LICENSEE's officers and/or employees who have a need-to-know and who are bound by confidentiality obligations with LICENSEE at least as restrictive as those contained in this Agreement. LICENSEE shall be responsible for its employees' adherence to the terms of this Agreement. LICENSEE shall protect Confidential Information by using the same degree of care that it uses to protect its own confidential information of a similar nature, but not less than a reasonable degree of care.
+9.2	LICENSEE shall keep the terms and conditions of this Agreement in confidence, and shall not disclose any of the terms and conditions of this Agreement to any third party without written consent of CYPRESS.
+9.3	The confidential obligations specified in Sections 9.1 and 9.2 shall not be applied to any information:
+(a) 	which is or become generally known or available by publication through no fault of LICENSEE;
+(b) 	which was known by LICENSEE before receipt from CYPRESS without any obligations of confidentiality;
+(c)	which is at any time rightfully received by LICENSEE from any third party without any obligations of confidentiality;
+(d)	which is independently developed by LICENSEE without use of or access to Confidential Information; or
+(e)	which is lawfully obtained from a third party without any obligations of confidentiality.
+9.4	In the event that LICENSEE is requested or required pursuant to any governmental rule, regulation, or form or thorough requests for information or documents by any governmental authority in connection with legal proceedings, civil investigations, or other similar legal processes to disclose any Confidential Information, LICENSEE shall provide CYPRESS with prompt written notice of such request or requirement so that CYPRESS may seek a protective order or other appropriate remedy or waive compliance with the provisions of this Agreement. If, in the absence of a protective order, other remedy or the receipt of a waiver by the other party, the party being requested or required to disclose any Confidential Information is nonetheless legally compelled to disclose such Confidential Information, it may, without liability hereunder, disclose only that portion of Confidential Information which it is legally compelled to disclose.
+9.5	The obligations of confidentiality and restricted use set forth in this Section 9 shall survive after expiration or termination of this Agreement.
+ 
+10.  INTELLECTUAL PROPERTY RIGHTS
+
+10.1	Except for the limited rights specifically granted in this Agreement, CYPRESS retains all of its right, title and interest in and to the Deliverables. This Agreement is not a sale and does not assign or transfer to LICENSEE any title or ownership interest in or to the Deliverables, any patent, copyright, trade secret, trade name, trademark or other proprietary or intellectual property rights related to the Deliverables.
+10.2	Except as expressly provided herein, no express or implied right or license shall be granted to Licensee under CYPRESS's Intellectual Property Rights by implication, estoppel, or otherwise. 
+10.3	LICENSEE agrees not to remove or destroy any copyright notices, proprietary markings or confidential legends (the "IP Notices") placed upon, contained within or associated with the Deliverables, and shall ensure that the IP Notices are reproduced on any permitted copy or modification of the Deliverables.  
+
+11.	TERM AND TERMINATION
+
+11.1	This Agreement shall become effective as of the date of installation and shall continue in full force and effect unless otherwise terminated in accordance with the terms hereof.
+11.2	In the event of breach of this Agreement by LICENSEE, if such breach is not corrected within thirty (30) days after the written notice by CYPRESS to LICENSEE, CYPRESS shall be entitled to terminate this Agreement by giving written notice to LICENSEE.
+11.3	In addition to Section 11.2 above, CYPRESS may terminate this Agreement immediately by giving written notice to LICENSEE upon the occurrence of any of following events:
+(a)	insolvency of LICENSEE;
+(b)	filing of a voluntary petition in bankruptcy or for corporate reorganization or for any similar relief by LICENSEE or commencement of voluntary liquidation proceeding by LICENSEE;
+(c)	filing of an involuntary petition in bankruptcy or for corporate reorganization or for any similar relief against LICENSEE, or commencement of involuntary liquidation proceeding against LICENSEE, unless such petition or proceeding is set aside, dismissed or withdrawn or ceased to be in effect within sixty (60) days from the date of such filing or commencement;
+(d)	appointment of a receiver, trustee or liquidator with respect to substantially all of the important assets of LICENSEE;
+(e)	execution by LICENSEE of an assignment for the benefit of its creditors under laws relating to bankruptcy, liquidation or insolvency;
+(f)	sale, assignment or other transfer to any third party or parties of substantial or important part of the business or assets of LICENSEE; 
+(g)	any substantial or important change in the ownership, control or management of LICENSEE, including by way of merger, consolidation or takeover, which CYPRESS judges after a careful consideration to be detrimental to LICENSEE; or
+(h)	any other event that shows the existing or threatened deterioration of financial conditions of LICENSEE.
+11.4	Upon termination of this Agreement, all licenses and rights of LICENSEE granted hereunder shall immediately terminate. LICENSEE agrees to return or destroy all written and other tangible Confidential Information received from CYPRESS including any extracts, copies and electrical files that have been fixed in electronic form on CD-ROMs, hard drives or other media containing Confidential Information in accordance with CYPRESS's written request.
+11.5	The provisions of Sections 1 (Definitions), 5.4 (Warranties), 6.5 (Indemnification of Intellectual Property Rights), 7 (Limitation of Liabilities), 9 (Confidentiality), 10 (Intellectual Property Rights), 11.4 (Term and Termination), 11.5 (Term and Termination), 12 (Governing Law and Jurisdiction), 13 (Equitable Relief), 14 (Independent Contractor), 15 (Severability), 16 (Assignment), 17 (No Waiver), 18 (Headings), 19 (High Safety Application), 20 (Export Control), 21 (Force Majeure) and 22 (Entire Agreement) will survive any expiration or termination of this Agreement.
+
+12.	GOVERNING LAW AND JURISDICTION
+
+12.1	This Agreement shall be governed and construed in accordance with the laws of State of California as applied to contracts entered into in California by a California corporation, without giving effect to its choice of law provisions. The United Nations Convention on Contracts for the International Sale of Goods shall not apply. 
+12.2	Both parties shall use reasonable efforts to resolve by mutual agreement any disputes, controversies, claims or differences which may arise from, under, out of or in connection with this Agreement. If such disputes, controversies, claims or differences cannot be settled between the parties, any dispute resolution proceeding shall take place in the United States, but if either party files a claim in a state or federal court, such claim shall be filed in the state or federal courts in Santa Clara County, California or with the International Trade Commission.  The parties hereby consent to personal jurisdiction and venue in the state and federal courts of Santa Clara County, and the International Trade Commission.  Nothing herein shall alter or affect any other rights either party may have to redress any breach or act of the other party. 
+
+13.  EQUITABLE RELIEF
+
+LICENSEE acknowledges that its breach of this Agreement may cause irreparable damage and hereby agrees that CYPRESS shall be entitled to seek injunctive relief under this Agreement as well as such further relief as may be granted by a court of competent jurisdiction.
+
+14.	INDEPENDENT CONTRACTOR
+
+The relationship between the parties will be that of independent contractors. Nothing contained herein will be construed to imply a principal-agent relationship, partnership or other joint venture relationship, and neither party will have the rights, power or authority to create any obligation, express or implied, on behalf of the other.
+
+
+15.  SEVERABILITY
+
+If any provision or a part of any provisions of this Agreement, including its Exhibits, is invalidated by operation of law or otherwise, the provision or part will to that extent be deemed omitted and the remainder of this Agreement or applicable Exhibit will remain in full force and effect. The parties agree that such invalidated provision or part thereof shall be replaced by a similar, but legally valid, provision which is as close as possible in commercial effect to the invalidated provision or part thereof. 
+
+16.  ASSIGNMENT
+
+This Agreement shall not be assigned or transferred by either party, in whole or in part, without the prior written consent of the other party; provided, however, that CYPRESS may assign and transfer all its rights under this Agreement solely to a party controlling, controlled by or under common control with CYPRESS, a successor in interest in the event of a merger, consolidation or sale of substantially all of CYPRESS's assets or stock, or to a successor to the portion of its business that designs or markets products incorporating Deliverables. Any assignment or transfer without such consent shall be null and void. Any attempted act in derogation of the foregoing will be null and void. This Agreement will be binding upon, and inure to the benefit of, successors in interest to and permitted assigns of the parties.
+
+17.  NO WAIVER
+
+The failure or delay by either party to enforce any provisions of this Agreement or to exercise any right in respect thereto shall not be construed as constituting a waiver of its rights thereof. No waiver of any terms or conditions of this Agreement, whether by conduct or otherwise, in any one or more instances, shall be deemed to be a further or continuing waiver of such terms or conditions or as a waiver of any other terms or conditions of this Agreement.
+
+18.  HEADINGS
+
+Headings in this Agreement are for convenience only and shall not affect the interpretation hereof.
+
+19.  HIGH-SAFETY APPLICATION
+
+LICENSEE understands and agrees that the Deliverables are not designed, developed, manufactured, intended, authorized, or warranted for use in medical, life-saving or life-sustaining systems, transportation systems (including air traffic control systems), nuclear systems, weapon systems, undersea systems, space satellite systems, or any other application in which the failure of the Deliverables could create a situation where personal injury, death, or severe property or environmental damage may occur ("High-Safety Application"), and that any semiconductor device, as well as the Deliverables, has an inherent chance of failure. Consequently, LICENSEE agrees that if it uses any software, including the Deliverables, in High-Safety Applications, including those described above, LICENSEE shall perform its own analysis of the use of the Deliverables in High-Safety Applications and take sole responsibility for such use, including protecting against injury, damage or loss from failures by incorporating appropriate safety design measures into its products, systems, facilities, and equipment, such as redundancy, fire protection, and prevention of over-current levels and other abnormal operating conditions.  LICENSEE further agrees that if it uses the Deliverables in High-Safety Applications, including those described above, LICENSEE shall fully indemnify, hold harmless, and defend CYPRESS, its subsidiaries, affiliates, their respective officers, directors, employees, distributors, subcontractors, consultants, agents, successors, and assigns (collectively, "Indemnified Parties") from and against all claims, actions, suits, demands, damages, liabilities, obligations, losses, settlements, judgments, arbitration awards, costs, and expenses (including without limitation reasonable attorneys' fees and costs), whether or not involving a third-party claim, which arise out of, relate to, or result from, the LICENSEE's use of the Deliverables in any High-Safety Application, in each case whether or not caused by the negligence of CYPRESS or any other Indemnified Party and whether or not the relevant claim has merit.
+
+20.  EXPORT CONTROL
+
+LICENSEE shall comply with all then-current applicable laws, regulations and other legal requirements in its performance in connection with this Agreement, including without limitation, the Foreign Exchange and Trade Act of Japan and the United States Export Administration Act and the regulations thereunder and all other applicable export control laws, rules and regulations of LICENSEE's country, the United States and any other relevant countries.
+
+21.	FORCE MAJEURE
+
+Neither party shall be liable to the other party for any failure or delay in the performance of any of its obligations under this Agreement if and to the extent that such failure or delay is caused directly or indirectly by fires, earthquakes, floods, tsunami, storms, epidemics, wars, civil commotions, strikes, acts of government or its agencies, acts of God or any other acts beyond the control of the affected party, provided, however, that such affected party shall promptly give notice of the occurrence or potentiality of the occurrence of such force majeure events to the other party hereto and shall use its best efforts to fulfill its obligations in this Agreement at the earliest possible time. If such affected party is incapable of performing for a continuous period of six (6) months or more, the other party may terminate this Agreement immediately upon notice to such affected party.
+
+22.	ENTIRE AGREEMENT
+
+This Agreement constitutes the entire agreement between the parties with respect to the subject matter hereof, and supersedes all previous communications, representations, understandings and agreements, either oral or written, between the parties or any official or representative thereof. No amendment to or modification of this Agreement will be binding unless in writing and signed by duly authorized representatives of both parties.
+
+ 
+ Exhibit A 
+Deliverables
+(i) Licensed Program
+
+(a) Source Code
+- none
+
+(b) Object Code
+- SOFTUNE(TM) USB Driver
+
+(ii) Documentation
+(a) Document
+- none
+
+(b) Specifications
+- none
+
+Exhibit B
+Support Services
+
+CYPRESS shall, at no additional charge, provide LICENSEE with the following basic technical support services in accordance with Section 8.1 of this Agreement 
+
+1.	Problem Solution Support
+(i)  	CYPRESS shall, by telephone, internet or other manner, answer questions regarding the Specifications on the following topics: how to use and operation environment of the Licensed Program received by telephone or internet.
+(ii) 	If LICENSEE notifies CYPRESS that the Licensed Program has a Defect, then CYPRESS shall provide technical supports to LICENSEE in its efforts to investigate causes and fix the Defect; provided that CYPRESS may not provide any support with respect to any amendment or change by LICENSEE or any Defect caused by such amendment or change. 
+(iii)	The foregoing supports shall be provided during Monday through Friday from 9 a.m. to 5 p.m. (Japan Standard Time, GMT+9) except for Japanese national holidays and other domestic holidays of CYPRESS; provided that CYPRESS shall not be required to answer any question within the day on which CYPRESS receives the question from LICENSEE.
+(iv)	No support services shall be provided in connection with any software program developed or to be developed by LICENSEE by using the Licensed Program.
+
+2.	Other Terms
+(i)	LICENSEE shall be responsible for necessary back-up in case of any trouble or interruption due to the Licensed Program.
+(ii)	Any updated or new version may be released at CYPRESS's sole and absolute discretion, and in no event shall CYPRESS be obligated to develop or release such updated or new versions. 
+

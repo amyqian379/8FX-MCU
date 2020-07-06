@@ -1,0 +1,31 @@
+[Bug-ID]        flnk896sV3-20070907-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (linker)
+[Versions]      V30L01-V30L13
+[Date]          2007-09-07
+[Host]          PC-AT | Sun4
+[OS]            Windows XP/2000 | Solaris 2.6
+[Revision]      V30L14
+[Severity]      Middle
+
+[Outline]
+        The linker may terminate abnormally when the sections that doesn't
+        exist in the section group specification option (-gr) are made a
+        group.
+
+[Detail]
+        The linker terminates abnormally when the arrangement of the section
+        group created by sections alone that doesn't exist a group is
+        specified.
+
+[Workaround]
+        Please do not make the section that doesn't exist a group.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L14
+
+[Report History]
+        [2008-02-01] [Status] was changed to Completely fixed. 
+                     The correction version was added to [Revision] and [Product
+                     Release]. 

@@ -1,0 +1,104 @@
+[Bug-ID]        fasm896sV3-20040401-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L07
+[Date]          2004-04-01
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows XP/Me/2000/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L08
+[Severity]      High
+
+[Outline]
+        If an invalid assembler source description is provided, an un intended
+        object code may be output without outputting this error, which will be
+        output under normal circumstances.
+
+[Detail]
+        If an invalid assembler source description is provided, an un intended
+        object code may be output without outputting this error, which will be
+        output under normal circumstances.
+        This error never occurs in the assembler source to be output by the
+        compiler.
+        The relationship between the assembler source description causing this
+        error and the invalid object code to be output is indicated in Table 1
+        List of Assembler Source Descriptions Causing Error.
+
+        The "invalid assembler source description causing an error" in Table 1
+        refers to an assembler source description causing this error.
+        The "invalid object code (hexadecimal) to be output" in Table 1 refers
+        to a hexadecimal object code to be generated when a description
+        causing this error is assembled.
+        The "assembler source description corresponding to an invalid object
+        code" in Table 1 refers to an assembler source description
+        corresponding to an invalid output object code.  This assembler source
+        description is the same as that displayed when the disassemble
+        function of the Workbench is used.
+
+            Table 1 List of Assembler Source Descriptions Causing Error
+     +---------------------+-------------------+-----------------------------+
+     | invalid assembler   | invalid object    | assembler source description|
+     | source description  | code              | corresponding to an invalid |
+     | causing an error    | (hexadecimal)     | object code                 |
+     +---------------------+-------------------+-----------------------------+
+     |  MOV  Ri, T         | 0x48Å`0x4F        |  MOV  Ri, A                 |
+     +---------------------+-------------------+-----------------------------+
+     |  MOV  @A+off, T     | 0x82              |  MOV  @A, T                 |
+     +---------------------+-------------------+-----------------------------+
+     |  MOV  @EP+off, #d8  | 0x87,0xXX         |  MOV  @EP, #d8              |
+     +---------------------+-------------------+-----------------------------+
+     |  MOV  @EP+off, A    | 0x47              |  MOV  @EP, A                |
+     +---------------------+-------------------+-----------------------------+
+     |  MOV  A, @A+off     | 0x92              |  MOV  A, @A                 |
+     +---------------------+-------------------+-----------------------------+
+     |  MOV  A, @EP+off    | 0x07              |  MOV  A, @EP                |
+     +---------------------+-------------------+-----------------------------+
+     |  MOVW  @A, IX       | 0x83              |  MOVW  @A, T                |
+     |  MOVW  @A, EP       |                   |                             |
+     |  MOVW  @A, PC       |                   |                             |
+     |  MOVW  @A, SP       |                   |                             |
+     |  MOVW  @A, PS       |                   |                             |
+     |  MOVW  @A+off, T    |                   |                             |
+     |  MOVW  @A+off, IX   |                   |                             |
+     |  MOVW  @A+off, EP   |                   |                             |
+     |  MOVW  @A+off, PC   |                   |                             |
+     |  MOVW  @A+off, SP   |                   |                             |
+     |  MOVW  @A+off, PS   |                   |                             |
+     +---------------------+-------------------+-----------------------------+
+     |  MOVW  @EP+off, A   | 0xD7              |  MOVW  @EP, A               |
+     +---------------------+-------------------+-----------------------------+
+     |  MOVW  A, @A+off    | 0x93              |  MOVW  A, @A                |
+     +---------------------+-------------------+-----------------------------+
+     |  MOVW  A, @EP+off   | 0xC7              |  MOVW  A, @EP               |
+     +---------------------+-------------------+-----------------------------+
+     |  ADDC  A,@EP+off    | 0x27              |  ADDC  A,@EP                |
+     +---------------------+-------------------+-----------------------------+
+     |  SUBC  A,@EP+off    | 0x37              |  SUBC  A,@EP                |
+     +---------------------+-------------------+-----------------------------+
+     |  CMP  Ri            | 0x98Å`0x9F        |  CMP  Ri, #d8               |
+     |  CMP  Ri, dir       |                   |                             |
+     |  CMP  Ri, @A        |                   |                             |
+     |  CMP  Ri, @IX       |                   |                             |
+     |  CMP  Ri, @EP       |                   |                             |
+     |  CMP  Ri, @A+off    |                   |                             |
+     |  CMP  Ri, @IX+off   |                   |                             |
+     |  CMP  Ri, @EP+off   |                   |                             |
+     +---------------------+-------------------+-----------------------------+
+     |  CMP  @EP+off, #d8  | 0x15              |  CMP  @EP, #d8              |
+     +---------------------+-------------------+-----------------------------+
+     |  XOR  A, @EP+off    | 0x57              |  XOR  A, @EP                |
+     +---------------------+-------------------+-----------------------------+
+     |  AND  A, @EP+off    | 0x67              |  AND  A, @EP                |
+     +---------------------+-------------------+-----------------------------+
+     |  OR  A, @EP+off     | 0x77              |  OR  A, @EP                 |
+     +---------------------+-------------------+-----------------------------+
+     |  JMP  A             | 0xE0              |  JMP  @A                    |
+     +---------------------+-------------------+-----------------------------+
+
+[Workaround]
+        To edit the assembler source file output by the compiler or to write
+        a program by the assembler, avoid describing the "invalid assembler
+        source description causing an error" in Table 1.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L08

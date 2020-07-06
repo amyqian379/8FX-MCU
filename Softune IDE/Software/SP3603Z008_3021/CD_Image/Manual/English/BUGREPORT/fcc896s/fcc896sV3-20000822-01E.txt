@@ -1,0 +1,26 @@
+[Bug-ID]          fcc896sV3-20000822-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L05
+[Date]            2000-08-22
+[Host]            PC-AT
+[OS]              Windows 2000/NT4.0/98/95
+[Revision]        V30L06
+[Severity]        Middle
+
+[Outline]
+        The sample I/O register files are lacked.
+
+[Detail]
+        In the product of the Windows version, the following two files are
+        lacked.
+
+            lib\896\include\sample\_ffmc8l_a.asm
+            lib\896\include\sample\_f8ldef.inc
+
+[Workaround]
+      - Please use correction version (V30L06 or later).
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L06

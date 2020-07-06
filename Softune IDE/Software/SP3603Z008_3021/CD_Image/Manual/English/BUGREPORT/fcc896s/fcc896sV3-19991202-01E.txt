@@ -1,0 +1,44 @@
+[Bug-ID]          fcc896sV3-19991202-01
+[Status]          Completely fixed
+[Tool Name]       SOFTUNE C Compiler
+[Versions]        V30L01-V30L03
+[Date]            1999-12-02
+[Host]            PC-AT
+[OS]              Windows NT4.0/98/95
+[Revision]        V30L04
+[Severity]        Middle
+
+[Outline]
+        The C preprocessor outputs the wrong warning message in
+        #pragma endasm;
+
+[Detail]
+        The C preprocessor outputs the wrong warning message when compiling
+        the following source.
+
+        [Condition]
+            (1) There is ; following #pragma asm or #pragma endasm. AND,
+            (2) There is comment(/* */ or //) following (1).
+
+        [C source]
+            #ifndef _ANSI_CHECK_
+            #pragma asm
+            #pragma endasm;
+            #endif
+
+            #ifndef _ANSI_CHECK_    /* wrong warning message in this comment */
+            #pragma asm
+            #pragma endasm
+            #endif
+
+        [Error Messages]
+            % fcc896s -S a.c
+            *** a.c(6) W1002P: #ifndef: invalid token specified after
+            identifier: newline expected
+
+[Workaround]
+      - Please describe a correct pragma name.
+
+[Note]
+        [Sample Release]        None
+        [Product Release]       V30L04

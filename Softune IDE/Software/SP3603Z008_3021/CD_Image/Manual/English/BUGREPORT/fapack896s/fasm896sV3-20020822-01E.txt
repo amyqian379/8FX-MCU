@@ -1,0 +1,55 @@
+[Bug-ID]        fasm896sV3-20020822-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L07
+[Date]          2002-08-22
+[Host]          Sun4 | HP-9000
+[OS]            Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L08
+[Severity]      Low
+
+[Outline]
+        After completion of assembly, the temporary file that was made by the
+        assembler may be left.
+
+[Detail]
+        The preprocessor processing by the assembler makes the temporary file in
+        the following directory:
+
+        [Temporary file name]
+           asm.*   (*: An arbitrary character string that was created by the
+                       assembler)
+        [Directory]
+           When the environment variable TMP is set:
+                     Directory that is set for the environment variable TMP
+           When the environment variable TMP is not set:  /tmp
+
+           A setting example of the environment variable TMP
+                         % setenv TMP /home/tmp
+
+        Normally, this temporary file is deleted, but when the following condition
+        1 or 2 is met, it is not deleted and is left.
+
+          1. When the #macro instruction and the #repeat instruction are not
+             written
+          2. When a macro definition is provided using the #macro instruction,
+             but the macro call instruction for the macro is not present; and
+             the #repeat instruction is not written
+
+        [When the temporary file is left  -  Example 1]
+          /* the #macro instruction and the #repeat instruction are not written */
+
+        [When the temporary file is left  -  Example 2]
+           #macro  mac     addr_1,addr_2
+                MOVW     A, #addr_1
+                MOVW     A, #addr_2
+           #endm
+                /* the macro call instruction for the macro mac is not present */
+                /* and the #repeat instruction is not written */
+
+[Workaround]
+        Delete the temporary file.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L08

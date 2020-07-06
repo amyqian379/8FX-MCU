@@ -1,0 +1,107 @@
+REGEDIT4
+
+;*********************************************************************
+; FFMC-8L Softune Workbench Sample registory file    Ver 1.04
+; Copyright (c) 1998-2014 Spansion
+;*********************************************************************
+;*********************************************************************
+;Setup Manager Mode
+;
+; DisplayOption      : Output tool option at compile/assemble[0 or 1]
+; AutoPrjOpen        : Open the last project at starting[0 or 1]
+; AutoSavePrj        : Inquiry for save at close project[0 or 1]
+; AutoSaveCompile    : Inquiry for save at compile/assemble[0 or 1]
+; ErrorLevel         : Errorlevel at suspend Make/Build 
+;*********************************************************************
+; - sample -
+;[HKEY_CURRENT_USER\Software\Fujitsu\Softune\Softune896\Manager\Mode]
+;"DisplayOption"=dword:00000000
+;"AutoPrjOpen"=dword:00000000
+;"AutoSavePrj"=dword:00000000
+;"AutoSaveCompile"=dword:00000000
+;"ErrorLevel"=dword:00000003
+
+;*********************************************************************
+;Executeing Before/After Tool
+;
+; Count		: Total tool count
+; Title 	: Title
+; ExeName	: Execute Filename
+; Option	: Option
+; AddOptDialog	: Designate additional option when executing[0:OFF/1:ON] 
+; AddOption	: Add Parameter
+; Directory	: Executing Directory
+; UseOutput	: Use output window[0:Not use/1:Use]
+; Disable	: [0:Execute/1:Not Execute]
+; FileDataCount	: Tempfile line no
+; FileData-[0-n]: Tempfile write line data
+;*********************************************************************
+; - sample (After executing Linker) -
+;[HKEY_CURRENT_USER\Software\Fujitsu\Softune\Softune896\Manager\Customize Build]
+;
+;[HKEY_CURRENT_USER\Software\Fujitsu\Softune\Softune896\Manager\Customize Build\Lnk After]
+;"Count"=dword:00000001
+;
+;[HKEY_CURRENT_USER\Software\Fujitsu\Softune\Softune896\Manager\Customize Build\Lnk After\Tool-0]
+;"Title"=""
+;"ExeName"="command.com"
+;"Option"="/c dir %a"
+;"AddOption"=""
+;"Directory"="%(ABSPATH)"
+;"UseOutput"=dword:00000001
+;"AddOptDialog"=dword:00000000
+;"Disable"=dword:00000000
+;"FileDataCount"=dword:00000000
+
+;*********************************************************************
+;Tool Customize
+;
+; Count 	: Total tool count
+; Title 	: Title
+; ExeName	: Execute Filename
+; Option	: Option
+; AddOptDialog	: Designate additional option when executing[0:OFF/1:ON] 
+; AddOption	: Add Parameter
+; Directory	: Executing Directory
+; UseOutput	: Use output window[0:Not use/1:Use]
+; Disable	: [0:Execute/1:Not Execute]
+; FileDataCount	: Always set 0
+;*********************************************************************
+; - sample (DIR command) -
+;[HKEY_CURRENT_USER\Software\Fujitsu\Softune\Softune896\Manager\Tool]
+;"Count"=dword:00000001
+
+;[HKEY_CURRENT_USER\Software\Fujitsu\Softune\Softune896\Manager\Tool\Tool-0]
+;"Title"="Dir"
+;"ExeName"="command.com"
+;"Option"="/c dir"
+;"AddOption"=""
+;"Directory"="%x"
+;"UseOutput"=dword:00000001
+;"AddOptDialog"=dword:00000000
+;"Disable"=dword:00000000
+;"FileDataCount"=dword:00000000
+
+;*********************************************************************
+;Addin DLL Module
+;*********************************************************************
+[HKEY_CURRENT_USER\Software\Fujitsu\Softune\Softune896\AddinDLL]
+
+[HKEY_CURRENT_USER\Software\Fujitsu\Softune\Softune896\AddinDLL\Common]
+"PathName"="SiCmn.dll"
+"EnuResFile"="SiCmnEnu.dll"
+
+[HKEY_CURRENT_USER\Software\Fujitsu\Softune\Softune896\AddinDLL\Manager]
+"PathName"="SiM896.dll"
+"EnuResFile"="SiM896e.dll"
+
+[HKEY_CURRENT_USER\Software\Fujitsu\Softune\Softune896\AddinDLL\OsManager]
+"PathName"="SiOsM896.dll"
+
+[HKEY_CURRENT_USER\Software\Fujitsu\Softune\Softune896\AddinDLL\RConfig]
+"PathName"="SiRcf.dll"
+"EnuResFile"="SiRcfEnu.dll"
+
+[HKEY_CURRENT_USER\Software\Fujitsu\Softune\Softune896\AddinDLL\Debugger]
+"PathName"="SiD896.dll"
+"EnuResFile"="SiD896e.dll"

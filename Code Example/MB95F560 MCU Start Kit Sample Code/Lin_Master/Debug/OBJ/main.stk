@@ -1,0 +1,21 @@
+!d:\2011\work\mb95f560 mcu start kit sample code\lin_master\debug\scr\main.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...
+#
+        10	E	_main
+	->	E	_Start_LIN_Message
+	->	E	_wait
+	->	E	_InitIrqLevels
+	->	E	_LIN_Uart_Mode3_Init
+#
+         2	E	_LIN_Uart_Mode3_Init
+#
+         2	E	_Start_LIN_Message
+#
+        16	E	_wait	A
+	->	E	LCOMPL
+	->	E	LSUBL
+#
+        20	I	_LIN_UART_Recive

@@ -1,0 +1,70 @@
+USB programmer version log
+Copyright (C) 2017 Spansion Inc.
+
+
+this release contains the following components:
+------------
+/1> USB programmer V03L04
+/2> MB2146-07 drivers in windows 64bit/32bit OS
+/3> version log (this file)
+
+
+Notes:
+------------
+Update new dirver and use one version for 32bit/64bit OS
+
+Release Dates
+-------------
+	USB Programmer V03L04 -- Feb 20, 2017
+	USB Programmer V03L03 -- Nov 9, 2016
+	USB Programmer V03L02 -- July 18, 2014
+	USB Programmer V03L01 -- March 6, 2014
+	USB Programmer V02L08 -- Sep 4, 2013
+        USB programmer V02L07 -- Oct 8, 2012
+        USB programmer V02L06 -- May 30, 2012
+        USB programmer V02L05 -- April 27, 2012
+	USB programmer V02L04 -- March 13, 2012
+	USB programmer V02L03 -- January 1, 2012
+
+
+Revision History
+----------------
+   V03L04
+	Update the latest USB driver V12.00
+----------------
+   V03L03
+	Update Cypress Logo and version information
+----------------
+   V03L02
+	Update new dirver and use one version for 32bit/64bit OS
+
+----------------
+   V03L01-64bit
+	Update Spansion Logo
+
+----------------
+   V02L08-64bit
+	Update device driver
+
+----------------
+   V02L07-64bit
+	Add MB95F012K and MB95F013K flash memory information
+
+----------------
+   V02L06-64bit:
+	Add 410/710  serial chips
+
+----------------
+   V02L05-64bit:
+	Add 710/770 serial chips
+
+----------------
+   V02L04-64bit:
+	support 65x serial chips
+        display the check sum value when open USB programmer
+	add 8x6 serial chips flash size and location
+
+----------------
+   V02L03-64bit:
+	support programming of all of new 8FX MCU
+	support serial numer and check sum program

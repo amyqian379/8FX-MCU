@@ -1,0 +1,59 @@
+[Bug-ID]        fasm896sV3-20050823-02
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L08
+[Date]          2005-08-23
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows XP/Me/2000/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L09
+[Severity]      Low
+
+[Outline]
+        The warning (W1558A:Starting address not in code section) occurs
+        although a section of the starting address specified by the .END pseudo
+        instruction indicates the CODE attribute section.
+
+[Detail]
+        If the following description is made as the .END pseudo instruction,
+        the starting address of program can be specified. 
+
+        	.END	[Start address]
+
+        If the starting address has not specified the CODE attribute section,
+        the warning (W1558A:Starting address not in code section) occurs. 
+        Even if the warning occurs, the starting address specified by .END is
+        set as it is. 
+
+        When all of the conditions below are met, the warning (W1558A) occurs
+        although the starting address indicates the CODE attribute section. 
+
+          - Absolute section of the CODE attribute and absolute section other
+            than the CODE attribute exist. 
+          - The end address of the absolute section other than the CODE
+            attribute and the beginning address of the absolute section of the
+            CODE attribute are the same address. 
+          - In the Assembler source program, an absolute section other than
+            the CODE attribute is described before the CODE attribute absolute
+            section. 
+          - The starting address indicates the beginning of the absolute
+            section of the CODE attribute. 
+
+        The following is an example of the source description where the
+        problem occurs. 
+
+            .SECTION  CONST, CONST, LOCATE=0xFF0
+            .DATA.W   0,0,0,0,0,0,0,0
+            .SECTION  CODE, CODE, LOCATE=0x1000
+        _START:
+            NOP
+            NOP
+            .END      _START  <== The starting address indicates a beginning
+                                  of the CODE section.
+
+[Workaround]
+        Change the absolute section of the CODE attribute to a relative
+        section. 
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L09

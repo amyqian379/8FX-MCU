@@ -1,0 +1,52 @@
+!d:\work\06_project\04_i2c boot loader\01_source code\i2c bus boot loader\debug\src\main.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...
+#
+         2	E	_Boot_main
+	->	E	_Data_Process
+	->	E	_Communication
+	->	E	_User_Mode
+	->	E	_I2C_Init
+	->	E	_Clock_Init
+	->	E	_Clear_Para
+#
+         2	E	_Clear_Para
+#
+         2	E	_Clock_Init
+#
+         2	E	_I2C_Init
+#
+         2	E	_Communication
+	->	E	_Command_Receive
+	->	E	_ACK_To_PC
+#
+        14	E	_User_Mode	A
+	->	E	LSHLW
+	->	E	_Flash_Read
+#
+         2	E	_Command_Receive
+	->	E	_slave_receive
+#
+         2	E	_slave_receive
+	->	E	LSHLW
+#
+        32	E	_Data_Process
+	->	E	LSHLW
+	->	E	LCOMPL
+	->	E	LADDL
+	->	E	_Flash_Write
+	->	E	_Flash_Erase
+	->	E	_Flash_Read
+#
+         2	E	_ACK_To_PC
+	->	E	_slave_transmit
+#
+         2	E	_slave_transmit
+#
+         6	E	_Flash_Erase	A
+#
+         4	E	_Flash_Write	A
+#
+         6	E	_Flash_Read

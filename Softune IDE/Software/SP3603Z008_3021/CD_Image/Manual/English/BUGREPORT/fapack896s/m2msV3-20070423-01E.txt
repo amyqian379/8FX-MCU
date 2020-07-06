@@ -1,0 +1,31 @@
+[Bug-ID]        m2msV3-20070423-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (S-format adjuster)
+[Versions]      V30L01-V30L06
+[Date]          2007-04-23
+[Host]          PC-AT | Sun4
+[OS]            Windows XP/2000 | Solaris 2.6
+[Revision]      V30L07
+[Severity]      High
+
+[Outline]
+        The S-format adjuster may be terminated abnormally or the data of S0
+        type record may be illegal.
+
+[Detail]
+        Either of the following problems occur when the data of 0x80 or more
+        exists in the S0 type record of the input S-format file.
+
+        - The S-format adjuster is terminated abnormally.
+        - The S0 record data of output S-format file becomes illegal.
+
+[Workaround]
+        Please use correction version.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L07
+
+[Report History]
+        [2008-06-19] Genesis phenomenon(The S0 record data becomes illegal.) is
+                     added.

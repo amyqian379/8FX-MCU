@@ -1,0 +1,44 @@
+[Bug-ID]        fasm896sV3-20020313-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L06
+[Date]          2002-03-13
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows 2000/95/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L07
+[Severity]      High
+
+[Outline]
+        When assembling a source file beginning with a numeric character,
+        a fatal error occurs depending on the way of specifying the option
+        to set the output level of warning message.
+
+[Detail]
+        When assembling a source file (example:  0123.asm) beginning with
+        a numeric character, a fatal error occurs depending on the way of
+        specifying the option (-w [0 to 3]) to set the output level of
+        warning message.
+
+        (1) A fatal error occurs when:
+            the w option's warning level is omitted; that is, '-w' is
+            immediately followed by a source file beginning with a numeric
+            character.
+
+                C:\>fasm896s -cpu mb89603 -w 0123.asm
+                *** F9954A: Invalid value (-w 0123.asm)
+                *** F9951A: Source filename not specified
+                C:\>
+
+        (2) No fatal error occurs when:
+            the w option's warning level is not omitted; that is, '-w' is
+            immediately followed by a warning level.
+
+                C:\>fasm896s -cpu mb89603 -w 2 0123.asm
+                C:\>
+
+[Workaround]
+        Specify the warning level.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L07

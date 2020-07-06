@@ -1,0 +1,25 @@
+[Bug-ID]        flnk896sV3-20000601-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (linker)
+[Versions]      V30L01-V30L06
+[Date]          2000-06-01
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows 95/98/NT4.0 | Solaris 2.5 | HP-UX 10.0
+[Revision]      V30L07
+[Severity]      Middle
+
+[Outline]
+        Symbol type information given in the local symbol information list may
+        be displayed accidentally.
+
+[Detail]
+        If symbol type information given in the local symbol information list
+        is struct, union, or enum type information, it may be displayed
+        accidentally.
+
+[Workaround]
+        Use the modified version of the linker.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L07

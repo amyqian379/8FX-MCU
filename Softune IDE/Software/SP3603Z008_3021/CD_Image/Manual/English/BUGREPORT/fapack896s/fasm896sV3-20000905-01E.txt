@@ -1,0 +1,37 @@
+[Bug-ID]        fasm896sV3-20000905-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L05
+[Date]          2000-09-05
+[Host]          PC-AT
+[OS]            Windows 2000/95/98/NT4.0
+[Revision]      V30L06
+[Severity]      Middle
+
+[Outline]
+        An error message is generated when assembling with a option file which
+        size is over 4095 bytes.
+
+[Detail]
+        In Windows version Assembler, assemble error is occurred when
+        assembling with a option file which size is over 4095 bytes.
+
+        [Conditions]
+            (1) The Assembler of the Windows version is used. AND,
+            (2) When assembling, the option file is used. AND,
+            (3) Size of the option file of (2) is over 4095 bytes.
+
+        [Error Messages]
+        > dir a.opt
+        A        OPT         4,095  00-09-05  00:00 a.opt
+
+        > fasm896s -f a.opt a.asm
+        .asm)9960A: Too many file (
+
+[Workaround]
+        Please divide the option file so that the size of the option file may
+        become 4094 bytes or less.
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L06

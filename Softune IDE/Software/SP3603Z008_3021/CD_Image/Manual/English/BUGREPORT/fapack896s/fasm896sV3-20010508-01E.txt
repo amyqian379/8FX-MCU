@@ -1,0 +1,33 @@
+[Bug-ID]        fasm896sV3-20010508-01
+[Status]        Completely fixed
+[Tool Name]     SOFTUNE Assembler Pack (assembler)
+[Versions]      V30L01-V30L06
+[Date]          2001-05-08
+[Host]          PC-AT | Sun4 | HP-9000
+[OS]            Windows 2000/95/98/NT4.0 | Solaris 2.6 | HP-UX 10.0
+[Revision]      V30L07
+[Severity]      Middle
+
+[Outline]
+        Does not operate normally when only the path name is described at the
+        -o and -lf options.
+
+[Detail]
+        When starting the assembler specifying only the path name where a file
+        name, such as
+            D:\aaa> fasm896s D:\aaa\test.asm -cpu MB89603 -o d:\
+        should be specified from the command line, will cause it to make files
+        with illegal file names such as
+            d:\D:\aaa\test.obj
+        and subsequently to fail.
+
+[Workaround]
+        Specify without omitting the file name.
+
+        [Example]
+             D:\aaa> fasm896s D:\aaa\test.asm -cpu MB89603 -o d:\test.obj
+             D:\aaa> fasm896s D:\aaa\test.asm -cpu MB89603 -o d:\test
+
+[Note]
+        [Sample Release]  Non
+        [Product Release] V30L07
