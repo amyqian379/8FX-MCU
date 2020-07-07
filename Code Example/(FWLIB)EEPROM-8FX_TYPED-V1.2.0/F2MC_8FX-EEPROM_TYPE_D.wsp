@@ -1,0 +1,22 @@
+[CPUTYPE]
+CpuSerise=896
+
+[PrjFile]
+Count=1
+FILE-0=F2MC_8FX-EEPROM_TYPE_D.prj
+ActivePrj=F2MC_8FX-EEPROM_TYPE_D.prj
+
+[SubPrj-F2MC_8FX-EEPROM_TYPE_D.prj]
+Count=0
+
+[DebState]
+AutoSave=1
+Exec=0
+AutoLoad=1
+
+[DirInfo]
+WSP=D:\Fujitsu_Work\00_8FX LPC\00_Project\00_Completed\01_F2MC_8FX_EEPROM\New Spec Project\Release\20120306\TYPE_D\(FWLIB)F2MC-8FX-EEPROM_TYPE_D_MB95630_V1.0.0\F2MC_8FX-EEPROM_TYPE_D\
+
+[EditState]
+Count=0
+

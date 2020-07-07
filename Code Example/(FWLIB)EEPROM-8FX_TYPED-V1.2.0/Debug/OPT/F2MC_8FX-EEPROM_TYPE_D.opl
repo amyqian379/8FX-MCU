@@ -1,0 +1,29 @@
+-g
+-AL 2
+-ra _INRAM01=0x0090/0x048F
+-ro _INROM02=0x8000/0xFFFF
+-sc @INIT/Const+@DIRINIT/Dirconst=_INROM02
+-sc IO/IO=0x0000
+-check_rora
+-check_locate
+-m "E:\Fujitsu_Work\00_8FX LPC\00_Project\00_Completed\01_F2MC_8FX_EEPROM\New Spec Project\Release\Release version\C_IF\TYPE_D\(FWLIB)EEPROM-8FX_TYPED-V1.2.0\Debug\LST\F2MC_8FX-EEPROM_TYPE_D.mp1"
+-pl 60
+-pw 132
+-alin "E:\Fujitsu_Work\00_8FX LPC\00_Project\00_Completed\01_F2MC_8FX_EEPROM\New Spec Project\Release\Release version\C_IF\TYPE_D\(FWLIB)EEPROM-8FX_TYPED-V1.2.0\Debug\LST"
+-alout "E:\Fujitsu_Work\00_8FX LPC\00_Project\00_Completed\01_F2MC_8FX_EEPROM\New Spec Project\Release\Release version\C_IF\TYPE_D\(FWLIB)EEPROM-8FX_TYPED-V1.2.0\Debug\LST"
+-Xals
+-Xalr
+-na
+-w 1
+-Xset_rora
+-cwno
+-a
+-cpu MB95F636K
+-o "E:\Fujitsu_Work\00_8FX LPC\00_Project\00_Completed\01_F2MC_8FX_EEPROM\New Spec Project\Release\Release version\C_IF\TYPE_D\(FWLIB)EEPROM-8FX_TYPED-V1.2.0\Debug\ABS\F2MC_8FX-EEPROM_TYPE_D.abs"
+-l "E:\Fujitsu_Work\00_8FX LPC\00_Project\00_Completed\01_F2MC_8FX_EEPROM\New Spec Project\Release\Release version\C_IF\TYPE_D\(FWLIB)EEPROM-8FX_TYPED-V1.2.0\Lib\F2MC_8FX-EEPROM_TYPE_D-V1.2.0.lib"
+
+"E:\Fujitsu_Work\00_8FX LPC\00_Project\00_Completed\01_F2MC_8FX_EEPROM\New Spec Project\Release\Release version\C_IF\TYPE_D\(FWLIB)EEPROM-8FX_TYPED-V1.2.0\Debug\OBJ\_f2mc8fx.obj"
+"E:\Fujitsu_Work\00_8FX LPC\00_Project\00_Completed\01_F2MC_8FX_EEPROM\New Spec Project\Release\Release version\C_IF\TYPE_D\(FWLIB)EEPROM-8FX_TYPED-V1.2.0\Debug\OBJ\main.obj"
+"E:\Fujitsu_Work\00_8FX LPC\00_Project\00_Completed\01_F2MC_8FX_EEPROM\New Spec Project\Release\Release version\C_IF\TYPE_D\(FWLIB)EEPROM-8FX_TYPED-V1.2.0\Debug\OBJ\startup.obj"
+"E:\Fujitsu_Work\00_8FX LPC\00_Project\00_Completed\01_F2MC_8FX_EEPROM\New Spec Project\Release\Release version\C_IF\TYPE_D\(FWLIB)EEPROM-8FX_TYPED-V1.2.0\Debug\OBJ\vectors.obj"
+

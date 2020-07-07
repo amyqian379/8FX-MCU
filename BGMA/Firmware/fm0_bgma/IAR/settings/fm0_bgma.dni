@@ -1,0 +1,117 @@
+[PlDriver]
+MemConfigValue=C:\Abel\SVN\24_18um_Tools\00_Development\03_Development\01_FW\New_BGMA\trunk\fm0_bgma\IAR\..\cmsis\svd\S6E1C3XD.svd
+FirstRun=0
+[Jet]
+JetConnSerialNo=301189965
+JetConnFoundProbes=
+DisableInterrupts=0
+LeaveRunning=0
+MultiCoreRunAll=0
+OnlineReset=Software
+PrevWtdReset=System
+[DebugChecksum]
+Checksum=710102581
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[ArmDriver]
+EnableCache=1
+[CodeCoverage]
+Enabled=_ 0
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[SWOManager]
+SamplingDivider=8192
+OverrideClock=0
+CpuClock=1111835694
+SwoClock=1162299221
+DataLogMode=0
+ItmPortsEnabled=63
+ItmTermIOPorts=1
+ItmLogPorts=0
+ItmLogFile=$PROJ_DIR$\ITM.log
+PowerForcePC=1
+PowerConnectPC=1
+[PlCacheRanges]
+CustomRanges0=0 0 131056 1 0
+CustomRangesText0=Code
+CustomRanges1=0 536870912 12288 0 0
+CustomRangesText1=SRAM
+CustomRanges2=0 536883200 4096 0 0
+CustomRangesText2=SRAM
+CustomRanges3=0 570425344 33554432 0 0
+CustomRangesText3=bit-banding
+CustomRanges4=0 1073741824 33554432 2 0
+CustomRangesText4=Peripheral
+CustomRanges5=0 1107296256 33554432 2 0
+CustomRangesText5=bit-banding
+CustomRanges6=0 3758096384 536870912 2 0
+CustomRangesText6=Private peripheral
+[ETMTraceWindow]
+PortWidth=4
+PortMode=0
+CaptureDataValues=0
+CaptureDataAddresses=0
+CaptureDataRange=0
+DataFirst=0
+DataLast=-1
+StopWhen=0
+StallCPU=0
+NoPCCapture=0
+[Trace2]
+Enabled=0
+ShowSource=0
+[SWOTraceWindow]
+ForcedPcSampling=0
+ForcedInterruptLogs=0
+ForcedItmLogs=0
+EventCPI=0
+EventEXC=0
+EventFOLD=0
+EventLSU=0
+EventSLEEP=0
+[JLinkDriver]
+CStepIntDis=_ 0
+LeaveTargetRunning=_ 0
+TraceBufferSize=0x00010000
+TraceStallIfFIFOFull=0x00000000
+TracePortSize=0x00000000
+[Trace1]
+Enabled=0
+ShowSource=1
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Count=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Aliases]
+Count=0
+SuppressDialog=0
+[DriverProfiling]
+Enabled=0
+Mode=2
+Graph=0
+Symbiont=0
+Exclusions=
+[CallStackLog]
+Enabled=0
+[CallStackStripe]
+ShowTiming=1

@@ -1,0 +1,6 @@
+Contains configuration files.
+iomux.c              Used by Pin & Code Wizard
+iomux.h              Used by Pin & Code Wizard
+pdl_user.h           (Optional) used by PDL
+usbconfig.h          (Optional) used by USB
+usbconfig.c          (Optional) used by USB

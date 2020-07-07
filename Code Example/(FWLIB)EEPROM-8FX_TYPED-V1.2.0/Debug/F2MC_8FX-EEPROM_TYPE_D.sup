@@ -1,0 +1,153 @@
+[Information]
+DebChangeFlag=0
+MCUChangeFlag=0
+[Version]
+Version=1
+Level=1
+Revision=0
+[Debug Type]
+Type=0
+Virtual CPU File=wv896e6.dll
+Core ID=0
+Monitor Load=1
+Monitor Load Condition=Disable
+Mode=FFFF
+[Device]
+Communication=USB
+ProductID=2024
+Protocol=1
+[Target]
+AutoLoad=Enable
+Before Batch File=
+After Batch File=
+Main Freq=4
+Main Freq Unit=F4240
+ClockUP Mode=Disable
+PowerSupply=Enable
+StartFlashSync=Enable
+Non AutoMap=Enable
+Load DebInfo Only=Disable
+Ondemand Load Condition=Disable
+Synchronize after load=Disable
+Fast Load=Enable
+[Start]
+Batch File=
+[Emulation Environment]
+Cable Length=2
+Software Break=FFFFFFFF
+Flag=Enable
+Verify=0
+Sampling=FFFFFFFF
+TimerScale=0
+WatchDoc=0
+ParallelPort=-1 0
+DefaultBreak=1
+[Window]
+Flag=Enable
+CommandSize=130 -2 891 318
+CommandState=0
+Assembly Address=H'8018
+Memory Address=H'1000
+Memory Mode=H'00000001
+Memory Ascii=H'00000001
+Memory Line Byte=H'00000000
+Memory SplitRow=117
+RMemory Address=H'0000
+RMemory Mode=H'FFFFFFFF
+RMemory Ascii=H'00000001
+RMemory SplitRow=0
+Trace ViewMode=FFFFFFFF
+Command Max History=H'00000032
+Source Display Mode=Enable
+Source Multi Mode=Enable
+Source Ask Mode=Enable
+Source Active Mode=Enable
+Abs Sort Mode=H'00000001
+Source PC Color=255 255 0
+Source Scope Color=255 0 255
+Source Back Trace=255 0 255
+Register Change Color=255 0 0
+Memory Change Color=255 0 0
+Memory Mark Color0=192 192 192
+Memory Mark Color1=192 0 0
+Memory Mark Color2=255 255 0
+Memory Mark Color3=0 255 0
+Memory Mark Color4=0 255 255
+Memory Mark Color5=0 128 192
+Memory Mark Color6=255 128 64
+Source Executed Color=0 128 0
+Source UnExecuted Color=128 0 0
+RAM Monitoring Radix=16
+RMemory Change Color=255 0 0
+RMemory Invalid Color=128 128 128
+AssemblySize=0 0 420 240
+AssemblyState=0
+AssemblyFGColor=0 0 255
+MemorySize=581 56 1121 474
+MemoryState=0
+Memory Address2=H'1800
+Memory Mode2=H'00000001
+Memory Ascii2=H'00000001
+Memory Line Byte2=H'00000000
+WatchSize=657 29 1077 246
+WatchState=0
+Watch2Size=0 0 420 112
+Watch2State=0
+Watch3Size=0 0 420 112
+Watch3State=0
+Watch4Size=0 0 420 112
+Watch4State=0
+[Path Environment]
+Flag=Enable
+Source=
+[Map]
+Flag=Enable
+Inrom Access=Off
+[Radix Environment]
+Flag=Enable
+Mode=10
+Source=1
+[Watch Environment]
+Flag=Enable
+Size=0
+Mode=0
+MBuf=0
+Check=1
+CSiz=100
+[Exec Environment]
+Flag=Enable
+GoIntMask=0
+StepUnit=3
+StepIntMask=0
+StepIntpCtrl=4
+[Break Environment]
+Flag=Enable
+Code1=0000814E 1 1 1 main.c$98
+CodeBreakFlag1=Enable
+Code2=0000816C 1 1 1 main.c$105
+CodeBreakFlag2=Enable
+[Monitor Environment]
+Flag=Enable
+MemoryWindow=0
+WatchWindow=0
+ObjectWindow=0
+ElapseTime=3E8
+Unit=1
+[Error]
+Flag=Enable
+GuiErrorOutput=2
+CommandErrorOutput=1
+BatchErrorOutput=1
+ErrorOutputLevel=0
+[Color]
+Flag=Enable
+[Tab Environment]
+TabSize=8
+[Communication]
+Send=512
+Receive=512
+[Ram Monitor]
+Mode=Disable
+MonitoringInterval=1000
+SamplingInterval=1
+Debug File=E:\Fujitsu_Work\00_8FX LPC\00_Project\00_Completed\01_F2MC_8FX_EEPROM\New Spec Project\Release\Release version\C_IF\TYPE_D\(FWLIB)EEPROM-8FX_TYPED-V1.2.0\Debug\ABS\F2MC_8FX-EEPROM_TYPE_D.abs

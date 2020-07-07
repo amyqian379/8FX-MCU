@@ -1,0 +1,106 @@
+[Version]
+DLLVer=02.3007.05.0
+PRJVer=1
+
+[PRJKIND]
+mode=1
+
+[CPUTYPE]
+CpuSerise=896
+
+[DirInfo]
+PRJ=E:\Fujitsu_Work\00_8FX LPC\00_Project\00_Completed\01_F2MC_8FX_EEPROM\New Spec Project\Release\Release version\C_IF\TYPE_D\(FWLIB)EEPROM-8FX_TYPED-V1.2.0\
+
+[PrjInfo]
+Count=1
+PrjInfo-0=Debug
+Active=Debug
+
+[MEMBER]
+F0=7
+F1=0 f Source Files
+F2=0 c Src\_f2mc8fx.c
+F3=0 c Src\main.c
+F4=0 a Src\startup.asm
+F5=0 c Src\vectors.c
+F6=0 f Include Files
+F7=0 l Lib\F2MC_8FX-EEPROM_TYPE_D-V1.2.0.lib
+
+[OPTIONFILE]
+FILE=F2MC_8FX-EEPROM_TYPE_D.dat
+
+[CPUTYPE-Debug]
+CsvFile=Lib\896\896.csv
+CpuName=MB95F636K
+Count=0
+
+[DirInfo-Debug]
+CONFIG=Debug\
+OBJ=Debug\OBJ\
+LST=Debug\LST\
+OPT=Debug\OPT\
+
+[MEMBER-Debug]
+F0=6
+F1=0 m 1 Debug\ABS\F2MC_8FX-EEPROM_TYPE_D.abs
+F2=2 c 1 Src\_f2mc8fx.c
+F2-1=- src\_f2mc8fx.h
+F2-2=- src\mb95630.h
+F3=2 c 1 Src\main.c
+F3-1=- src\mb95630.h
+F3-2=- src\F2MC_8FX_EEPROM.h
+F4=0 a 1 Src\startup.asm
+F5=1 c 1 Src\vectors.c
+F5-1=- src\mb95630.h
+F6=0 l 1 Lib\F2MC_8FX-EEPROM_TYPE_D-V1.2.0.lib
+
+[BUILDMODE-Debug]
+kernel=1
+
+[RUNSET-Debug]
+CONVERT=0
+CONVERTKIND=0
+
+[DebState-Debug]
+SupCount=1
+Supfile-0=Debug\F2MC_8FX-EEPROM_TYPE_D.sup
+Current=F2MC_8FX-EEPROM_TYPE_D.sup
+AliasFile=
+CPURunMode=
+
+[AsmBefore]
+Count=0
+
+[AsmAfter]
+Count=0
+
+[CcBefore]
+Count=0
+
+[CcAfter]
+Count=0
+
+[LnkBefore]
+Count=0
+
+[LnkAfter]
+Count=0
+
+[LibBefore]
+Count=0
+
+[LibAfter]
+Count=0
+
+[CnvBefore]
+Count=0
+
+[CnvAfter]
+Count=0
+
+[ConfigBefore]
+Count=0
+
+[ConfigAfter]
+Count=0
+

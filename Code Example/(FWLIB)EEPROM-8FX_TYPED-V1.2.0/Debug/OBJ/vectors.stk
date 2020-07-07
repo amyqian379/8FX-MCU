@@ -1,0 +1,9 @@
+@e:\fujitsu_work\00_8fx lpc\00_project\00_completed\01_f2mc_8fx_eeprom\new spec project\release\release version\c_if\type_d\(fwlib)eeprom-8fx_typed-v1.2.0\src\vectors.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...
+#
+         2	E	_InitIrqLevels
+#
+        14	I	_DefaultIRQHandler

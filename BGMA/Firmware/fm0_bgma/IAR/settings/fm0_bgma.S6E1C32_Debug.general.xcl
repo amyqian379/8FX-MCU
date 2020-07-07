@@ -1,0 +1,13 @@
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.4\arm\bin\armproc.dll" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.4\arm\bin\armjlink2.dll" 
+
+"C:\Abel\SVN\24_18um_Tools\00_Development\03_Development\01_FW\New_BGMA\trunk\fm0_bgma\README.md" 
+
+--plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.4\arm\bin\armbat.dll" 
+
+--flash_loader "C:\Abel\SVN\24_18um_Tools\00_Development\03_Development\01_FW\New_BGMA\trunk\fm0_bgma\IAR\config\flashloader\FlashLoader.board" 
+
+
+
+

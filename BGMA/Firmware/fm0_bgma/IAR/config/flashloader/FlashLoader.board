@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_board>
+  <pass>
+    <loader>$PROJ_DIR$\config\flashloader\FlashS6E1C3.flash</loader>
+    <range>CODE 0x00000000 0x001FFF0</range>
+  </pass>
+</flash_board>
+
+

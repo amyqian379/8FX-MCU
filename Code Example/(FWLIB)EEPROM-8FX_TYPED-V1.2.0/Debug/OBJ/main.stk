@@ -1,0 +1,19 @@
+@e:\fujitsu_work\00_8fx lpc\00_project\00_completed\01_f2mc_8fx_eeprom\new spec project\release\release version\c_if\type_d\(fwlib)eeprom-8fx_typed-v1.2.0\src\main.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...
+#
+         2	E	_MCU_initialization
+	->	E	_InitIrqLevels
+#
+         6	E	_vDelay
+#
+        18	E	_main
+	->	E	_vDelay
+	->	E	_EEPROM_B_Read
+	->	E	_EEPROM_B_Write
+	->	E	_EEPROM_Restore
+	->	E	_EEPROM_Define
+	->	E	_EEPROM_Check
+	->	E	_MCU_initialization
