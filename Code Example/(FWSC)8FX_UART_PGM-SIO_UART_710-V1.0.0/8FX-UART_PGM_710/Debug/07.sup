@@ -1,0 +1,284 @@
+[Information]
+DebChangeFlag=0
+MCUChangeFlag=0
+[Version]
+Version=1
+Level=1
+Revision=0
+[Debug Type]
+Type=0
+Virtual CPU File=wv896e6.dll
+Core ID=0
+Monitor Load=1
+Monitor Load Condition=Disable
+Mode=FFFF
+[Device]
+Communication=USB
+ProductID=2024
+Protocol=1
+[Target]
+AutoLoad=Enable
+Before Batch File=
+After Batch File=
+Main Freq=10
+Main Freq Unit=F4240
+ClockUP Mode=Enable
+PowerSupply=Disable
+StartFlashSync=Enable
+Non AutoMap=Enable
+Load DebInfo Only=Disable
+Ondemand Load Condition=Disable
+Synchronize after load=Disable
+Fast Load=Enable
+[Start]
+Batch File=
+[Emulation Environment]
+Cable Length=2
+Software Break=FFFFFFFF
+Flag=Enable
+Verify=0
+Sampling=FFFFFFFF
+TimerScale=0
+WatchDoc=0
+ParallelPort=-1 0
+DefaultBreak=1
+[Window]
+Flag=Enable
+Layer0=1003,
+Assembly Address=H'16AF
+Memory Address=H'0090
+Memory Mode=H'00000001
+Memory Ascii=H'00000001
+Memory Line Byte=H'00000000
+Memory SplitRow=0
+RMemory Address=H'0000
+RMemory Mode=H'FFFFFFFF
+RMemory Ascii=H'00000001
+RMemory SplitRow=0
+Trace ViewMode=FFFFFFFF
+Command Max History=H'00000032
+Source Display Mode=Enable
+Source Multi Mode=Enable
+Source Ask Mode=Enable
+Source Active Mode=Enable
+Abs Sort Mode=H'00000001
+Source PC Color=255 255 0
+Source Scope Color=255 0 255
+Source Back Trace=255 0 255
+Register Change Color=255 0 0
+Memory Change Color=255 0 0
+Memory Mark Color0=192 192 192
+Memory Mark Color1=192 0 0
+Memory Mark Color2=255 255 0
+Memory Mark Color3=0 255 0
+Memory Mark Color4=0 255 255
+Memory Mark Color5=0 128 192
+Memory Mark Color6=255 128 64
+Source Executed Color=0 128 0
+Source UnExecuted Color=128 0 0
+RAM Monitoring Radix=16
+Source0Name=Debug\SRC\start8FX.asm
+Source0Size=243 6 926 646
+Source0State=2
+Source0Line=38
+Source0Mode=2
+RMemory Change Color=255 0 0
+RMemory Invalid Color=128 128 128
+Layer1=1004,
+Source1Name=Debug\SRC\flash.asm
+Source1Size=186 36 1002 576
+Source1State=0
+Source1Line=4F
+Source1Mode=2
+WatchSize=1004 56 1524 550
+WatchState=0
+Layer2=1006,
+Watch Variable0=[&ReciveData],81040000,-1,-1 -1
+MemorySize=860 168 1392 655
+MemoryState=0
+Layer3=1002,
+Layer4=2000,Debug\SRC\flash.asm
+Source2Name=debug\src\main.c
+Source2Size=29 21 896 685
+Source2State=0
+Source2Line=35
+Source2Mode=2
+AssemblySize=533 99 953 508
+AssemblyState=0
+AssemblyFGColor=0 0 255
+Layer5=2000,debug\src\main.c
+Watch Variable1=[&Specialarea],81040000,-1,-1 -1
+Watch Variable2=[&step],81040000,-1,-1 -1
+Watch Variable3=[&flag],00080000,-1,-1 -1
+Watch Variable4=[&security_result],00080000,-1,-1 -1
+Watch Variable5=[&counter],81040000,-1,-1 -1
+Watch Variable6=[&datacnt],81040000,-1,-1 -1
+RegisterSize=5 487 299 695
+RegisterState=0
+Register Select0=H'00000000
+Register Select1=H'00000002
+Register Select2=H'00000005
+Register Select3=H'00000008
+Register Select4=H'0000000A
+Register Select5=H'0000000B
+Register Select6=H'0000000D
+Register Select7=H'0000000E
+Register Select8=H'00000018
+Register Select9=H'00000019
+Register Select10=H'0000001A
+Register Select11=H'0000001B
+Register Select12=H'0000001C
+Register Select13=H'0000001D
+Register Select14=H'0000001E
+Register Select15=H'0000001F
+Register Select16=H'00000020
+Register Select17=H'00000021
+Watch Variable7=[&readdatacnt],81040000,-1,-1 -1
+Watch Variable8=[&address],81040000,-1,-1 -1
+Watch Variable9=[&data],81040000,-1,-1 -1
+Watch Variable10=[&result],81040000,-1,-1 -1
+RCheckSize=0 0 420 112
+RCheckState=0
+CommandSize=0 0 420 320
+CommandState=0
+Command History0=cmd frame=31,00,00,00,00,00,FF,B0,00,00,00,10,00
+Command History1=cmd frame=31,00,00,00,00,00,C0,00,00,00,00,10,00
+Command History2=cmd frame=31,00,00,00,00,00,C0,00,00,00,00,10,00
+Command History3=cmd frame=31,00,00,00,00,00,c0,00,00,00,00,10,00
+Command History4=cmd frame=31,00,00,00,00,00,FF,B0,00,00,00,10,00
+Watch Variable11=[result],80030000,-1,-1 -1
+Command History5=cmd frame=31,00,00,00,00,00,FF,B0,00,00,00,10,00
+Command History6=cmd frame=31,00,00,00,00,00,FF,B0,00,00,00,10,00
+Command History7=cmd frame=31,00,00,00,00,00,FF,B0,00,00,00,10,00
+Command History8=cmd frame=31,00,00,00,00,00,FF,B0,00,00,00,10,00
+Command History9=cmd frame=31,00,00,00,00,00,FF,B0,00,00,00,10,00
+Command History10=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History11=cmd frame=31,00,00,00,00,00,c0,00,00,00,00,10,00
+Command History12=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Watch Variable12=[address],81030000,-1,-1 -1
+Watch Variable13=[Specialarea],00020000,-1,-1 -1
+Watch Variable14=[data],80030000,-1,-1 -1
+Command History13=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History14=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History15=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History16=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History17=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History18=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History19=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History20=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History21=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History22=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History23=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History24=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History25=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History26=cmd frame=31,00,00,00,00,00,C0,00,00,00,00,10,00
+Command History27=cmd frame=31,00,00,00,00,00,C0,00,00,00,00,10,00
+Command History28=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History29=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History30=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History31=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History32=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History33=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History34=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History35=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History36=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History37=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Watch Variable15=[buffer],00080000,-1,-1 -1
+Watch Variable16=[buffer1],00080000,-1,-1 -1
+Watch Variable17=[buffer2],00080000,-1,-1 -1
+Command History38=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History39=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History40=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History41=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History42=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History43=cmd frame=31,00,00,00,00,00,FF,F0,00,00,00,10,00
+Command History44=cmd frame=31,00,00,00,00,00,c0,00,00,00,00,10,00
+Command History45=cmd frame=31,00,00,00,00,00,c0,00,00,00,00,10,00
+Watch Variable18=[read_buffer1],00080000,-1,-1 -1
+Watch Variable19=[read_buffer2],00080000,-1,-1 -1
+Command History46=cmd frame=31,00,00,00,00,00,c0,00,00,00,00,10,00
+Command History47=cmd frame=31,00,00,00,00,00,c0,00,00,00,00,10,00
+Command History48=cmd frame=31,00,00,00,00,00,c0,00,00,00,00,10,00
+Watch Variable20=[datacnt],81030000,-1,-1 -1
+Watch Variable21=[temp],00080000,-1,-1 -1
+Watch Variable22=[&Test_F],00080000,-1,-1 -1
+Watch2Size=448 341 868 607
+Watch2State=0
+Watch1 Variable0=[IO_DDR1],00020000,-1,-1 -1
+Watch1 Variable1=[IO_PDR1],00020000,-1,-1 -1
+Watch1 Variable2=[Flag_Timeout],80030000,-1,-1 -1
+Watch1 Variable3=[&t1],81040000,-1,-1 -1
+Watch1 Variable4=[&t2],81040000,-1,-1 -1
+Watch1 Variable5=[&t3],81040000,-1,-1 -1
+Watch1 Variable6=[&t4],81040000,-1,-1 -1
+Watch1 Variable7=[F_Timeout],00380000,-1,-1 -1
+Watch1 Variable8=[tef],00080000,-1,-1 -1
+Watch3Size=446 19 868 502
+Watch3State=2
+Watch2 Variable0=[u],00080000,-1,-1 -1
+Watch2 Variable1=[MODE_PIN],00080000,-1,-1 -1
+Watch2 Variable2=[t1],80030000,-1,-1 -1
+Watch2 Variable3=[t2],80030000,-1,-1 -1
+Watch2 Variable4=[t3],80030000,-1,-1 -1
+Watch2 Variable5=[t4],80030000,-1,-1 -1
+Watch2 Variable6=[&t2],81040000,-1,-1 -1
+Watch2 Variable7=[Flag_Timeout],80030000,-1,-1 -1
+Watch Variable23=[address],81030000,-1,-1 -1
+Watch Variable24=[IO_SSR0],00020000,-1,-1 -1
+Layer6=2000,Debug\SRC\start8FX.asm
+Watch Variable25=[IO_PDR0],00020000,-1,-1 -1
+[Path Environment]
+Flag=Enable
+Source=
+[Map]
+Flag=Enable
+Inrom Access=Off
+[Radix Environment]
+Flag=Enable
+Mode=10
+Source=1
+[Watch Environment]
+Flag=Enable
+Size=0
+Mode=0
+MBuf=0
+Check=1
+CSiz=100
+[Exec Environment]
+Flag=Enable
+GoIntMask=0
+StepUnit=3
+StepIntMask=0
+StepIntpCtrl=4
+[Break Environment]
+Flag=Enable
+Code2=0000B1FD 1 1 1 main.c$229
+CodeBreakFlag2=Enable
+[Monitor Environment]
+Flag=Enable
+MemoryWindow=0
+WatchWindow=0
+ObjectWindow=0
+ElapseTime=3E8
+Unit=1
+[Error]
+Flag=Enable
+GuiErrorOutput=2
+CommandErrorOutput=1
+BatchErrorOutput=1
+ErrorOutputLevel=0
+[Color]
+Flag=Enable
+[Tab Environment]
+TabSize=8
+[Communication]
+Send=512
+Receive=512
+[Ram Monitor]
+Mode=Disable
+MonitoringInterval=1000
+SamplingInterval=1
+Debug File=D:\Work\06_Project\02_8FX UART Boot Loader\SIO-UART\0.18product\8FX-UART_PGM_710\Debug\ABS\8FX-UART_PGM.abs
+[Book Mark]
+BookMarkMem0=H'0108,,2,H'0108,H'0108
+BookMarkMem1=H'01A7,,2,H'01A7,H'01A7

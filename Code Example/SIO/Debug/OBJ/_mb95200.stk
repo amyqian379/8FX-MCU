@@ -1,0 +1,5 @@
+@d:\softune workspace\sio\debug\src\_mb95200.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...

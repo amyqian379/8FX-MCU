@@ -1,0 +1,5 @@
+@d:\work\06_project\02_8fx uart boot loader\sio-uart\0.18product\8fx-uart_pgm_710\debug\src\_f2mc8fx.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...

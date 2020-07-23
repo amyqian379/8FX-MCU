@@ -1,0 +1,46 @@
+!d:\work\06_project\02_8fx uart boot loader\sio-uart\0.18product\8fx-uart_pgm_710\debug\src\main.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...
+#
+         2	E	_Boot_main
+	->	E	_ACK_To_PC
+	->	E	_Data_Process
+	->	E	_Command_Receive
+	->	E	_User_Mode
+	->	E	_SIO_UART_Init
+	->	E	_Clock_Init
+	->	E	_Clear_Para
+#
+         2	E	_Clear_Para
+#
+         2	E	_Clock_Init
+#
+         2	E	_SIO_UART_Init
+#
+        14	E	_User_Mode	A
+	->	E	LSHLW
+	->	E	_Flash_Read
+#
+         2	E	_Command_Receive
+	->	E	_UART_Receive
+#
+         2	E	_UART_Receive
+	->	E	LSHLW
+#
+        22	E	_Data_Process
+	->	E	_Flash_Write
+	->	E	_Flash_Erase
+	->	E	_Flash_Read
+#
+         2	E	_ACK_To_PC
+	->	E	_UART_Transmit
+#
+         2	E	_UART_Transmit
+#
+         6	E	_Flash_Erase	A
+#
+         4	E	_Flash_Write	A
+#
+         6	E	_Flash_Read

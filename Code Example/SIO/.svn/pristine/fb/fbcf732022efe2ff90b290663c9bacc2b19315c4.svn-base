@@ -1,0 +1,25 @@
+[CPUTYPE]
+CpuSerise=896
+
+[PrjFile]
+Count=1
+FILE-0=SIO.prj
+ActivePrj=SIO.prj
+
+[SubPrj-SIO.prj]
+Count=0
+
+[DebState]
+AutoSave=1
+Exec=0
+AutoLoad=1
+
+[DirInfo]
+WSP=D:\Softune workspace\MB95F200\SIO\
+
+[EditState]
+STATE-1=Debug\LST\SIO.mp1:56
+STATE-2=Debug\src\startup.asm:112
+STATE-3=debug\src\main.c:16
+Count=3
+

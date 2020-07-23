@@ -1,0 +1,26 @@
+[CPUTYPE]
+CpuSerise=896
+
+[PrjFile]
+Count=1
+FILE-0=8FX-UART_PGM.prj
+ActivePrj=8FX-UART_PGM.prj
+
+[SubPrj-8FX-UART_PGM.prj]
+Count=0
+
+[DebState]
+AutoSave=1
+Exec=0
+AutoLoad=1
+
+[DirInfo]
+WSP=D:\Work\06_Project\02_8FX UART Boot Loader\SIO-UART\0.18product\8FX-UART_PGM_710\
+
+[EditState]
+STATE-1=Debug\SRC\main.c:67
+STATE-2=debug\src\API.h:41
+STATE-3=debug\src\mb95710.h:3924
+STATE-4=Debug\SRC\start8FX.asm:72
+Count=4
+

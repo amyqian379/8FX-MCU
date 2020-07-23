@@ -1,0 +1,12 @@
+-dt s,d,r,a
+-pl 60
+-pw 132
+-g
+-cwno
+-cpu MB95F204K
+"D:\Softune workspace\MB95F200\SIO\Debug\ABS\SIO.abs"
+-a "D:\Softune workspace\MB95F200\SIO\Debug\OBJ\vectors.obj"
+-a "D:\Softune workspace\MB95F200\SIO\Debug\OBJ\Main.obj"
+-a "D:\Softune workspace\MB95F200\SIO\Debug\OBJ\mb95200.obj"
+-a "D:\Softune workspace\MB95F200\SIO\Debug\OBJ\startup.obj"
+

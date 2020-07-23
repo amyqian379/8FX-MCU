@@ -1,0 +1,160 @@
+F2MC-8L/8FX Family SOFTUNE Linker Control List                                                  2008-04-17 21:46:17  Page:     1
+
+Option File(s)
+  D:\Softune workspace\MB95F200\SIO\Debug\OPT\SIO.opl
+
+Control(s)
+  -f D:\Softune workspace\MB95F200\SIO\Debug\OPT\SIO.opl
+  @ -g 
+  @ -AL 2
+  @ -ra _INRAM01=0x0090/0x027F
+  @ -ro _INROM01=0xC000/0xFFFF
+  @ -sc @INIT/Const+@DIRINIT/Dirconst=_INROM01
+  @ -sc IO=0x0000
+  @ -check_rora 
+  @ -check_locate 
+  @ -rg 0
+  @ -m D:\Softune workspace\MB95F200\SIO\Debug\LST\SIO.mp1
+  @ -pl 60
+  @ -pw 132
+  @ -alin D:\Softune workspace\MB95F200\SIO\Debug\LST
+  @ -alout D:\Softune workspace\MB95F200\SIO\Debug\LST
+  @ -Xals 
+  @ -Xalr 
+  @ -na 
+  @ -w 1
+  @ -Xset_rora 
+  @ -cwno 
+  @ -a 
+  @ -cpu MB95F204K
+  @ -o D:\Softune workspace\MB95F200\SIO\Debug\ABS\SIO.abs
+  -Xdof 
+
+Input Module(s)
+     1 D:\Softune workspace\MB95F200\SIO\Debug\OBJ\vectors.obj(vectors)
+     2 D:\Softune workspace\MB95F200\SIO\Debug\OBJ\Main.obj(main)
+     3 D:\Softune workspace\MB95F200\SIO\Debug\OBJ\mb95200.obj(MB95200)
+     4 D:\Softune workspace\MB95F200\SIO\Debug\OBJ\startup.obj(start)
+     5 C:\Softune\LIB\896\lib950.lib(__STD_LIB_lcompl)
+     6 C:\Softune\LIB\896\lib950.lib(__STD_LIB_lmemclea)
+     7 C:\Softune\LIB\896\lib950.lib(__STD_LIB_lmemtome)
+     8 C:\Softune\LIB\896\lib950.lib(__STD_LIB_lsubl)
+
+Error(s)
+     ** Nothing **
+
+F2MC-8L/8FX Family SOFTUNE Linker Mapping List                                                  2008-04-17 21:46:17  Page:     2
+
+S_Addr. -E_Addr.   Size      Section Type Al     Sec.(Top 81)                                                                      C
+00000000-........  00000000  IO    P RW-- 01 REL  IO
+00000000-0000007E  0000007F  IO    N RW-- 00 ABS  IOBASE
+00000090-00000090  00000001  DATA  P RW-- 01 REL  DATA
+00000090-........  00000000  DIR   P RW-- 01 REL  DIRDATA
+00000090-........  00000000  DIR   P RW-- 01 REL  DIRINIT
+00000091-00000091  00000001  DATA  P RW-- 01 REL  INIT
+00000100-00000107  00000008  DATA  N RW-- 01 ABS  Register Bank No. 00
+00000108-00000187  00000080  STACK P RW-- 01 REL  STACK
+00000F80-00000FEE  0000006F  DATA  N RW-- 00 ABS  IOXTND
+0000C000-0000C000  00000001  DATA  P R--- 01 REL #INIT
+0000C001-0000C1A7  000001A7  CODE  P R-XI 01 REL  CODE
+0000C001-........  00000000  DIR   P R--- 01 REL #DIRINIT
+0000FFCC-0000FFFB  00000030  CONST N R--I 00 ABS  INTVECT
+0000FFFC-0000FFFF  00000004  CONST N R--I 00 ABS  RESET
+F2MC-8L/8FX Family SOFTUNE Linker Symbol List                                                   2008-04-17 21:46:17  Page:     3
+
+Symbol Value        Type   Def.  Symbol Name (Top 97)                                                                              C
+ 0000C114(ABS)      Addr.  LIB    LCOMPL
+ 0000C142(ABS)      Addr.  LIB    LMEMCLEAR
+ 0000C162(ABS)      Addr.  LIB    LMEMTOMEM
+ 0000C188(ABS)      Addr.  LIB    LSUBL
+ 0000C014(ABS)      Addr.  OM/LM @_DefaultIRQHandler
+ 0000C001(ABS)      Addr.  OM/LM  _InitIrqLevels
+ 0000C02C(ABS)      Addr.  OM/LM @_MCU_initialization
+ 0000006C(ABS)      Addr.  OM/LM @__adc1
+ 0000006D(ABS)      Addr.  OM/LM @__adc2
+ 0000006E(ABS)      Addr.  OM/LM @__addh
+ 0000006F(ABS)      Addr.  OM/LM @__addl
+ 00000FC3(ABS)      Addr.  OM/LM  __aidrl
+ 00000FBC(ABS)      Addr.  OM/LM  __bgr
+ 00000FBD(ABS)      Addr.  OM/LM @__bgr0
+ 00000FBC(ABS)      Addr.  OM/LM @__bgr1
+ 00000FE9(ABS)      Addr.  OM/LM @__cmcr
+ 00000FEA(ABS)      Addr.  OM/LM @__cmdr
+ 00000FE4(ABS)      Addr.  OM/LM @__crth
+ 00000FE5(ABS)      Addr.  OM/LM @__crtl
+ 00000001(ABS)      Addr.  OM/LM  __ddr0
+ 00000003(ABS)      Addr.  OM/LM @__ddr1
+ 00000017(ABS)      Addr.  OM/LM  __ddr6
+ 00000029(ABS)      Addr.  OM/LM @__ddrf
+ 0000002B(ABS)      Addr.  OM/LM @__ddrg
+ 00000055(ABS)      Addr.  OM/LM @__eccr
+ 00000049(ABS)      Addr.  OM/LM @__eic10
+ 0000004A(ABS)      Addr.  OM/LM @__eic20
+ 0000004B(ABS)      Addr.  OM/LM @__eic30
+ 00000054(ABS)      Addr.  OM/LM @__escr
+ 00000072(ABS)      Addr.  OM/LM @__fsr
+ 00000079(ABS)      Addr.  OM/LM  __ilr0
+ 0000007A(ABS)      Addr.  OM/LM  __ilr1
+ 0000007B(ABS)      Addr.  OM/LM  __ilr2
+ 0000007C(ABS)      Addr.  OM/LM  __ilr3
+ 0000007D(ABS)      Addr.  OM/LM  __ilr4
+ 0000007E(ABS)      Addr.  OM/LM  __ilr5
+ 00000FEE(ABS)      Addr.  OM/LM @__ilsr
+ 00000000(ABS)      Addr.  OM/LM  __pdr0
+ 00000002(ABS)      Addr.  OM/LM @__pdr1
+ 00000016(ABS)      Addr.  OM/LM  __pdr6
+ 00000028(ABS)      Addr.  OM/LM @__pdrf
+ 0000002A(ABS)      Addr.  OM/LM @__pdrg
+ 0000002C(ABS)      Addr.  OM/LM @__pul0
+ 00000035(ABS)      Addr.  OM/LM @__pulg
+ 00000053(ABS)      Addr.  OM/LM  __rdr
+ 00000009(ABS)      Addr.  OM/LM @__rsrr
+ 00000050(ABS)      Addr.  OM/LM  __scr
+ 00000051(ABS)      Addr.  OM/LM  __smr
+ 00000052(ABS)      Addr.  OM/LM  __ssr
+ 0000C0D4(ABS)      Addr.  OM/LM @__start
+ 00000008(ABS)      Addr.  OM/LM @__stbc
+ 00000007(ABS)      Addr.  OM/LM  __sycc
+ 0000000D(ABS)      Addr.  OM/LM @__sycc2
+ 00000FE8(ABS)      Addr.  OM/LM @__sysc
+ 00000F93(ABS)      Addr.  OM/LM @__t00cr0
+ 00000037(ABS)      Addr.  OM/LM @__t00cr1
+ 00000F95(ABS)      Addr.  OM/LM @__t00dr
+F2MC-8L/8FX Family SOFTUNE Linker Symbol List                                                   2008-04-17 21:46:17  Page:     4
+
+Symbol Value        Type   Def.  Symbol Name (Top 97)                                                                              C
+ 00000F92(ABS)      Addr.  OM/LM @__t01cr0
+ 00000036(ABS)      Addr.  OM/LM @__t01cr1
+ 00000F94(ABS)      Addr.  OM/LM @__t01dr
+ 00000F94(ABS)      Addr.  OM/LM @__t0dr
+ 00000F98(ABS)      Addr.  OM/LM @__t10cr0
+ 00000039(ABS)      Addr.  OM/LM @__t10cr1
+ 00000F9A(ABS)      Addr.  OM/LM @__t10dr
+ 00000F97(ABS)      Addr.  OM/LM @__t11cr0
+ 00000038(ABS)      Addr.  OM/LM @__t11cr1
+ 00000F99(ABS)      Addr.  OM/LM @__t11dr
+ 00000F99(ABS)      Addr.  OM/LM @__t1dr
+ 0000000A(ABS)      Addr.  OM/LM @__tbtc
+ 00000053(ABS)      Addr.  OM/LM  __tdr
+ 00000F96(ABS)      Addr.  OM/LM @__tmcr0
+ 00000F9B(ABS)      Addr.  OM/LM @__tmcr1
+ 00000005(ABS)      Addr.  OM/LM @__watr
+ 0000000C(ABS)      Addr.  OM/LM  __wdtc
+ 00000FEB(ABS)      Addr.  OM/LM @__wdth
+ 00000FEC(ABS)      Addr.  OM/LM @__wdtl
+ 0000000B(ABS)      Addr.  OM/LM @__wpcr
+ 00000F80(ABS)      Addr.  OM/LM @__wrarh0
+ 00000F83(ABS)      Addr.  OM/LM @__wrarh1
+ 00000F86(ABS)      Addr.  OM/LM @__wrarh2
+ 00000F81(ABS)      Addr.  OM/LM @__wrarl0
+ 00000F84(ABS)      Addr.  OM/LM @__wrarl1
+ 00000F87(ABS)      Addr.  OM/LM @__wrarl2
+ 00000F82(ABS)      Addr.  OM/LM @__wrdr0
+ 00000F85(ABS)      Addr.  OM/LM @__wrdr1
+ 00000F88(ABS)      Addr.  OM/LM @__wrdr2
+ 00000076(ABS)      Addr.  OM/LM @__wren
+ 00000077(ABS)      Addr.  OM/LM @__wror
+ 0000C091(ABS)      Addr.  OM/LM  _main
+ 00000090(ABS)      Addr.  OM/LM @_rx_data
+ 00000091(ABS)      Addr.  OM/LM @_tx_data
+ 0000C054(ABS)      Addr.  OM/LM @_wait

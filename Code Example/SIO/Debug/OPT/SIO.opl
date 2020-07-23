@@ -1,0 +1,29 @@
+-g
+-AL 2
+-ra _INRAM01=0x0090/0x027F
+-ro _INROM01=0xC000/0xFFFF
+-sc @INIT/Const+@DIRINIT/Dirconst=_INROM01
+-sc IO=0x0000
+-check_rora
+-check_locate
+-rg 0
+-m "D:\Softune workspace\MB95F200\SIO\Debug\LST\SIO.mp1"
+-pl 60
+-pw 132
+-alin "D:\Softune workspace\MB95F200\SIO\Debug\LST"
+-alout "D:\Softune workspace\MB95F200\SIO\Debug\LST"
+-Xals
+-Xalr
+-na
+-w 1
+-Xset_rora
+-cwno
+-a
+-cpu MB95F204K
+-o "D:\Softune workspace\MB95F200\SIO\Debug\ABS\SIO.abs"
+
+"D:\Softune workspace\MB95F200\SIO\Debug\OBJ\vectors.obj"
+"D:\Softune workspace\MB95F200\SIO\Debug\OBJ\Main.obj"
+"D:\Softune workspace\MB95F200\SIO\Debug\OBJ\mb95200.obj"
+"D:\Softune workspace\MB95F200\SIO\Debug\OBJ\startup.obj"
+

@@ -1,0 +1,9 @@
+@d:\amy.qian\source code\8fx-uart_pgm\debug\src\vectors.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...
+#
+         2	E	_InitIrqLevels
+#
+        14	I	_DefaultIRQHandler

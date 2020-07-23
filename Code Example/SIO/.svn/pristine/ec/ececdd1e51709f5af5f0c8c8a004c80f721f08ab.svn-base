@@ -1,0 +1,16 @@
+!d:\softune workspace\mb95f200\sio\debug\src\main.c
+# E=Extern S=Static I=Interrupt
+# {Stack}    {E|S|I} {function name}
+#     ->     {E|S}   {call function}
+#             ...
+#
+         2	E	_MCU_initialization
+	->	E	_InitIrqLevels
+#
+        16	E	_wait	A
+	->	E	LCOMPL
+	->	E	LSUBL
+#
+         6	E	_main
+	->	E	_wait
+	->	E	_MCU_initialization

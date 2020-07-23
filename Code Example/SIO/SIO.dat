@@ -1,0 +1,76 @@
+$CPUSERIES-896
+$Prj-Debug
+$0
+-g
+-w 1
+-O 0
+-B
+-Xdof
+-INF STACK
+-K NOUNROLL
+$other
+$time
+1205293290
+$end
+$1
+-linf ON
+-lsrc ON
+-lsec ON
+-lcros OFF
+-linc ON
+-lexp OBJ
+-pl 60
+-pw 100
+-tab 8
+-w 2
+-g
+-Xdof
+$other
+$time
+1205288071
+$end
+$2
+-g
+-AL 2
+-ra _INRAM01=0x0090/0x027F
+-ro _INROM01=0xC000/0xFFFF
+-sc @INIT/Const+@DIRINIT/Dirconst=_INROM01
+-sc IO=0x0000
+-check_rora
+-check_locate
+-rg 0
+-m
+-pl 60
+-pw 132
+-Xals
+-Xalr
+-na
+-w 1
+-Xdof
+$other
+$time
+1205741232
+$end
+$3
+-dt s,d,r,a
+-pl 60
+-pw 132
+-g
+-Xdof
+$other
+$time
+1205741232
+$end
+$4
+-Xdof
+$other
+$time
+1205288071
+$end
+$5
+$other
+$time
+1205288071
+$end
+$Prjend
+$CPUSERIESEND
